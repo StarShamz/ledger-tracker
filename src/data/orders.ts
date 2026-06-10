@@ -81,7 +81,7 @@ export const orders: Order[] = [
     minOrders: 8,
     requiredOrderIds: [5],
     resources: [
-      { item: 'Chad Canisters', quantityDisplay: '300' },
+      { item: 'Tokenium Canisters', quantityDisplay: '300' },
       { item: 'Silicate Concrete', quantityDisplay: '10,000' },
     ],
     actions: [],

@@ -11,7 +11,7 @@ export const RESOURCE_ICONS: Record<string, string> = {
   'Vespium Frames':    url('1511698289542697030'), // Cubes
   'Low Grade Gel':     url('1511696414877679626'), // Gloo
   'Jade':              url('1511697020111552562'), // Green/Jade
-  'Chad Canisters':    url('1511697251532144700'), // Toke Juice cans
+  'Tokenium Canisters':    url('1511697251532144700'), // Toke Juice cans
 }
 
 export const ACTION_ICONS: Record<string, string> = {
@@ -32,7 +32,7 @@ export const RESOURCE_FLAVOR: Record<string, string> = {
   'Silicate Bricks':   'Fired silicate blocks for heavy construction.',
   'Silicate Concrete': 'Silicate slurry poured for foundations.',
   'Industrial Bits':   'Crated components for industrial assembly.',
-  'Chad Canisters':    "Canisters of Chad's secret brew.",
+  'Tokenium Canisters':    "Canisters of Chad's secret brew.",
   'Hydracite':         'A volatile crystal harvested from icy moons.',
   'Scorchium':         'Superheated mineral — handle with care.',
   'Low Grade Gel':     'Sticky synthetic gel of dubious origin.',
