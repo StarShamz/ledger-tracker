@@ -26,11 +26,11 @@ export default function ProgressHeader({
         {/* Top bar: title + buttons */}
         <div className="flex items-start justify-between gap-4 mb-3">
           <div>
-            <p className="font-orbitron text-[9px] tracking-[0.35em] text-slate-400 uppercase mb-1.5">
-              Ledger Planner
+            <p className="font-spacemono text-[9px] tracking-[0.2em] text-slate-400 uppercase mb-1.5">
+              Chad&apos;s Galactic Mining Empire
             </p>
             <h1 className="font-orbitron text-sm font-bold tracking-[0.12em] text-cyan-200 uppercase leading-snug [text-shadow:0_0_18px_rgba(0,212,255,0.45)]">
-              Chad&apos;s Galactic Mining Empire
+              Ledger Planner
             </h1>
             <div className="flex items-center gap-2 mt-2">
               <div className="flex items-center gap-1.5 text-xs font-spacemono tabular-nums">
@@ -79,6 +79,19 @@ export default function ProgressHeader({
             )}
           </div>
         </div>
+
+        {/* Description + feedback link */}
+        <p className="font-spacemono text-[11px] leading-relaxed text-slate-400 mb-3">
+          Plan resource costs, prerequisite chains, and your completion progress across all 118 orders — saved automatically in your browser.{' '}
+          <a
+            href="https://github.com/StarShamz/ledger-tracker/issues/new/choose"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-cyan-400 hover:text-cyan-200 underline underline-offset-2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-cyan-400/50 rounded-sm"
+          >
+            Report a bug or request a feature
+          </a>
+        </p>
 
         {/* Energy bar */}
         <div
