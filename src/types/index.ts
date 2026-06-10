@@ -49,11 +49,13 @@ export const ALL_RESOURCE_NAMES: readonly string[] = [
   'Silicate Glass',
   'Silicate Bricks',
   'Silicate Concrete',
+  'Silicate Frames',
   'Industrial Bits',
   'Tokenium Canisters',
   'Hydracite',
   'Scorchium',
   'Low Grade Gel',
+  'Silicate Gel',
   'Worthless Rocks',
 ]
 

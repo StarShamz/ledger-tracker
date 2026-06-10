@@ -271,7 +271,7 @@ export default function OrderCard({
               To Complete
             </p>
             {order.completion.resources.map(r => (
-              <ResourceRequirementRow key={r.item} r={r} stats={stats} verb="Spend" />
+              <ResourceRequirementRow key={r.item} r={r} stats={stats} verb="Spend" raw />
             ))}
             {order.completion.actions.map(a => (
               <ActionRequirementRow key={a.type} a={a} stats={stats} />
@@ -286,7 +286,7 @@ export default function OrderCard({
             </p>
             {order.rewards.map(reward => (
               <div key={reward} className="flex items-baseline gap-1.5 text-xs text-amber-200/85">
-                <span aria-hidden="true" className="flex-shrink-0 font-bold font-spacemono text-amber-400">+</span>
+                <span aria-hidden="true" className="flex-shrink-0 font-bold font-spacemono text-amber-400">✦</span>
                 <span>{reward}</span>
               </div>
             ))}
@@ -356,16 +356,21 @@ function ResourceRequirementRow({
   r,
   stats,
   verb,
+  raw = false,
 }: {
   r: ResourceRequirement
   stats: PlayerStats
   verb: string
+  // Display quantityDisplay exactly as given, skipping the fmtQty round-trip
+  // (which would normalize e.g. "500.00m" down to "500m").
+  raw?: boolean
 }) {
   const reqState = meetsRequirement(stats.resources[r.item], r.quantityDisplay)
   const icon = RESOURCE_ICONS[r.item]
+  const qty = raw ? r.quantityDisplay : r.quantityDisplay !== null ? fmtQty(r.quantityDisplay) : null
   return (
     <RequirementRow state={reqState} kind="resource" flavor={RESOURCE_FLAVOR[r.item]}>
-      {verb} {r.quantityDisplay !== null ? `${fmtQty(r.quantityDisplay)}+ ` : 'any '}
+      {verb} {qty !== null ? `${qty}+ ` : 'any '}
       {icon && <img src={icon} alt="" aria-hidden="true" className="inline-block w-3.5 h-3.5 object-contain align-middle mx-0.5" />}
       {r.item}
     </RequirementRow>

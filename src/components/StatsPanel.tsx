@@ -15,7 +15,7 @@ interface StatsPanelProps {
 
 const RESOURCE_GROUPS: { label: string; items: string[] }[] = [
   { label: 'Worthless Rocks', items: ['Worthless Rocks'] },
-  { label: 'Silicate', items: ['Industrial Bits', 'Silicate Glass', 'Silicate Bricks', 'Silicate Concrete'] },
+  { label: 'Silicate', items: ['Industrial Bits', 'Silicate Glass', 'Silicate Bricks', 'Silicate Concrete', 'Silicate Frames'] },
   {
     label: 'Vespium',
     items: ['Vespium', 'Vespium Ingots', 'Vespium Plates', 'Vespium Rods', 'Vespium Frames', 'Vespium Wire'],
@@ -23,7 +23,7 @@ const RESOURCE_GROUPS: { label: string; items: string[] }[] = [
   { label: 'Jade', items: ['Jade'] },
   { label: 'Potions', items: ['Hydracite', 'Scorchium'] },
   { label: 'Tokenium', items: ['Tokenium', 'Tokenium Canisters'] },
-  { label: 'Other', items: ['Low Grade Gel'] },
+  { label: 'Other', items: ['Low Grade Gel', 'Silicate Gel'] },
 ]
 
 const INPUT_CLASSES =

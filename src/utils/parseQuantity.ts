@@ -54,6 +54,7 @@ export function parseQuantity(raw: string | null | undefined): bigint | null {
     [/^([\d.]+)sp$/,  10n ** 24n],  // septillion
     [/^([\d.]+)sx$/,  10n ** 21n],  // sextillion
     [/^([\d.]+)qi$/,  10n ** 18n],  // quintillion
+    [/^([\d.]+)qu$/,  10n ** 18n],  // quintillion (alternate notation)
     [/^([\d.]+)qa$/,  10n ** 15n],  // quadrillion (alias for q)
     [/^([\d.]+)q$/,   10n ** 15n],  // quadrillion
     [/^([\d.]+)t$/,   1_000_000_000_000n],

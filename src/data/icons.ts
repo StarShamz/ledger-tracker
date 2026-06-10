@@ -31,6 +31,8 @@ export const RESOURCE_FLAVOR: Record<string, string> = {
   'Silicate Glass':     'Polished silicate, clear as a mirror.',
   'Silicate Bricks':    'Fired silicate blocks for heavy construction.',
   'Silicate Concrete':  'Silicate slurry poured for foundations.',
+  'Silicate Frames':    'Silicate cast into rigid structural frames.',
+  'Silicate Gel':       'A refined silicate gel, denser than the low-grade stuff.',
   'Industrial Bits':    'Crated components for industrial assembly.',
   'Tokenium Canisters': "Canisters of Chad's secret brew.",
   'Hydracite':          'A volatile crystal harvested from icy moons.',
