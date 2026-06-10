@@ -14,6 +14,13 @@ export interface Order {
   requiredOrderIds: number[]
   resources: ResourceRequirement[]
   actions: ActionRequirement[]
+  // What's needed to finish (not unlock) the order, once available. Omitted where unknown.
+  completion?: {
+    resources: ResourceRequirement[]
+    actions: ActionRequirement[]
+  }
+  // What completing the order grants. Omitted where unknown.
+  rewards?: string[]
 }
 
 export interface PlayerStats {

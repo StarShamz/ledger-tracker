@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { createPortal } from 'react-dom'
-import type { Order, OrderStatus, PlayerStats } from '@/types'
+import type { ActionRequirement, Order, OrderStatus, PlayerStats, ResourceRequirement } from '@/types'
 import { meetsRequirement, parseQuantity, formatQuantity } from '@/utils/parseQuantity'
 import { orders as allOrders } from '@/data/orders'
 import { RESOURCE_ICONS, ACTION_ICONS, RESOURCE_FLAVOR } from '@/data/icons'
@@ -254,37 +254,44 @@ export default function OrderCard({
                 </RequirementRow>
               ))}
 
-              {order.resources.map(r => {
-                const reqState = meetsRequirement(stats.resources[r.item], r.quantityDisplay)
-                const icon = RESOURCE_ICONS[r.item]
-                return (
-                  <RequirementRow key={r.item} state={reqState} kind="resource" flavor={RESOURCE_FLAVOR[r.item]}>
-                    Acquire {r.quantityDisplay !== null ? `${fmtQty(r.quantityDisplay)}+ ` : 'any '}
-                    {icon && <img src={icon} alt="" aria-hidden="true" className="inline-block w-3.5 h-3.5 object-contain align-middle mx-0.5" />}
-                    {r.item}
-                  </RequirementRow>
-                )
-              })}
+              {order.resources.map(r => (
+                <ResourceRequirementRow key={r.item} r={r} stats={stats} verb="Acquire" />
+              ))}
 
-              {order.actions.map(a => {
-                const isCI = a.type === 'chad_infusion'
-                const playerStr = isCI ? stats.tiLevel : stats.potionsCrafted
-                const actionState: 'met' | 'unmet' | 'unknown' = playerStr?.trim()
-                  ? (parseQuantity(playerStr) ?? 0n) >= BigInt(a.quantity) ? 'met' : 'unmet'
-                  : 'unknown'
-                const icon = ACTION_ICONS[a.type]
-                return (
-                  <RequirementRow key={a.type} state={actionState} kind="action">
-                    {icon && <img src={icon} alt="" aria-hidden="true" className="inline-block w-3.5 h-3.5 object-contain align-middle mr-1" />}
-                    {isCI
-                      ? `TI Level ${a.quantity}+ (${a.quantity}+ Chad Infusions)`
-                      : `Craft ${a.quantity}+ Endurance Synthesizer Potion${a.quantity > 1 ? 's' : ''}`}
-                  </RequirementRow>
-                )
-              })}
+              {order.actions.map(a => (
+                <ActionRequirementRow key={a.type} a={a} stats={stats} />
+              ))}
             </>
           )}
         </div>
+
+        {order.completion && (order.completion.resources.length > 0 || order.completion.actions.length > 0) && (
+          <div className="mt-1.5 pt-1.5 border-t border-slate-700/20 space-y-1.5">
+            <p className="font-spacemono text-[9px] tracking-[0.2em] text-slate-500 uppercase">
+              To Complete
+            </p>
+            {order.completion.resources.map(r => (
+              <ResourceRequirementRow key={r.item} r={r} stats={stats} verb="Spend" />
+            ))}
+            {order.completion.actions.map(a => (
+              <ActionRequirementRow key={a.type} a={a} stats={stats} />
+            ))}
+          </div>
+        )}
+
+        {order.rewards && order.rewards.length > 0 && (
+          <div className="mt-1.5 pt-1.5 border-t border-amber-700/25 space-y-1">
+            <p className="font-spacemono text-[9px] tracking-[0.2em] text-amber-400/70 uppercase">
+              Rewards
+            </p>
+            {order.rewards.map(reward => (
+              <div key={reward} className="flex items-baseline gap-1.5 text-xs text-amber-200/85">
+                <span aria-hidden="true" className="flex-shrink-0 font-bold font-spacemono text-amber-400">+</span>
+                <span>{reward}</span>
+              </div>
+            ))}
+          </div>
+        )}
 
         {unlocksIds.length > 0 && (
           <div className="mt-1.5 pt-1.5 border-t border-slate-700/20 space-y-1.5">
@@ -342,6 +349,43 @@ function RequirementRow({
         {flavor && <div className="text-[10px] text-slate-600 italic mt-0.5">{flavor}</div>}
       </div>
     </div>
+  )
+}
+
+function ResourceRequirementRow({
+  r,
+  stats,
+  verb,
+}: {
+  r: ResourceRequirement
+  stats: PlayerStats
+  verb: string
+}) {
+  const reqState = meetsRequirement(stats.resources[r.item], r.quantityDisplay)
+  const icon = RESOURCE_ICONS[r.item]
+  return (
+    <RequirementRow state={reqState} kind="resource" flavor={RESOURCE_FLAVOR[r.item]}>
+      {verb} {r.quantityDisplay !== null ? `${fmtQty(r.quantityDisplay)}+ ` : 'any '}
+      {icon && <img src={icon} alt="" aria-hidden="true" className="inline-block w-3.5 h-3.5 object-contain align-middle mx-0.5" />}
+      {r.item}
+    </RequirementRow>
+  )
+}
+
+function ActionRequirementRow({ a, stats }: { a: ActionRequirement; stats: PlayerStats }) {
+  const isCI = a.type === 'chad_infusion'
+  const playerStr = isCI ? stats.tiLevel : stats.potionsCrafted
+  const actionState: ReqState = playerStr?.trim()
+    ? (parseQuantity(playerStr) ?? 0n) >= BigInt(a.quantity) ? 'met' : 'unmet'
+    : 'unknown'
+  const icon = ACTION_ICONS[a.type]
+  return (
+    <RequirementRow state={actionState} kind="action">
+      {icon && <img src={icon} alt="" aria-hidden="true" className="inline-block w-3.5 h-3.5 object-contain align-middle mr-1" />}
+      {isCI
+        ? `TI Level ${a.quantity}+ (${a.quantity}+ Chad Infusions)`
+        : `Craft ${a.quantity}+ Endurance Synthesizer Potion${a.quantity > 1 ? 's' : ''}`}
+    </RequirementRow>
   )
 }
 

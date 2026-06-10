@@ -301,6 +301,11 @@ export const orders: Order[] = [
     requiredOrderIds: [32],
     resources: [],
     actions: [{ type: 'chad_infusion', quantity: 31 }],
+    completion: {
+      resources: [{ item: 'Ether', quantityDisplay: '222' }],
+      actions: [],
+    },
+    rewards: ['+22 Max Stamina', 'x1.22 EXP'],
   },
   // 43
   {

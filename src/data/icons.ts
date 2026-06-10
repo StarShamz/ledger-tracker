@@ -36,4 +36,5 @@ export const RESOURCE_FLAVOR: Record<string, string> = {
   'Hydracite':          'A volatile crystal harvested from icy moons.',
   'Scorchium':          'Superheated mineral — handle with care.',
   'Low Grade Gel':      'Sticky synthetic gel of dubious origin.',
+  'Ether':              'A shimmering currency, spent to commission completed orders.',
 }

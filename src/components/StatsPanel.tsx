@@ -419,6 +419,38 @@ export default function StatsPanel({ stats, onChange, onApplyInference }: StatsP
           )}
         </div>
 
+        {/* ── Ether ── */}
+        <div>
+          <button
+            onClick={() => toggleGroup('ether')}
+            className="flex items-center justify-between w-full font-orbitron text-[9px] font-semibold text-slate-300 uppercase tracking-[0.2em] mb-2 border-l-2 border-cyan-600/45 pl-2 hover:text-slate-100 transition-colors cursor-pointer"
+          >
+            Ether
+            <span className={`mr-0.5 text-slate-500 transition-transform duration-150 ${collapsedGroups.has('ether') ? '-rotate-90' : 'rotate-0'}`}>▾</span>
+          </button>
+          {!collapsedGroups.has('ether') && (
+            <div>
+              <label className="flex items-center gap-1 text-xs text-slate-300 mb-0.5">
+                {RESOURCE_ICONS['Ether'] && (
+                  <img src={RESOURCE_ICONS['Ether']} alt="" aria-hidden="true" className="w-3.5 h-3.5 object-contain flex-shrink-0" />
+                )}
+                Current Ether
+              </label>
+              <input
+                type="text"
+                inputMode="decimal"
+                value={stats.resources['Ether'] ?? ''}
+                onChange={e => onChange(setResource(stats, 'Ether', e.target.value))}
+                placeholder="current balance"
+                className={INPUT_CLASSES}
+              />
+              <p className="text-[10px] text-slate-500 mt-1">
+                Unlike other resources, enter what you currently have on hand — Ether is spent to complete orders, so this goes down over time, not up.
+              </p>
+            </div>
+          )}
+        </div>
+
         {/* ── Resources ── */}
         {RESOURCE_GROUPS.map(group => (
           <div key={group.label}>
