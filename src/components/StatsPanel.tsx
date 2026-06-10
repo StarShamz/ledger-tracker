@@ -22,7 +22,7 @@ const RESOURCE_GROUPS: { label: string; items: string[] }[] = [
   },
   { label: 'Jade', items: ['Jade'] },
   { label: 'Potions', items: ['Hydracite', 'Scorchium'] },
-  { label: 'Tokenium', items: ['Chad Canisters'] },
+  { label: 'Tokenium', items: ['Tokenium', 'Chad Canisters'] },
   { label: 'Other', items: ['Low Grade Gel'] },
 ]
 
