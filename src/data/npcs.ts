@@ -20,8 +20,8 @@ const RESOURCE_NPC: Record<string, string> = {
   'Low Grade Gel':     'Clank',
 }
 
-// Vespium Ingots is split between two NPCs: Tank handles orders for
-// pure Vespium Ingots, while Puri Puri handles orders that combine
+// Vespium Ingots is split between two NPCs: Tank Timmerson handles orders
+// for pure Vespium Ingots, while Puri Puri handles orders that combine
 // Ingots with other Vespium products (Plates, Rods, Frames).
 const VESPIUM_PRODUCTS = new Set(['Vespium Plates', 'Vespium Rods', 'Vespium Frames'])
 
@@ -30,29 +30,30 @@ const VESPIUM_PRODUCTS = new Set(['Vespium Plates', 'Vespium Rods', 'Vespium Fra
 const BULK_RESOURCES = new Set(['Industrial Bits', 'Silicate Concrete'])
 
 const ACTION_NPC: Record<string, string> = {
-  endurance_synthesizer_potion: 'Edelaine',
+  endurance_synthesizer_potion: 'Eidelaine Eeko',
   chad_infusion: 'The Entity',
 }
 
 // Headshot portrait art per NPC, shown on order cards.
 export const NPC_IMAGES: Record<string, string> = {
-  'Meepa Torani':  '/npcs/meepa-torani.webp',
-  'Edelaine':      '/npcs/edelaine.webp',
-  'Tank':          '/npcs/tank.webp',
-  'Puri Puri':     '/npcs/puri-puri.webp',
-  'The Twins':     '/npcs/the-twins.webp',
-  'Gerbo':         '/npcs/gerbo.webp',
-  'Minalima Lin':  '/npcs/minalima-lin.webp',
-  'Gama Kamalon':  '/npcs/gama-kamalon.webp',
-  'Clank':         '/npcs/clank.webp',
-  'The Entity':    '/npcs/the-entity.webp',
+  'Meepa Torani':    '/npcs/meepa-torani.webp',
+  'Eidelaine Eeko':  '/npcs/eidelaine-eeko.webp',
+  'Tank Timmerson':  '/npcs/tank-timmerson.webp',
+  'Puri Puri':       '/npcs/puri-puri.webp',
+  'The Twins':       '/npcs/the-twins.webp',
+  'Gerbo':           '/npcs/gerbo.webp',
+  'Minalima Lin':    '/npcs/minalima-lin.webp',
+  'Gama Kamalon':    '/npcs/gama-kamalon.webp',
+  'Clank':           '/npcs/clank.webp',
+  'The Entity':      '/npcs/the-entity.webp',
+  'Donathan Creel':  '/npcs/donathan-creel.webp',
 }
 
 export function getOrderNpc(order: Order): string | undefined {
   for (const r of order.resources) {
     if (r.item === 'Vespium Ingots') {
       const hasOtherVespiumProduct = order.resources.some(o => VESPIUM_PRODUCTS.has(o.item))
-      return hasOtherVespiumProduct ? 'Puri Puri' : 'Tank'
+      return hasOtherVespiumProduct ? 'Puri Puri' : 'Tank Timmerson'
     }
     if (BULK_RESOURCES.has(r.item)) {
       return order.resources.length === 1 ? 'Clank' : 'Meepa Torani'
