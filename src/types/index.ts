@@ -21,6 +21,8 @@ export interface Order {
   }
   // What completing the order grants. Omitted where unknown.
   rewards?: string[]
+  // Confirmed requesting NPC, overriding the resource-based inference. Omitted where unconfirmed.
+  npc?: string
 }
 
 export interface PlayerStats {

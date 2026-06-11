@@ -194,6 +194,9 @@ export default function StatsPanel({ stats, onChange, onApplyInference }: StatsP
           <p className="font-orbitron text-[9px] font-semibold text-cyan-400/80 uppercase tracking-[0.2em]">
             Calculate Completions
           </p>
+          <p className="text-xs text-amber-400/80">
+            Work in progress — order completion calculation may be inaccurate until all order data has been gathered.
+          </p>
           <p className="text-xs text-slate-400">
             This will automatically calculate what orders you may have realistically completed, given the stats you have provided below. Some orders may be flagged for your manual approval in an effort to prevent incomplete orders from being automatically completed.
           </p>

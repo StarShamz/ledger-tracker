@@ -50,6 +50,8 @@ export const NPC_IMAGES: Record<string, string> = {
 }
 
 export function getOrderNpc(order: Order): string | undefined {
+  if (order.npc) return order.npc
+
   for (const r of order.resources) {
     if (r.item === 'Vespium Ingots') {
       const hasOtherVespiumProduct = order.resources.some(o => VESPIUM_PRODUCTS.has(o.item))
