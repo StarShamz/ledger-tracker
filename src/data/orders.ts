@@ -739,6 +739,11 @@ export const orders: Order[] = [
     requiredOrderIds: [45],
     resources: [{ item: 'Jade', quantityDisplay: '10 billion' }],
     actions: [],
+    completion: {
+      resources: [{ item: 'Jade', quantityDisplay: '20.00b' }],
+      actions: [],
+    },
+    rewards: ['x1.1 Jade', 'x1.1 Vespium', 'x1.1 Tokenium'],
   },
   // 51
   {
@@ -747,6 +752,11 @@ export const orders: Order[] = [
     requiredOrderIds: [42],
     resources: [],
     actions: [{ type: 'chad_infusion', quantity: 35 }],
+    completion: {
+      resources: [{ item: 'Ether', quantityDisplay: '188' }],
+      actions: [],
+    },
+    rewards: ['x1.12 EXP', 'x1.02 Tokenium', 'x1.02 Tokenium Canister'],
   },
   // 52
   {
@@ -1125,6 +1135,11 @@ export const orders: Order[] = [
     requiredOrderIds: [38],
     resources: [{ item: 'Vespium Ingot', quantityDisplay: '1 million' }],
     actions: [],
+    completion: {
+      resources: [{ item: 'Vespium Ingot', quantityDisplay: '1.00m' }],
+      actions: [],
+    },
+    rewards: ['+6% Crafting Speed'],
   },
   // 77
   {
@@ -1161,6 +1176,11 @@ export const orders: Order[] = [
     requiredOrderIds: [78],
     resources: [{ item: 'Vespium Ingot', quantityDisplay: '20 million' }],
     actions: [],
+    completion: {
+      resources: [{ item: 'Vespium Ingot', quantityDisplay: '50.00m' }],
+      actions: [],
+    },
+    rewards: ['+9% Crafting Speed'],
   },
   // 80
   {
@@ -1406,6 +1426,11 @@ export const orders: Order[] = [
     requiredOrderIds: [94],
     resources: [{ item: 'Low Grade Gel', quantityDisplay: '1,000' }],
     actions: [],
+    completion: {
+      resources: [{ item: 'Low Grade Gel', quantityDisplay: '36.40k' }],
+      actions: [],
+    },
+    rewards: ['+70 Ether', 'x1.5 All Rig Yield'],
   },
   // 96
   {
@@ -1439,6 +1464,14 @@ export const orders: Order[] = [
       { item: 'Scorchium', quantityDisplay: '80,000' },
     ],
     actions: [],
+    completion: {
+      resources: [
+        { item: 'Hydracite', quantityDisplay: '200.00k' },
+        { item: 'Scorchium', quantityDisplay: '160.00k' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.5 EXP', '+10 Ether'],
   },
   // 99
   {
@@ -1557,6 +1590,11 @@ export const orders: Order[] = [
     requiredOrderIds: [108],
     resources: [{ item: 'Vespium Rod', quantityDisplay: '50,000' }],
     actions: [],
+    completion: {
+      resources: [{ item: 'Vespium Rod', quantityDisplay: '27.50k' }],
+      actions: [],
+    },
+    rewards: ['x1.05 Vespium', 'x1.08 Credits'],
   },
   // 110
   {
@@ -1607,6 +1645,11 @@ export const orders: Order[] = [
     requiredOrderIds: [112],
     resources: [{ item: 'Vespium Frame', quantityDisplay: '10,000' }],
     actions: [],
+    completion: {
+      resources: [{ item: 'Vespium Frame', quantityDisplay: '4000' }],
+      actions: [],
+    },
+    rewards: ['+6% Crafting Speed', '/1.25 Crafter Cost Reduction'],
   },
   // 114
   {
@@ -1643,6 +1686,11 @@ export const orders: Order[] = [
     requiredOrderIds: [115],
     resources: [{ item: 'Vespium Wire', quantityDisplay: '500' }],
     actions: [],
+    completion: {
+      resources: [{ item: 'Vespium Wire', quantityDisplay: '360' }],
+      actions: [],
+    },
+    rewards: ['x1.04 Tokenium Canister', '+10 Core'],
   },
   // 117
   {
@@ -1654,6 +1702,14 @@ export const orders: Order[] = [
       { item: 'Low Grade Gel', quantityDisplay: '200' },
     ],
     actions: [],
+    completion: {
+      resources: [
+        { item: 'Vespium Wire', quantityDisplay: '475' },
+        { item: 'Low Grade Gel', quantityDisplay: '600' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.05 Tokenium Canister', '+14 Core'],
   },
   // 118
   {
