@@ -175,7 +175,7 @@ export default function OrderCard({
                     inProgress ? 'text-amber-400' : 'text-slate-500 hover:text-amber-400/70'
                   }`}
                 >
-                  <svg className="w-3 h-3.5" viewBox="0 0 10 13" fill={inProgress ? 'currentColor' : 'none'} aria-hidden="true">
+                  <svg className="w-4 h-5" viewBox="0 0 10 13" fill={inProgress ? 'currentColor' : 'none'} aria-hidden="true">
                     <path d="M2 1h6v8L5 7 2 9V1z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
                   </svg>
                 </button>
