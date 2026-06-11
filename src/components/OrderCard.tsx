@@ -267,7 +267,7 @@ export default function OrderCard({
 
         {order.completion && (order.completion.resources.length > 0 || order.completion.actions.length > 0) && (
           <div className="mt-1.5 pt-1.5 border-t border-slate-700/20 space-y-1.5">
-            <p className="font-spacemono text-[9px] tracking-[0.2em] text-slate-500 uppercase">
+            <p className="font-spacemono text-[9px] tracking-[0.2em] text-amber-400/70 uppercase">
               To Complete
             </p>
             {order.completion.resources.map(r => (
