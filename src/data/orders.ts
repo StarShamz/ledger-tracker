@@ -670,7 +670,7 @@ export const orders: Order[] = [
       resources: [{ item: 'Jade', quantityDisplay: '5.00b' }],
       actions: [],
     },
-    rewards: ['+3% Crafter Duplication Chance'],
+    rewards: ['+3% Crafter Duplication Chance', '+20 Ether'],
   },
   // 46
   {
