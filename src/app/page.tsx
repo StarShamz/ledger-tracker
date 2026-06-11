@@ -7,6 +7,7 @@ import ProgressHeader from '@/components/ProgressHeader'
 import SearchFilter from '@/components/SearchFilter'
 import OrderCard from '@/components/OrderCard'
 import StatsPanel from '@/components/StatsPanel'
+import CreditsPanel from '@/components/CreditsPanel'
 import { parseQuantity } from '@/utils/parseQuantity'
 import { getAllPrerequisites, getAllDependents } from '@/utils/inferCompletedOrders'
 import type { Order, OrderStatus, PlayerStats, ResourceFilter, StatusFilter } from '@/types'
@@ -91,6 +92,7 @@ export default function Page() {
   const [resourceFilter, setResourceFilter] = useState<ResourceFilter>('all')
   const [searchQuery, setSearchQuery] = useState('')
   const [statsOpen, setStatsOpen] = useState(false)
+  const [creditsOpen, setCreditsOpen] = useState(false)
   const [completedFlash, setCompletedFlash] = useState(0)
   const deferredSearch = useDeferredValue(searchQuery)
 
@@ -208,6 +210,8 @@ export default function Page() {
         totalCount={orders.length}
         statsOpen={statsOpen}
         onStatsToggle={() => setStatsOpen(v => !v)}
+        creditsOpen={creditsOpen}
+        onCreditsToggle={() => setCreditsOpen(v => !v)}
         onReset={handleReset}
       />
       {statsOpen && (
@@ -217,6 +221,7 @@ export default function Page() {
           onApplyInference={ids => setCompletedArray(ids)}
         />
       )}
+      {creditsOpen && <CreditsPanel />}
       <SearchFilter
         searchQuery={searchQuery}
         onSearchChange={setSearchQuery}

@@ -7,6 +7,8 @@ interface ProgressHeaderProps {
   totalCount: number
   statsOpen: boolean
   onStatsToggle: () => void
+  creditsOpen: boolean
+  onCreditsToggle: () => void
   onReset: () => void
 }
 
@@ -15,6 +17,8 @@ export default function ProgressHeader({
   totalCount,
   statsOpen,
   onStatsToggle,
+  creditsOpen,
+  onCreditsToggle,
   onReset,
 }: ProgressHeaderProps) {
   const [confirmReset, setConfirmReset] = useState(false)
@@ -51,6 +55,17 @@ export default function ProgressHeader({
               }`}
             >
               Stats
+            </button>
+
+            <button
+              onClick={onCreditsToggle}
+              className={`font-orbitron text-[10px] tracking-[0.08em] px-3 py-2 min-h-[44px] rounded-sm border transition-all duration-150 cursor-pointer [touch-action:manipulation] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-fuchsia-500/50 focus-visible:ring-offset-1 focus-visible:ring-offset-black ${
+                creditsOpen
+                  ? 'bg-fuchsia-500/10 border-fuchsia-600/35 text-fuchsia-300 shadow-[0_0_12px_rgba(232,121,249,0.12)]'
+                  : 'border-slate-700/60 text-slate-400 hover:text-slate-200 hover:border-slate-500'
+              }`}
+            >
+              Credits
             </button>
 
             {!confirmReset ? (
