@@ -31,22 +31,22 @@ const BULK_RESOURCES = new Set(['Industrial Bits', 'Silicate Concrete'])
 
 const ACTION_NPC: Record<string, string> = {
   endurance_synthesizer_potion: 'Eidelaine Eeko',
-  chad_infusion: 'The Entity',
+  chad_infusion: 'The Ether Hoarder',
 }
 
 // Headshot portrait art per NPC, shown on order cards.
 export const NPC_IMAGES: Record<string, string> = {
-  'Meepa Torani':    '/npcs/meepa-torani.webp',
-  'Eidelaine Eeko':  '/npcs/eidelaine-eeko.webp',
-  'Tank Timmerson':  '/npcs/tank-timmerson.webp',
-  'Puri Puri':       '/npcs/puri-puri.webp',
-  'The Twins':       '/npcs/the-twins.webp',
-  'Gerbo':           '/npcs/gerbo.webp',
-  'Minalima Lin':    '/npcs/minalima-lin.webp',
-  'Gama Kamalon':    '/npcs/gama-kamalon.webp',
-  'Clank':           '/npcs/clank.webp',
-  'The Entity':      '/npcs/the-entity.webp',
-  'Donathan Creel':  '/npcs/donathan-creel.webp',
+  'Meepa Torani':      '/npcs/meepa-torani.webp',
+  'Eidelaine Eeko':    '/npcs/eidelaine-eeko.webp',
+  'Tank Timmerson':    '/npcs/tank-timmerson.webp',
+  'Puri Puri':         '/npcs/puri-puri.webp',
+  'The Twins':         '/npcs/the-twins.webp',
+  'Gerbo':             '/npcs/gerbo.webp',
+  'Minalima Lin':      '/npcs/minalima-lin.webp',
+  'Gama Kamalon':      '/npcs/gama-kamalon.webp',
+  'Clank':             '/npcs/clank.webp',
+  'The Ether Hoarder': '/npcs/the-entity.webp',
+  'Donathan Creel':    '/npcs/donathan-creel.webp',
 }
 
 export function getOrderNpc(order: Order): string | undefined {

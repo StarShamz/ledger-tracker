@@ -418,7 +418,7 @@ export const orders: Order[] = [
     requiredOrderIds: [32],
     resources: [],
     actions: [{ type: 'chad_infusion', quantity: 31 }],
-    npc: 'The Entity',
+    npc: 'The Ether Hoarder',
     completion: {
       resources: [{ item: 'Ether', quantityDisplay: '222' }],
       actions: [],
