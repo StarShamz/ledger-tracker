@@ -4,30 +4,30 @@ import type { Order } from '@/types'
 // Orders are checked against their resources first, then their actions;
 // the first match with a known NPC determines the order's requester.
 const RESOURCE_NPC: Record<string, string> = {
-  'Industrial Bits':   'Meepa Torani',
+  'Industrial Bit':    'Meepa Torani',
   'Silicate Glass':    'Meepa Torani',
-  'Silicate Bricks':   'Meepa Torani',
+  'Silicate Brick':    'Meepa Torani',
   'Silicate Concrete': 'Meepa Torani',
   'Hydracite':         'The Twins',
   'Scorchium':         'The Twins',
-  'Worthless Rocks':   'Gerbo',
+  'Worthless Rock':    'Gerbo',
   'Vespium':           'Gerbo',
   'Jade':              'Minalima Lin',
-  'Vespium Plates':    'Puri Puri',
-  'Vespium Rods':      'Puri Puri',
-  'Vespium Frames':    'Puri Puri',
+  'Vespium Plate':     'Puri Puri',
+  'Vespium Rod':       'Puri Puri',
+  'Vespium Frame':     'Puri Puri',
   'Vespium Wire':      'Gama Kamalon',
   'Low Grade Gel':     'Clank',
 }
 
-// Vespium Ingots is split between two NPCs: Tank Timmerson handles orders
-// for pure Vespium Ingots, while Puri Puri handles orders that combine
-// Ingots with other Vespium products (Plates, Rods, Frames).
-const VESPIUM_PRODUCTS = new Set(['Vespium Plates', 'Vespium Rods', 'Vespium Frames'])
+// Vespium Ingot is split between two NPCs: Tank Timmerson handles orders
+// for pure Vespium Ingot, while Puri Puri handles orders that combine
+// Ingot with other Vespium products (Plate, Rod, Frame).
+const VESPIUM_PRODUCTS = new Set(['Vespium Plate', 'Vespium Rod', 'Vespium Frame'])
 
-// Orders that ask for nothing but Industrial Bits or Silicate Concrete
+// Orders that ask for nothing but Industrial Bit or Silicate Concrete
 // (no other resources) are handled by Clank instead of Meepa Torani.
-const BULK_RESOURCES = new Set(['Industrial Bits', 'Silicate Concrete'])
+const BULK_RESOURCES = new Set(['Industrial Bit', 'Silicate Concrete'])
 
 const ACTION_NPC: Record<string, string> = {
   endurance_synthesizer_potion: 'Eidelaine Eeko',
@@ -53,7 +53,7 @@ export function getOrderNpc(order: Order): string | undefined {
   if (order.npc) return order.npc
 
   for (const r of order.resources) {
-    if (r.item === 'Vespium Ingots') {
+    if (r.item === 'Vespium Ingot') {
       const hasOtherVespiumProduct = order.resources.some(o => VESPIUM_PRODUCTS.has(o.item))
       return hasOtherVespiumProduct ? 'Puri Puri' : 'Tank Timmerson'
     }

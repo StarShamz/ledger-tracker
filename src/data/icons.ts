@@ -2,16 +2,16 @@ const CDN = 'https://cdn.discordapp.com/emojis'
 const url = (id: string) => `${CDN}/${id}.webp?size=32`
 
 export const RESOURCE_ICONS: Record<string, string> = {
-  'Industrial Bits':    url('1511695621180883014'), // Boxes
-  'Silicate Glass':     url('1511696320396660766'), // Mirrors
-  'Silicate Concrete':  url('1511697199984283768'), // Buckets
-  'Vespium Ingots':     url('1511698128665972977'), // Bars
-  'Vespium Plates':     url('1511698168662986862'), // Cardboard
-  'Vespium Rods':       url('1511698204390064261'), // Sticks
-  'Vespium Frames':     url('1511698289542697030'), // Cubes
-  'Low Grade Gel':      url('1511696414877679626'), // Gloo
-  'Jade':               url('1511697020111552562'), // Green/Jade
-  'Tokenium Canisters': url('1511697251532144700'), // Toke Juice cans
+  'Industrial Bit':    url('1511695621180883014'), // Boxes
+  'Silicate Glass':    url('1511696320396660766'), // Mirrors
+  'Silicate Concrete': url('1511697199984283768'), // Buckets
+  'Vespium Ingot':     url('1511698128665972977'), // Bars
+  'Vespium Plate':     url('1511698168662986862'), // Cardboard
+  'Vespium Rod':       url('1511698204390064261'), // Sticks
+  'Vespium Frame':     url('1511698289542697030'), // Cubes
+  'Low Grade Gel':     url('1511696414877679626'), // Gloo
+  'Jade':              url('1511697020111552562'), // Green/Jade
+  'Tokenium Canister': url('1511697251532144700'), // Toke Juice cans
 }
 
 export const ACTION_ICONS: Record<string, string> = {

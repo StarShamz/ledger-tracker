@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo, useState, useDeferredValue, useCallback } from 'react'
+import { useMemo, useState, useEffect, useDeferredValue, useCallback } from 'react'
 import { orders } from '@/data/orders'
 import { useLocalStorage } from '@/hooks/useLocalStorage'
 import ProgressHeader from '@/components/ProgressHeader'
@@ -56,14 +56,27 @@ function matchesResource(order: Order, filter: ResourceFilter): boolean {
     case 'jade':      return items.some(i => i === 'jade')
     case 'vespium':   return items.some(i => i.includes('vespium'))
     case 'silicate':  return items.some(i => i.includes('silicate'))
-    case 'industrial': return items.some(i => i === 'industrial bits')
+    case 'industrial': return items.some(i => i === 'industrial bit')
     case 'hydracite': return items.some(i => i === 'hydracite')
     case 'scorchium': return items.some(i => i === 'scorchium')
     case 'gel':       return items.some(i => i === 'low grade gel')
-    case 'rocks':     return items.some(i => i === 'worthless rocks')
+    case 'rocks':     return items.some(i => i === 'worthless rock')
     case 'actions':   return order.actions.length > 0
     default:          return true
   }
+}
+
+// One-time migration: item names used to be plural in `stats.resources`.
+// Carries over any values saved under the old keys to their new singular keys.
+const RESOURCE_KEY_MIGRATIONS: Record<string, string> = {
+  'Industrial Bits': 'Industrial Bit',
+  'Silicate Bricks': 'Silicate Brick',
+  'Tokenium Canisters': 'Tokenium Canister',
+  'Vespium Frames': 'Vespium Frame',
+  'Vespium Ingots': 'Vespium Ingot',
+  'Vespium Plates': 'Vespium Plate',
+  'Vespium Rods': 'Vespium Rod',
+  'Worthless Rocks': 'Worthless Rock',
 }
 
 function matchesSearch(order: Order, query: string): boolean {
@@ -88,6 +101,22 @@ export default function Page() {
     'ledger-stats',
     DEFAULT_STATS
   )
+
+  useEffect(() => {
+    if (!statsLoaded) return
+    setStats(prev => {
+      let changed = false
+      const resources = { ...prev.resources }
+      for (const [oldKey, newKey] of Object.entries(RESOURCE_KEY_MIGRATIONS)) {
+        if (oldKey in resources) {
+          if (!resources[newKey]?.trim()) resources[newKey] = resources[oldKey]
+          delete resources[oldKey]
+          changed = true
+        }
+      }
+      return changed ? { ...prev, resources } : prev
+    })
+  }, [statsLoaded, setStats])
   const [statusFilter, setStatusFilter] = useState<StatusFilter>('all')
   const [resourceFilter, setResourceFilter] = useState<ResourceFilter>('all')
   const [searchQuery, setSearchQuery] = useState('')

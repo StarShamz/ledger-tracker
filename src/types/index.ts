@@ -43,20 +43,20 @@ export const DEFAULT_STATS: PlayerStats = {
 export const ALL_RESOURCE_NAMES: readonly string[] = [
   'Jade',
   'Vespium',
-  'Vespium Ingots',
-  'Vespium Plates',
-  'Vespium Rods',
-  'Vespium Frames',
+  'Vespium Ingot',
+  'Vespium Plate',
+  'Vespium Rod',
+  'Vespium Frame',
   'Vespium Wire',
   'Silicate Glass',
-  'Silicate Bricks',
+  'Silicate Brick',
   'Silicate Concrete',
-  'Industrial Bits',
-  'Tokenium Canisters',
+  'Industrial Bit',
+  'Tokenium Canister',
   'Hydracite',
   'Scorchium',
   'Low Grade Gel',
-  'Worthless Rocks',
+  'Worthless Rock',
 ]
 
 export type OrderStatus = 'completed' | 'available' | 'needs_resources' | 'locked'
