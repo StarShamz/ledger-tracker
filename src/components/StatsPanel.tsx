@@ -447,9 +447,6 @@ export default function StatsPanel({ stats, onChange, onApplyInference }: StatsP
                 placeholder="current balance"
                 className={INPUT_CLASSES}
               />
-              <p className="text-[10px] text-slate-500 mt-1">
-                Unlike other resources, enter what you currently have on hand — Ether is spent to complete orders, so this goes down over time, not up.
-              </p>
             </div>
           )}
         </div>
