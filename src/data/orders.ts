@@ -86,7 +86,19 @@ export const orders: Order[] = [
     actions: [],
   },
   // 7
-  { id: 7, minOrders: 4, requiredOrderIds: [], resources: [], actions: [] },
+  {
+    id: 7,
+    minOrders: 4,
+    requiredOrderIds: [],
+    resources: [],
+    actions: [],
+    npc: 'Tank Timmerson',
+    completion: {
+      resources: [{ item: 'Vespium Ingots', quantityDisplay: '100' }],
+      actions: [],
+    },
+    rewards: ['x1.1 Vespium', '+1 Core'],
+  },
   // 8
   {
     id: 8,
@@ -94,6 +106,15 @@ export const orders: Order[] = [
     requiredOrderIds: [1],
     resources: [{ item: 'Vespium', quantityDisplay: '500' }],
     actions: [],
+    npc: 'Gerbo',
+    completion: {
+      resources: [
+        { item: 'Worthless Rocks', quantityDisplay: '100.00m' },
+        { item: 'Vespium', quantityDisplay: '4000' },
+      ],
+      actions: [],
+    },
+    rewards: ['+2 Core', 'x1.12 EXP', 'x1.05 Worthless Rock'],
   },
   // 9
   {
@@ -102,6 +123,12 @@ export const orders: Order[] = [
     requiredOrderIds: [4],
     resources: [{ item: 'Jade', quantityDisplay: '700' }],
     actions: [],
+    npc: 'Minalima Lin',
+    completion: {
+      resources: [{ item: 'Jade', quantityDisplay: '1750' }],
+      actions: [],
+    },
+    rewards: ['+4% Crafting Speed', '+1% Crafter Duplication Chance'],
   },
   // 10
   {
@@ -122,6 +149,16 @@ export const orders: Order[] = [
       { item: 'Vespium Rods', quantityDisplay: '334' },
     ],
     actions: [{ type: 'chad_infusion', quantity: 5 }],
+    npc: 'Puri Puri',
+    completion: {
+      resources: [
+        { item: 'Vespium Ingots', quantityDisplay: '333' },
+        { item: 'Vespium Plates', quantityDisplay: '333' },
+        { item: 'Vespium Rods', quantityDisplay: '333' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.12 Vespium', '+3% Crafting Speed'],
   },
   // 12
   {
@@ -140,6 +177,12 @@ export const orders: Order[] = [
     requiredOrderIds: [9],
     resources: [{ item: 'Jade', quantityDisplay: '3,000' }],
     actions: [],
+    npc: 'Minalima Lin',
+    completion: {
+      resources: [{ item: 'Jade', quantityDisplay: '7500' }],
+      actions: [],
+    },
+    rewards: ['+1 Attribute Point', 'x1.05 Jade'],
   },
   // 15
   {
@@ -151,6 +194,15 @@ export const orders: Order[] = [
       { item: 'Silicate Concrete', quantityDisplay: '10,000' },
     ],
     actions: [],
+    npc: 'Gama Kamalon',
+    completion: {
+      resources: [
+        { item: 'Silicate Concrete', quantityDisplay: '6250' },
+        { item: 'Vespium Plates', quantityDisplay: '1350' },
+      ],
+      actions: [],
+    },
+    rewards: ['+2 Core', 'x1.1 Tokenium', 'x1.05 Tokenium Canister'],
   },
   // 16
   {
@@ -161,7 +213,23 @@ export const orders: Order[] = [
     actions: [],
   },
   // 17
-  { id: 17, minOrders: 8, requiredOrderIds: [11], resources: [], actions: [] },
+  {
+    id: 17,
+    minOrders: 8,
+    requiredOrderIds: [11],
+    resources: [],
+    actions: [],
+    npc: 'Puri Puri',
+    completion: {
+      resources: [
+        { item: 'Vespium Ingots', quantityDisplay: '1111' },
+        { item: 'Vespium Plates', quantityDisplay: '1111' },
+        { item: 'Vespium Rods', quantityDisplay: '1111' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.22 Vespium', '+4% Crafting Speed'],
+  },
   // 18
   {
     id: 18,
@@ -183,6 +251,12 @@ export const orders: Order[] = [
     requiredOrderIds: [],
     resources: [{ item: 'Silicate Bricks', quantityDisplay: null }],
     actions: [],
+    npc: 'Meepa Torani',
+    completion: {
+      resources: [{ item: 'Silicate Bricks', quantityDisplay: '350' }],
+      actions: [],
+    },
+    rewards: ['x1.13 EXP', 'x1.13 Credits', '+1 Core'],
   },
   // 20
   {
@@ -191,6 +265,12 @@ export const orders: Order[] = [
     requiredOrderIds: [],
     resources: [],
     actions: [{ type: 'chad_infusion', quantity: 6 }],
+    npc: 'The Ether Hoarder',
+    completion: {
+      resources: [{ item: 'Ether', quantityDisplay: '165' }],
+      actions: [],
+    },
+    rewards: ['+7 Core'],
   },
   // 21
   {
@@ -199,6 +279,12 @@ export const orders: Order[] = [
     requiredOrderIds: [18],
     resources: [{ item: 'Jade', quantityDisplay: '20,000' }],
     actions: [],
+    npc: 'Minalima Lin',
+    completion: {
+      resources: [{ item: 'Jade', quantityDisplay: '87.50k' }],
+      actions: [],
+    },
+    rewards: ['x1.06 Jade', 'x1.06 Credits', 'x1.06 Worthless Rock'],
   },
   // 22
   {
@@ -235,6 +321,12 @@ export const orders: Order[] = [
     requiredOrderIds: [20],
     resources: [],
     actions: [{ type: 'chad_infusion', quantity: 15 }],
+    npc: 'The Ether Hoarder',
+    completion: {
+      resources: [{ item: 'Ether', quantityDisplay: '250' }],
+      actions: [],
+    },
+    rewards: ['+1 Attribute Point'],
   },
   // 25
   {
@@ -243,6 +335,16 @@ export const orders: Order[] = [
     requiredOrderIds: [15],
     resources: [{ item: 'Vespium Frames', quantityDisplay: null }],
     actions: [],
+    npc: 'Gama Kamalon',
+    completion: {
+      resources: [
+        { item: 'Silicate Glass', quantityDisplay: '1000' },
+        { item: 'Silicate Bricks', quantityDisplay: '850' },
+        { item: 'Vespium Frames', quantityDisplay: '100' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.15 Tokenium', 'x1.16 Worthless Rock', 'x1.17 Vespium'],
   },
   // 26
   {
@@ -251,6 +353,12 @@ export const orders: Order[] = [
     requiredOrderIds: [16],
     resources: [{ item: 'Silicate Concrete', quantityDisplay: '50,000' }],
     actions: [],
+    npc: 'Clank',
+    completion: {
+      resources: [{ item: 'Silicate Concrete', quantityDisplay: '150.00k' }],
+      actions: [],
+    },
+    rewards: ['+75 Ether', '+6 Core'],
   },
   // 27
   {
@@ -259,6 +367,12 @@ export const orders: Order[] = [
     requiredOrderIds: [13],
     resources: [{ item: 'Vespium Ingots', quantityDisplay: '10,000' }],
     actions: [],
+    npc: 'Tank Timmerson',
+    completion: {
+      resources: [{ item: 'Vespium Ingots', quantityDisplay: '50.00k' }],
+      actions: [],
+    },
+    rewards: ['+5 Core', '+3% Crafting Speed'],
   },
   // 28
   {
@@ -267,6 +381,12 @@ export const orders: Order[] = [
     requiredOrderIds: [],
     resources: [],
     actions: [{ type: 'chad_infusion', quantity: 9 }],
+    npc: 'Bhramari',
+    completion: {
+      resources: [{ item: 'Vespium Rods', quantityDisplay: '7500' }],
+      actions: [],
+    },
+    rewards: ['+1% Crafter Duplication Chance', 'x1.06 Credits'],
   },
   // 29
   {
@@ -283,6 +403,12 @@ export const orders: Order[] = [
     requiredOrderIds: [24],
     resources: [],
     actions: [{ type: 'chad_infusion', quantity: 19 }],
+    npc: 'The Ether Hoarder',
+    completion: {
+      resources: [{ item: 'Ether', quantityDisplay: '325' }],
+      actions: [],
+    },
+    rewards: ['x1.62 EXP'],
   },
   // 31
   {
@@ -291,6 +417,12 @@ export const orders: Order[] = [
     requiredOrderIds: [30],
     resources: [],
     actions: [{ type: 'chad_infusion', quantity: 23 }],
+    npc: 'The Ether Hoarder',
+    completion: {
+      resources: [{ item: 'Ether', quantityDisplay: '285' }],
+      actions: [],
+    },
+    rewards: ['x1.18 Credits'],
   },
   // 32
   {
@@ -299,6 +431,12 @@ export const orders: Order[] = [
     requiredOrderIds: [31],
     resources: [],
     actions: [{ type: 'chad_infusion', quantity: 27 }],
+    npc: 'The Ether Hoarder',
+    completion: {
+      resources: [{ item: 'Ether', quantityDisplay: '400' }],
+      actions: [],
+    },
+    rewards: ['+1 Attribute Point'],
   },
   // 33
   {
@@ -437,6 +575,17 @@ export const orders: Order[] = [
       { item: 'Industrial Bits', quantityDisplay: '50,000' },
     ],
     actions: [],
+    npc: 'Meepa Torani',
+    completion: {
+      resources: [
+        { item: 'Industrial Bits', quantityDisplay: '50.00k' },
+        { item: 'Silicate Concrete', quantityDisplay: '37.50k' },
+        { item: 'Silicate Glass', quantityDisplay: '2250' },
+        { item: 'Silicate Concrete', quantityDisplay: '2000' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.13 Craftable Sell Prices', 'x1.05 Credits'],
   },
   // 44
   {
@@ -496,6 +645,15 @@ export const orders: Order[] = [
       { item: 'Silicate Concrete', quantityDisplay: '400,000' },
     ],
     actions: [],
+    npc: 'Donathan Creel',
+    completion: {
+      resources: [
+        { item: 'Industrial Bits', quantityDisplay: '800.00k' },
+        { item: 'Silicate Concrete', quantityDisplay: '800.00k' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.04 Craftable Sell Prices', 'x1.04 Credits'],
   },
   // 48
   {
@@ -504,6 +662,16 @@ export const orders: Order[] = [
     requiredOrderIds: [25],
     resources: [{ item: 'Vespium Frames', quantityDisplay: '1,500' }],
     actions: [],
+    npc: 'Gama Kamalon',
+    completion: {
+      resources: [
+        { item: 'Silicate Glass', quantityDisplay: '8000' },
+        { item: 'Silicate Bricks', quantityDisplay: '8000' },
+        { item: 'Vespium Frames', quantityDisplay: '2250' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.08 Tokenium', 'x1.04 Tokenium Canister'],
   },
   // 49
   {
@@ -549,6 +717,17 @@ export const orders: Order[] = [
       { item: 'Vespium Rods', quantityDisplay: '50,000' },
     ],
     actions: [],
+    npc: 'Puri Puri',
+    completion: {
+      resources: [
+        { item: 'Vespium Ingots', quantityDisplay: '300.00k' },
+        { item: 'Vespium Plates', quantityDisplay: '20.00k' },
+        { item: 'Vespium Rods', quantityDisplay: '20.00k' },
+        { item: 'Vespium Frames', quantityDisplay: '2500' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.15 Vespium', 'x1.15 EXP'],
   },
   // 54
   {
@@ -642,6 +821,15 @@ export const orders: Order[] = [
       { item: 'Scorchium', quantityDisplay: '50' },
     ],
     actions: [],
+    npc: 'The Twins',
+    completion: {
+      resources: [
+        { item: 'Hydracite', quantityDisplay: '480' },
+        { item: 'Scorchium', quantityDisplay: '360' },
+      ],
+      actions: [],
+    },
+    rewards: ['+10 Core'],
   },
   // 60
   {
@@ -653,6 +841,15 @@ export const orders: Order[] = [
       { item: 'Scorchium', quantityDisplay: '100' },
     ],
     actions: [],
+    npc: 'The Twins',
+    completion: {
+      resources: [
+        { item: 'Hydracite', quantityDisplay: '1000' },
+        { item: 'Scorchium', quantityDisplay: '800' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.08 Credits', '+10% Crafting Speed'],
   },
   // 61
   {
@@ -885,6 +1082,12 @@ export const orders: Order[] = [
     requiredOrderIds: [77],
     resources: [{ item: 'Vespium Ingots', quantityDisplay: '10 million' }],
     actions: [],
+    npc: 'Tank Timmerson',
+    completion: {
+      resources: [{ item: 'Vespium Ingots', quantityDisplay: '10.00m' }],
+      actions: [],
+    },
+    rewards: ['+4% Crafting Speed', 'x1.1 Vespium'],
   },
   // 79
   {
@@ -1268,6 +1471,12 @@ export const orders: Order[] = [
     requiredOrderIds: [110],
     resources: [{ item: 'Vespium Plates', quantityDisplay: '100,000' }],
     actions: [],
+    npc: 'Puri Puri',
+    completion: {
+      resources: [{ item: 'Vespium Plates', quantityDisplay: '72.50k' }],
+      actions: [],
+    },
+    rewards: ['x1.09 Vespium', 'x1.06 Credits'],
   },
   // 112
   {
