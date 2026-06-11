@@ -15,6 +15,7 @@ interface SearchFilterProps {
 
 const STATUS_TABS: { value: StatusFilter; label: string }[] = [
   { value: 'recommended', label: 'Priority' },
+  { value: 'in_progress', label: 'In Progress' },
   { value: 'all', label: 'All' },
   { value: 'locked', label: 'Locked' },
   { value: 'completed', label: 'Completed' },
@@ -37,6 +38,7 @@ const FOCUS_RING = 'focus-visible:outline-none focus-visible:ring-1 focus-visibl
 
 function tabActiveClass(value: StatusFilter): string {
   if (value === 'recommended') return 'bg-cyan-500/10 border-cyan-600/40 text-cyan-300 shadow-[0_0_10px_rgba(0,200,255,0.10)]'
+  if (value === 'in_progress') return 'bg-amber-500/10 border-amber-600/40 text-amber-300 shadow-[0_0_10px_rgba(245,158,11,0.12)]'
   if (value === 'available')   return 'bg-cyan-500/10 border-cyan-600/35 text-cyan-300 shadow-[0_0_10px_rgba(0,200,255,0.10)]'
   if (value === 'needs_resources') return 'bg-orange-500/10 border-orange-600/30 text-orange-300'
   if (value === 'locked')      return 'bg-slate-800/50 border-slate-700/40 text-slate-400'
@@ -110,6 +112,8 @@ export default function SearchFilter({
                     ? tabActiveClass(tab.value)
                     : tab.value === 'recommended'
                     ? 'bg-cyan-500/[0.04] border-cyan-800/30 text-slate-400 hover:text-slate-200 hover:bg-cyan-500/[0.08]'
+                    : tab.value === 'in_progress'
+                    ? 'bg-amber-500/[0.04] border-amber-800/30 text-slate-400 hover:text-slate-200 hover:bg-amber-500/[0.08]'
                     : 'bg-slate-900/40 border-slate-700/40 text-slate-400 hover:text-slate-200 hover:bg-slate-800/50'
                 }`}
               >

@@ -61,7 +61,7 @@ export const ALL_RESOURCE_NAMES: readonly string[] = [
 
 export type OrderStatus = 'completed' | 'available' | 'needs_resources' | 'locked'
 
-export type StatusFilter = 'all' | 'recommended' | 'available' | 'needs_resources' | 'locked' | 'completed'
+export type StatusFilter = 'all' | 'recommended' | 'in_progress' | 'available' | 'needs_resources' | 'locked' | 'completed'
 
 export type ResourceFilter =
   | 'all'

@@ -179,6 +179,14 @@ export default function Page() {
         })
     }
 
+    if (statusFilter === 'in_progress') {
+      return orders.filter(order =>
+        inProgressIds.has(order.id) &&
+        matchesResource(order, resourceFilter) &&
+        matchesSearch(order, deferredSearch)
+      )
+    }
+
     return orders.filter(order => {
       const status = statuses.get(order.id)!
       const matchStatus = statusFilter === 'all' ? status !== 'completed' : status === statusFilter
@@ -186,7 +194,7 @@ export default function Page() {
       const matchSearch = matchesSearch(order, deferredSearch)
       return matchStatus && matchResource && matchSearch
     })
-  }, [statuses, statusFilter, resourceFilter, deferredSearch, unlockPotential])
+  }, [statuses, statusFilter, resourceFilter, deferredSearch, unlockPotential, inProgressIds])
 
   const inProgressOrders = useMemo(
     () => inProgressArray
@@ -235,7 +243,7 @@ export default function Page() {
         <div className="max-w-2xl mx-auto space-y-1.5">
 
           {/* In-progress section */}
-          {inProgressOrders.length > 0 && (
+          {statusFilter !== 'in_progress' && inProgressOrders.length > 0 && (
             <div className="mb-2 bg-amber-950/20 border border-amber-500/10 px-2 pt-2 pb-2 -mx-1 rounded-sm">
               <div className="flex items-center gap-2 mb-2 px-0.5">
                 <span className="font-orbitron text-[8px] tracking-[0.3em] text-amber-400/80 uppercase">In Progress</span>
@@ -269,29 +277,45 @@ export default function Page() {
 
           {/* Main order list */}
           {(() => {
-            const mainOrders = filteredOrders.filter(o => !inProgressIds.has(o.id))
-            return mainOrders.length === 0 && inProgressOrders.length === 0 ? (
-              <div className="text-center py-20 space-y-2">
-                <p className="font-orbitron text-[9px] tracking-[0.3em] text-slate-600 uppercase">No orders found</p>
-                <p className="font-spacemono text-[10px] text-slate-700">Adjust filters or search query</p>
-              </div>
-            ) : (
-              mainOrders.map(order => (
-                <OrderCard
-                  key={order.id}
-                  order={order}
-                  status={statuses.get(order.id)!}
-                  completedCount={completedArray.length}
-                  completedIds={completedIds}
-                  stats={stats}
-                  unlockCount={statusFilter === 'recommended' ? (unlockPotential.get(order.id) ?? 0) : undefined}
-                  inProgress={false}
-                  onToggle={toggleCompleted}
-                  onScrollToOrder={scrollToOrder}
-                  onToggleInProgress={toggleInProgress}
-                />
-              ))
-            )
+            const mainOrders = statusFilter === 'in_progress'
+              ? filteredOrders
+              : filteredOrders.filter(o => !inProgressIds.has(o.id))
+
+            if (mainOrders.length === 0) {
+              if (statusFilter === 'in_progress' && inProgressOrders.length === 0) {
+                return (
+                  <div className="text-center py-20 space-y-2">
+                    <p className="font-orbitron text-[9px] tracking-[0.3em] text-slate-600 uppercase">No pinned orders</p>
+                    <p className="font-spacemono text-[10px] text-slate-700">Tap the bookmark icon on a card to track it here</p>
+                  </div>
+                )
+              }
+              if (statusFilter !== 'in_progress' && inProgressOrders.length > 0) {
+                return null
+              }
+              return (
+                <div className="text-center py-20 space-y-2">
+                  <p className="font-orbitron text-[9px] tracking-[0.3em] text-slate-600 uppercase">No orders found</p>
+                  <p className="font-spacemono text-[10px] text-slate-700">Adjust filters or search query</p>
+                </div>
+              )
+            }
+
+            return mainOrders.map(order => (
+              <OrderCard
+                key={order.id}
+                order={order}
+                status={statuses.get(order.id)!}
+                completedCount={completedArray.length}
+                completedIds={completedIds}
+                stats={stats}
+                unlockCount={statusFilter === 'recommended' ? (unlockPotential.get(order.id) ?? 0) : undefined}
+                inProgress={statusFilter === 'in_progress'}
+                onToggle={toggleCompleted}
+                onScrollToOrder={scrollToOrder}
+                onToggleInProgress={toggleInProgress}
+              />
+            ))
           })()}
 
         </div>
