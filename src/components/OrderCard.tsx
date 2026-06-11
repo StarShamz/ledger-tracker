@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom'
 import type { ActionRequirement, Order, OrderStatus, PlayerStats, ResourceRequirement } from '@/types'
 import { meetsRequirement, parseQuantity, formatQuantity } from '@/utils/parseQuantity'
 import { orders as allOrders } from '@/data/orders'
-import { RESOURCE_ICONS, ACTION_ICONS, RESOURCE_FLAVOR } from '@/data/icons'
+import { RESOURCE_ICONS, ACTION_ICONS } from '@/data/icons'
 import { getOrderNpc, NPC_IMAGES } from '@/data/npcs'
 
 interface OrderCardProps {
@@ -318,12 +318,10 @@ type ReqState = 'met' | 'unmet' | 'unknown'
 function RequirementRow({
   state,
   kind = 'order',
-  flavor,
   children,
 }: {
   state: ReqState
   kind?: ReqKind
-  flavor?: string
   children: React.ReactNode
 }) {
   const iconColor =
@@ -346,7 +344,6 @@ function RequirementRow({
       <div className="min-w-0">
         <span className="sr-only">{iconLabel}: </span>
         {children}
-        {flavor && <div className="text-[10px] text-slate-600 italic mt-0.5">{flavor}</div>}
       </div>
     </div>
   )
@@ -369,7 +366,7 @@ function ResourceRequirementRow({
   const icon = RESOURCE_ICONS[r.item]
   const qty = raw ? r.quantityDisplay : r.quantityDisplay !== null ? fmtQty(r.quantityDisplay) : null
   return (
-    <RequirementRow state={reqState} kind="resource" flavor={RESOURCE_FLAVOR[r.item]}>
+    <RequirementRow state={reqState} kind="resource">
       {verb} {qty !== null ? `${qty}+ ` : 'any '}
       {icon && <img src={icon} alt="" aria-hidden="true" className="inline-block w-3.5 h-3.5 object-contain align-middle mx-0.5" />}
       {r.item}

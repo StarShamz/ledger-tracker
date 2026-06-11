@@ -18,23 +18,3 @@ export const ACTION_ICONS: Record<string, string> = {
   chad_infusion:                url('1443273269573849289'),   // Chad
   endurance_synthesizer_potion: url('1511695677393076367'),   // Endurance Potion
 }
-
-export const RESOURCE_FLAVOR: Record<string, string> = {
-  'Worthless Rocks':    'Common debris that litters every asteroid field.',
-  'Jade':               'A rare green mineral prized across known space.',
-  'Vespium':            'Raw ore mined straight from rich asteroid veins.',
-  'Vespium Ingots':     'Smelted Vespium cast into solid bars.',
-  'Vespium Plates':     'Vespium pressed flat into rugged plating.',
-  'Vespium Rods':       'Vespium drawn into sturdy structural rods.',
-  'Vespium Frames':     'Vespium welded into modular frame units.',
-  'Vespium Wire':       'Fine Vespium filament for wiring and circuitry.',
-  'Silicate Glass':     'Polished silicate, clear as a mirror.',
-  'Silicate Bricks':    'Fired silicate blocks for heavy construction.',
-  'Silicate Concrete':  'Silicate slurry poured for foundations.',
-  'Industrial Bits':    'Crated components for industrial assembly.',
-  'Tokenium Canisters': "Canisters of Chad's secret brew.",
-  'Hydracite':          'A volatile crystal harvested from icy moons.',
-  'Scorchium':          'Superheated mineral — handle with care.',
-  'Low Grade Gel':      'Sticky synthetic gel of dubious origin.',
-  'Ether':              'A shimmering currency, spent to commission completed orders.',
-}
