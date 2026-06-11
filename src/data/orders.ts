@@ -214,7 +214,7 @@ export const orders: Order[] = [
     actions: [],
     completion: {
       resources: [
-        { item: 'Silicate Frames', quantityDisplay: '600' },
+        { item: 'Vespium Frames', quantityDisplay: '600' },
         { item: 'Silicate Bricks', quantityDisplay: '550' },
       ],
       actions: [],
@@ -464,7 +464,7 @@ export const orders: Order[] = [
     resources: [{ item: 'Low Grade Gel', quantityDisplay: null }],
     actions: [],
     completion: {
-      resources: [{ item: 'Silicate Gel', quantityDisplay: '50' }],
+      resources: [{ item: 'Low Grade Gel', quantityDisplay: '50' }],
       actions: [],
     },
     rewards: ['x1.05 All Rigs Yield', '+2% Rig Speed', '/1.5 Rig Cost'],
@@ -586,7 +586,7 @@ export const orders: Order[] = [
     resources: [{ item: 'Low Grade Gel', quantityDisplay: null }],
     actions: [],
     completion: {
-      resources: [{ item: 'Silicate Gel', quantityDisplay: '85' }],
+      resources: [{ item: 'Low Grade Gel', quantityDisplay: '85' }],
       actions: [],
     },
     rewards: ['x1.07 Credits'],
@@ -716,7 +716,7 @@ export const orders: Order[] = [
     completion: {
       resources: [
         { item: 'Silicate Glass', quantityDisplay: '100.00k' },
-        { item: 'Silicate Gel', quantityDisplay: '1000' },
+        { item: 'Low Grade Gel', quantityDisplay: '1000' },
         { item: 'Vespium Wire', quantityDisplay: '500' },
       ],
       actions: [],
@@ -925,7 +925,7 @@ export const orders: Order[] = [
     actions: [],
     completion: {
       resources: [
-        { item: 'Silicate Frames', quantityDisplay: '40.00k' },
+        { item: 'Vespium Frames', quantityDisplay: '40.00k' },
         { item: 'Silicate Bricks', quantityDisplay: '40.00k' },
         { item: 'Industrial Bits', quantityDisplay: '160.00k' },
         { item: 'Silicate Concrete', quantityDisplay: '160.00k' },
@@ -967,7 +967,7 @@ export const orders: Order[] = [
     actions: [],
     completion: {
       resources: [
-        { item: 'Silicate Frames', quantityDisplay: '400.00k' },
+        { item: 'Vespium Frames', quantityDisplay: '400.00k' },
         { item: 'Silicate Bricks', quantityDisplay: '400.00k' },
         { item: 'Industrial Bits', quantityDisplay: '2.00m' },
         { item: 'Silicate Concrete', quantityDisplay: '2.00m' },
@@ -1041,7 +1041,7 @@ export const orders: Order[] = [
     resources: [{ item: 'Low Grade Gel', quantityDisplay: null }],
     actions: [],
     completion: {
-      resources: [{ item: 'Silicate Gel', quantityDisplay: '264' }],
+      resources: [{ item: 'Low Grade Gel', quantityDisplay: '264' }],
       actions: [],
     },
     rewards: ['+55 Ether', '+2% Rig Speed'],
@@ -1054,7 +1054,7 @@ export const orders: Order[] = [
     resources: [{ item: 'Low Grade Gel', quantityDisplay: '500' }],
     actions: [],
     completion: {
-      resources: [{ item: 'Silicate Gel', quantityDisplay: '4840' }],
+      resources: [{ item: 'Low Grade Gel', quantityDisplay: '4840' }],
       actions: [],
     },
     rewards: ['+60 Ether', 'x1.5 Worthless Rock'],
