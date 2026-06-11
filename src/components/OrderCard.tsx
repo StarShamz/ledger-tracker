@@ -122,7 +122,7 @@ export default function OrderCard({
   return (
     <div
       id={`order-${order.id}`}
-      className={`relative overflow-hidden transition-all duration-200 ${inProgress ? 'card-glow-inprogress' : styles.glow}`}
+      className={`relative transition-all duration-200 ${inProgress ? 'card-glow-inprogress' : styles.glow}`}
     >
       {/* Top gradient border */}
       <div className={`absolute top-0 left-0 right-0 h-px bg-gradient-to-r ${inProgress ? 'from-amber-400/55' : styles.topGrad} to-transparent`} />
