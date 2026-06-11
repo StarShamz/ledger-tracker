@@ -271,7 +271,7 @@ export default function OrderCard({
               To Complete
             </p>
             {order.completion.resources.map(r => (
-              <ResourceRequirementRow key={r.item} r={r} stats={stats} verb="Spend" raw />
+              <ResourceRequirementRow key={r.item} r={r} stats={stats} verb="Exchange" raw />
             ))}
             {order.completion.actions.map(a => (
               <ActionRequirementRow key={a.type} a={a} stats={stats} />
