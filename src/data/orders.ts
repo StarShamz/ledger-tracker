@@ -411,6 +411,14 @@ export const orders: Order[] = [
     requiredOrderIds: [17],
     resources: [{ item: 'Vespium Frames', quantityDisplay: null }],
     actions: [],
+    completion: {
+      resources: [
+        { item: 'Vespium Ingots', quantityDisplay: '8k' },
+        { item: 'Vespium Rods', quantityDisplay: '5k' },
+        { item: 'Vespium Plates', quantityDisplay: '5k' },
+      ],
+      actions: [],
+    },
   },
   // 30
   {
