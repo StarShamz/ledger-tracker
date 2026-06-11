@@ -35,8 +35,9 @@ export default function CreditsPanel() {
 
         <div className="border-l-[2px] border-l-amber-500/50 border border-l-0 border-amber-800/30 bg-amber-500/[0.04] px-3 py-2.5">
           <p className="text-xs text-slate-400 leading-relaxed">
-            Firstly, thank you to <span className="text-amber-300">Chrysto of Octocube Games</span> for allowing us
-            to use Chad&apos;s game assets and for providing high quality portraits of all NPCs in the game.
+            Firstly, thank you to <span className="text-amber-300">Chrysto of Octocube Games</span> for providing us
+            with every ledger order&apos;s unlock requirements, allowing us to use Chad&apos;s game assets, and for
+            providing high quality portraits of all NPCs in the game.
           </p>
         </div>
 
