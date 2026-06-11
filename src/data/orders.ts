@@ -183,9 +183,26 @@ export const orders: Order[] = [
     requiredOrderIds: [8],
     resources: [{ item: 'Vespium', quantityDisplay: '7,500' }],
     actions: [],
+    completion: {
+      resources: [{ item: 'Vespium', quantityDisplay: '20.00k' }],
+      actions: [],
+    },
+    rewards: ['x1.5 EXP'],
   },
   // 13
-  { id: 13, minOrders: 8, requiredOrderIds: [7], resources: [], actions: [] },
+  {
+    id: 13,
+    minOrders: 8,
+    requiredOrderIds: [7],
+    resources: [],
+    actions: [],
+    npc: 'Tank Timmerson',
+    completion: {
+      resources: [{ item: 'Vespium Rods', quantityDisplay: '1000' }],
+      actions: [],
+    },
+    rewards: ['+4 Core', '+5 Ether'],
+  },
   // 14
   {
     id: 14,
@@ -227,6 +244,11 @@ export const orders: Order[] = [
     requiredOrderIds: [6],
     resources: [{ item: 'Industrial Bits', quantityDisplay: '10,000' }],
     actions: [],
+    completion: {
+      resources: [{ item: 'Industrial Bits', quantityDisplay: '15.00k' }],
+      actions: [],
+    },
+    rewards: ['+50 Ether', 'x1.1 Credits'],
   },
   // 17
   {
@@ -522,6 +544,11 @@ export const orders: Order[] = [
     requiredOrderIds: [34],
     resources: [],
     actions: [{ type: 'endurance_synthesizer_potion', quantity: 4 }],
+    completion: {
+      resources: [{ item: 'Power Booster Potion', quantityDisplay: '5' }],
+      actions: [],
+    },
+    rewards: ['x1.1 EXP', '+10 Ether'],
   },
   // 38
   {
@@ -885,6 +912,14 @@ export const orders: Order[] = [
       { item: 'Scorchium', quantityDisplay: '2,000' },
     ],
     actions: [],
+    completion: {
+      resources: [
+        { item: 'Hydracite', quantityDisplay: '5000' },
+        { item: 'Scorchium', quantityDisplay: '4000' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.3 EXP', '+10 Ether'],
   },
   // 62
   {
@@ -1591,6 +1626,15 @@ export const orders: Order[] = [
       { item: 'Low Grade Gel', quantityDisplay: '1,000' },
     ],
     actions: [],
+    npc: 'Gama Kamalon',
+    completion: {
+      resources: [
+        { item: 'Industrial Bits', quantityDisplay: '600.00k' },
+        { item: 'Low Grade Gel', quantityDisplay: '750' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.03 Tokenium Canister', '+8 Core'],
   },
   // 116
   {
