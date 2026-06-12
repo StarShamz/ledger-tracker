@@ -92,3 +92,6 @@ export type RewardFilter =
   | 'crafter'
   | 'max_stamina'
   | 'attribute_points'
+
+// 'all', or an NPC name as returned by getOrderNpc
+export type CharacterFilter = string

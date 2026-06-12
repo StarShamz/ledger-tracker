@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef, useEffect, useState } from 'react'
-import type { ResourceFilter, RewardFilter, StatusFilter } from '@/types'
+import type { CharacterFilter, ResourceFilter, RewardFilter, StatusFilter } from '@/types'
 
 interface SearchFilterProps {
   searchQuery: string
@@ -12,6 +12,8 @@ interface SearchFilterProps {
   onResourceChange: (v: ResourceFilter) => void
   rewardFilter: RewardFilter
   onRewardChange: (v: RewardFilter) => void
+  characterFilter: CharacterFilter
+  onCharacterChange: (v: CharacterFilter) => void
   completedFlash?: number
 }
 
@@ -55,6 +57,23 @@ const REWARD_CHIPS: { value: RewardFilter; label: string }[] = [
   { value: 'attribute_points', label: 'Attr. Points' },
 ]
 
+const CHARACTER_CHIPS: { value: CharacterFilter; label: string }[] = [
+  { value: 'all', label: 'All' },
+  { value: 'Bhramari', label: 'Bhramari' },
+  { value: 'Clank', label: 'Clank' },
+  { value: 'Donathan Creel', label: 'Donathan Creel' },
+  { value: 'Eidelaine Eeko', label: 'Eidelaine Eeko' },
+  { value: 'Gama Kamalon', label: 'Gama Kamalon' },
+  { value: 'Gerbo', label: 'Gerbo' },
+  { value: 'Meepa Torani', label: 'Meepa Torani' },
+  { value: 'Minalima Lin', label: 'Minalima Lin' },
+  { value: 'Puri Puri', label: 'Puri Puri' },
+  { value: 'Samos Sula', label: 'Samos Sula' },
+  { value: 'Tank Timmerson', label: 'Tank Timmerson' },
+  { value: 'The Ether Hoarder', label: 'The Ether Hoarder' },
+  { value: 'The Twins', label: 'The Twins' },
+]
+
 const FOCUS_RING = 'focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-cyan-500/50 focus-visible:ring-offset-1 focus-visible:ring-offset-black'
 
 function tabActiveClass(value: StatusFilter): string {
@@ -76,6 +95,8 @@ export default function SearchFilter({
   onResourceChange,
   rewardFilter,
   onRewardChange,
+  characterFilter,
+  onCharacterChange,
   completedFlash = 0,
 }: SearchFilterProps) {
   return (
@@ -122,8 +143,8 @@ export default function SearchFilter({
           ))}
         </div>
 
-        {/* Resource + Reward dropdowns */}
-        <div className="flex gap-1 justify-end">
+        {/* Resource + Reward + Character dropdowns */}
+        <div className="flex gap-1 justify-end flex-wrap">
           <FilterDropdown
             label="Resource"
             ariaLabel="Filter by resource"
@@ -137,6 +158,13 @@ export default function SearchFilter({
             chips={REWARD_CHIPS}
             value={rewardFilter}
             onChange={onRewardChange}
+          />
+          <FilterDropdown
+            label="Character"
+            ariaLabel="Filter by character"
+            chips={CHARACTER_CHIPS}
+            value={characterFilter}
+            onChange={onCharacterChange}
           />
         </div>
 

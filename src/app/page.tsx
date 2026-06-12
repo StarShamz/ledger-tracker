@@ -2,6 +2,7 @@
 
 import { useMemo, useState, useEffect, useDeferredValue, useCallback } from 'react'
 import { orders } from '@/data/orders'
+import { getOrderNpc } from '@/data/npcs'
 import { useLocalStorage } from '@/hooks/useLocalStorage'
 import ProgressHeader from '@/components/ProgressHeader'
 import SearchFilter from '@/components/SearchFilter'
@@ -10,7 +11,7 @@ import StatsPanel from '@/components/StatsPanel'
 import CreditsPanel from '@/components/CreditsPanel'
 import { parseQuantity } from '@/utils/parseQuantity'
 import { getAllPrerequisites, getAllDependents } from '@/utils/inferCompletedOrders'
-import type { Order, OrderStatus, PlayerStats, ResourceFilter, RewardFilter, StatusFilter } from '@/types'
+import type { CharacterFilter, Order, OrderStatus, PlayerStats, ResourceFilter, RewardFilter, StatusFilter } from '@/types'
 import { DEFAULT_STATS } from '@/types'
 
 function getStatus(
@@ -89,6 +90,11 @@ function matchesReward(order: Order, filter: RewardFilter): boolean {
   }
 }
 
+function matchesCharacter(order: Order, filter: CharacterFilter): boolean {
+  if (filter === 'all') return true
+  return getOrderNpc(order) === filter
+}
+
 // One-time migration: item names used to be plural in `stats.resources`.
 // Carries over any values saved under the old keys to their new singular keys.
 const RESOURCE_KEY_MIGRATIONS: Record<string, string> = {
@@ -143,6 +149,7 @@ export default function Page() {
   const [statusFilter, setStatusFilter] = useState<StatusFilter>('all')
   const [resourceFilter, setResourceFilter] = useState<ResourceFilter>('all')
   const [rewardFilter, setRewardFilter] = useState<RewardFilter>('all')
+  const [characterFilter, setCharacterFilter] = useState<CharacterFilter>('all')
   const [searchQuery, setSearchQuery] = useState('')
   const [statsOpen, setStatsOpen] = useState(false)
   const [creditsOpen, setCreditsOpen] = useState(false)
@@ -218,6 +225,7 @@ export default function Page() {
             (status === 'available' || status === 'needs_resources') &&
             matchesResource(order, resourceFilter) &&
             matchesReward(order, rewardFilter) &&
+            matchesCharacter(order, characterFilter) &&
             matchesSearch(order, deferredSearch)
           )
         })
@@ -238,6 +246,7 @@ export default function Page() {
         inProgressIds.has(order.id) &&
         matchesResource(order, resourceFilter) &&
         matchesReward(order, rewardFilter) &&
+        matchesCharacter(order, characterFilter) &&
         matchesSearch(order, deferredSearch)
       )
     }
@@ -247,10 +256,11 @@ export default function Page() {
       const matchStatus = statusFilter === 'all' ? status !== 'completed' : status === statusFilter
       const matchResource = matchesResource(order, resourceFilter)
       const matchReward = matchesReward(order, rewardFilter)
+      const matchCharacter = matchesCharacter(order, characterFilter)
       const matchSearch = matchesSearch(order, deferredSearch)
-      return matchStatus && matchResource && matchReward && matchSearch
+      return matchStatus && matchResource && matchReward && matchCharacter && matchSearch
     })
-  }, [statuses, statusFilter, resourceFilter, rewardFilter, deferredSearch, unlockPotential, inProgressIds])
+  }, [statuses, statusFilter, resourceFilter, rewardFilter, characterFilter, deferredSearch, unlockPotential, inProgressIds])
 
   const inProgressOrders = useMemo(
     () => inProgressArray
@@ -295,6 +305,8 @@ export default function Page() {
         onResourceChange={setResourceFilter}
         rewardFilter={rewardFilter}
         onRewardChange={setRewardFilter}
+        characterFilter={characterFilter}
+        onCharacterChange={setCharacterFilter}
         completedFlash={completedFlash}
       />
       <main className="flex-1 px-4 py-4">
