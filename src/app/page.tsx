@@ -10,7 +10,7 @@ import StatsPanel from '@/components/StatsPanel'
 import CreditsPanel from '@/components/CreditsPanel'
 import { parseQuantity } from '@/utils/parseQuantity'
 import { getAllPrerequisites, getAllDependents } from '@/utils/inferCompletedOrders'
-import type { Order, OrderStatus, PlayerStats, ResourceFilter, StatusFilter } from '@/types'
+import type { Order, OrderStatus, PlayerStats, ResourceFilter, RewardFilter, StatusFilter } from '@/types'
 import { DEFAULT_STATS } from '@/types'
 
 function getStatus(
@@ -63,6 +63,28 @@ function matchesResource(order: Order, filter: ResourceFilter): boolean {
     case 'rocks':     return items.some(i => i === 'worthless rock')
     case 'actions':   return order.actions.length > 0
     default:          return true
+  }
+}
+
+function matchesReward(order: Order, filter: RewardFilter): boolean {
+  if (filter === 'all') return true
+  const rewards = order.rewards ?? []
+  switch (filter) {
+    case 'ether':               return rewards.some(r => r.includes('Ether'))
+    case 'credits':             return rewards.some(r => r.includes('Credits'))
+    case 'exp':                 return rewards.some(r => r.includes('EXP'))
+    case 'core':                return rewards.some(r => r.includes('Core'))
+    case 'crafting_speed':      return rewards.some(r => r.includes('Crafting Speed'))
+    case 'vespium':             return rewards.some(r => r.includes('Vespium'))
+    case 'jade':                return rewards.some(r => r.includes('Jade'))
+    case 'worthless_rock':      return rewards.some(r => r.includes('Worthless Rock'))
+    case 'tokenium':            return rewards.some(r => r.includes('Tokenium'))
+    case 'craftable_sell_price': return rewards.some(r => r.includes('Craftable Sell Price'))
+    case 'rig':                 return rewards.some(r => r.includes('Rig'))
+    case 'crafter':             return rewards.some(r => r.includes('Crafter'))
+    case 'max_stamina':         return rewards.some(r => r.includes('Max Stamina'))
+    case 'attribute_points':    return rewards.some(r => r.includes('Attribute Point'))
+    default:                    return true
   }
 }
 
@@ -119,6 +141,7 @@ export default function Page() {
   }, [statsLoaded, setStats])
   const [statusFilter, setStatusFilter] = useState<StatusFilter>('all')
   const [resourceFilter, setResourceFilter] = useState<ResourceFilter>('all')
+  const [rewardFilter, setRewardFilter] = useState<RewardFilter>('all')
   const [searchQuery, setSearchQuery] = useState('')
   const [statsOpen, setStatsOpen] = useState(false)
   const [creditsOpen, setCreditsOpen] = useState(false)
@@ -193,6 +216,7 @@ export default function Page() {
           return (
             (status === 'available' || status === 'needs_resources') &&
             matchesResource(order, resourceFilter) &&
+            matchesReward(order, rewardFilter) &&
             matchesSearch(order, deferredSearch)
           )
         })
@@ -212,6 +236,7 @@ export default function Page() {
       return orders.filter(order =>
         inProgressIds.has(order.id) &&
         matchesResource(order, resourceFilter) &&
+        matchesReward(order, rewardFilter) &&
         matchesSearch(order, deferredSearch)
       )
     }
@@ -220,10 +245,11 @@ export default function Page() {
       const status = statuses.get(order.id)!
       const matchStatus = statusFilter === 'all' ? status !== 'completed' : status === statusFilter
       const matchResource = matchesResource(order, resourceFilter)
+      const matchReward = matchesReward(order, rewardFilter)
       const matchSearch = matchesSearch(order, deferredSearch)
-      return matchStatus && matchResource && matchSearch
+      return matchStatus && matchResource && matchReward && matchSearch
     })
-  }, [statuses, statusFilter, resourceFilter, deferredSearch, unlockPotential, inProgressIds])
+  }, [statuses, statusFilter, resourceFilter, rewardFilter, deferredSearch, unlockPotential, inProgressIds])
 
   const inProgressOrders = useMemo(
     () => inProgressArray
@@ -266,6 +292,8 @@ export default function Page() {
         onStatusChange={setStatusFilter}
         resourceFilter={resourceFilter}
         onResourceChange={setResourceFilter}
+        rewardFilter={rewardFilter}
+        onRewardChange={setRewardFilter}
         completedFlash={completedFlash}
       />
       <main className="flex-1 px-4 py-4">

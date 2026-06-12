@@ -577,7 +577,7 @@ export const orders: Order[] = [
       resources: [{ item: 'Silicate Brick', quantityDisplay: '125.00k' }],
       actions: [],
     },
-    rewards: ['+2% Crafting Speed', 'x1.06 All Rigs Yield'],
+    rewards: ['+2% Crafting Speed', 'x1.06 All Rig Yield'],
   },
   // 39
   {
@@ -974,7 +974,7 @@ export const orders: Order[] = [
       ],
       actions: [],
     },
-    rewards: ['1 Attribute Point'],
+    rewards: ['+1 Attribute Point'],
   },
   // 63
   {

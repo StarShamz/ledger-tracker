@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef, useEffect, useState } from 'react'
-import type { ResourceFilter, StatusFilter } from '@/types'
+import type { ResourceFilter, RewardFilter, StatusFilter } from '@/types'
 
 interface SearchFilterProps {
   searchQuery: string
@@ -10,6 +10,8 @@ interface SearchFilterProps {
   onStatusChange: (v: StatusFilter) => void
   resourceFilter: ResourceFilter
   onResourceChange: (v: ResourceFilter) => void
+  rewardFilter: RewardFilter
+  onRewardChange: (v: RewardFilter) => void
   completedFlash?: number
 }
 
@@ -34,6 +36,24 @@ const RESOURCE_CHIPS: { value: ResourceFilter; label: string }[] = [
   { value: 'actions', label: 'Actions' },
 ]
 
+const REWARD_CHIPS: { value: RewardFilter; label: string }[] = [
+  { value: 'all', label: 'All' },
+  { value: 'ether', label: 'Ether' },
+  { value: 'credits', label: 'Credits' },
+  { value: 'exp', label: 'EXP' },
+  { value: 'core', label: 'Core' },
+  { value: 'crafting_speed', label: 'Crafting Speed' },
+  { value: 'vespium', label: 'Vespium' },
+  { value: 'jade', label: 'Jade' },
+  { value: 'worthless_rock', label: 'Worthless Rock' },
+  { value: 'tokenium', label: 'Tokenium' },
+  { value: 'craftable_sell_price', label: 'Sell Price' },
+  { value: 'rig', label: 'Rig' },
+  { value: 'crafter', label: 'Crafter' },
+  { value: 'max_stamina', label: 'Max Stamina' },
+  { value: 'attribute_points', label: 'Attr. Points' },
+]
+
 const FOCUS_RING = 'focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-cyan-500/50 focus-visible:ring-offset-1 focus-visible:ring-offset-black'
 
 function tabActiveClass(value: StatusFilter): string {
@@ -53,33 +73,10 @@ export default function SearchFilter({
   onStatusChange,
   resourceFilter,
   onResourceChange,
+  rewardFilter,
+  onRewardChange,
   completedFlash = 0,
 }: SearchFilterProps) {
-  const [resourceOpen, setResourceOpen] = useState(false)
-  const dropdownRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    if (!resourceOpen) return
-    function handleOutsideClick(e: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setResourceOpen(false)
-      }
-    }
-    function handleEscape(e: KeyboardEvent) {
-      if (e.key === 'Escape') setResourceOpen(false)
-    }
-    document.addEventListener('mousedown', handleOutsideClick)
-    document.addEventListener('keydown', handleEscape)
-    return () => {
-      document.removeEventListener('mousedown', handleOutsideClick)
-      document.removeEventListener('keydown', handleEscape)
-    }
-  }, [resourceOpen])
-
-  const activeResource = RESOURCE_CHIPS.find(c => c.value === resourceFilter)
-  const resourceLabel = resourceFilter === 'all' ? 'Resource' : activeResource?.label ?? 'Resource'
-  const resourceActive = resourceFilter !== 'all'
-
   return (
     <div className="bg-black/98 backdrop-blur-xl border-b border-cyan-600/25 px-4 py-3 space-y-2.5 sticky top-0 z-10">
       <div className="max-w-2xl mx-auto space-y-2.5">
@@ -99,77 +96,131 @@ export default function SearchFilter({
           )}
         </div>
 
-        {/* Status tabs + Resource dropdown */}
-        <div className="flex gap-1 items-stretch">
-          <div role="group" aria-label="Filter by status" className="flex gap-1 flex-1 min-w-0">
-            {STATUS_TABS.map(tab => (
-              <button
-                key={tab.value}
-                onClick={() => onStatusChange(tab.value === 'recommended' ? 'recommended' : tab.value)}
-                aria-pressed={statusFilter === tab.value}
-                className={`relative overflow-hidden flex-1 font-orbitron text-[9px] tracking-[0.06em] py-2 min-h-[44px] rounded-sm border transition-all duration-150 cursor-pointer [touch-action:manipulation] ${FOCUS_RING} ${
-                  statusFilter === tab.value
-                    ? tabActiveClass(tab.value)
-                    : tab.value === 'recommended'
-                    ? 'bg-cyan-500/[0.04] border-cyan-800/30 text-slate-400 hover:text-slate-200 hover:bg-cyan-500/[0.08]'
-                    : tab.value === 'in_progress'
-                    ? 'bg-amber-500/[0.04] border-amber-800/30 text-slate-400 hover:text-slate-200 hover:bg-amber-500/[0.08]'
-                    : 'bg-slate-900/40 border-slate-700/40 text-slate-400 hover:text-slate-200 hover:bg-slate-800/50'
-                }`}
-              >
-                {tab.value === 'completed' && completedFlash > 0 && (
-                  <span key={completedFlash} className="completed-tab-flash absolute inset-0 rounded-sm pointer-events-none" />
-                )}
-                {tab.label}
-              </button>
-            ))}
-          </div>
-
-          {/* Resource dropdown */}
-          <div ref={dropdownRef} className="relative flex-shrink-0">
+        {/* Status tabs */}
+        <div role="group" aria-label="Filter by status" className="flex gap-1">
+          {STATUS_TABS.map(tab => (
             <button
-              onClick={() => setResourceOpen(v => !v)}
-              aria-expanded={resourceOpen}
-              aria-haspopup="listbox"
-              className={`h-full font-orbitron text-[9px] tracking-[0.06em] px-3 min-h-[44px] rounded-sm border transition-all duration-150 cursor-pointer [touch-action:manipulation] whitespace-nowrap ${FOCUS_RING} ${
-                resourceActive
-                  ? 'bg-cyan-500/10 border-cyan-600/40 text-cyan-300 shadow-[0_0_10px_rgba(0,200,255,0.10)]'
-                  : resourceOpen
-                  ? 'bg-slate-800/60 border-slate-600/60 text-slate-200'
+              key={tab.value}
+              onClick={() => onStatusChange(tab.value === 'recommended' ? 'recommended' : tab.value)}
+              aria-pressed={statusFilter === tab.value}
+              className={`relative overflow-hidden flex-1 font-orbitron text-[9px] tracking-[0.06em] py-2 min-h-[44px] rounded-sm border transition-all duration-150 cursor-pointer [touch-action:manipulation] ${FOCUS_RING} ${
+                statusFilter === tab.value
+                  ? tabActiveClass(tab.value)
+                  : tab.value === 'recommended'
+                  ? 'bg-cyan-500/[0.04] border-cyan-800/30 text-slate-400 hover:text-slate-200 hover:bg-cyan-500/[0.08]'
+                  : tab.value === 'in_progress'
+                  ? 'bg-amber-500/[0.04] border-amber-800/30 text-slate-400 hover:text-slate-200 hover:bg-amber-500/[0.08]'
                   : 'bg-slate-900/40 border-slate-700/40 text-slate-400 hover:text-slate-200 hover:bg-slate-800/50'
               }`}
             >
-              {resourceLabel}
-              <span className={`ml-1.5 inline-block transition-transform duration-150 ${resourceOpen ? 'rotate-180' : ''}`}>▾</span>
+              {tab.value === 'completed' && completedFlash > 0 && (
+                <span key={completedFlash} className="completed-tab-flash absolute inset-0 rounded-sm pointer-events-none" />
+              )}
+              {tab.label}
             </button>
+          ))}
+        </div>
 
-            {resourceOpen && (
-              <div
-                role="listbox"
-                aria-label="Filter by resource"
-                className="absolute right-0 top-full mt-1 z-50 bg-[#0a0b14] border border-slate-700/60 shadow-xl shadow-black/80 py-1 min-w-[150px]"
-              >
-                {RESOURCE_CHIPS.map(chip => (
-                  <button
-                    key={chip.value}
-                    role="option"
-                    aria-selected={resourceFilter === chip.value}
-                    onClick={() => { onResourceChange(chip.value); setResourceOpen(false) }}
-                    className={`w-full text-left font-orbitron text-[9px] tracking-[0.05em] py-2.5 transition-all duration-150 cursor-pointer [touch-action:manipulation] ${FOCUS_RING} ${
-                      resourceFilter === chip.value
-                        ? 'text-cyan-300 bg-cyan-500/[0.08] border-l-2 border-l-cyan-500/60 pl-[10px] pr-3'
-                        : 'text-slate-400 hover:text-slate-200 hover:bg-white/[0.04] border-l-2 border-l-transparent pl-[10px] pr-3'
-                    }`}
-                  >
-                    {chip.label}
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
+        {/* Resource + Reward dropdowns */}
+        <div className="flex gap-1 justify-end">
+          <FilterDropdown
+            label="Resource"
+            ariaLabel="Filter by resource"
+            chips={RESOURCE_CHIPS}
+            value={resourceFilter}
+            onChange={onResourceChange}
+          />
+          <FilterDropdown
+            label="Reward"
+            ariaLabel="Filter by reward"
+            chips={REWARD_CHIPS}
+            value={rewardFilter}
+            onChange={onRewardChange}
+          />
         </div>
 
       </div>
+    </div>
+  )
+}
+
+function FilterDropdown<T extends string>({
+  label,
+  ariaLabel,
+  chips,
+  value,
+  onChange,
+}: {
+  label: string
+  ariaLabel: string
+  chips: { value: T; label: string }[]
+  value: T
+  onChange: (v: T) => void
+}) {
+  const [open, setOpen] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (!open) return
+    function handleOutsideClick(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false)
+    }
+    function handleEscape(e: KeyboardEvent) {
+      if (e.key === 'Escape') setOpen(false)
+    }
+    document.addEventListener('mousedown', handleOutsideClick)
+    document.addEventListener('keydown', handleEscape)
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick)
+      document.removeEventListener('keydown', handleEscape)
+    }
+  }, [open])
+
+  const active = chips.find(c => c.value === value)
+  const buttonLabel = value === 'all' ? label : active?.label ?? label
+  const isActive = value !== 'all'
+
+  return (
+    <div ref={ref} className="relative flex-shrink-0">
+      <button
+        onClick={() => setOpen(v => !v)}
+        aria-expanded={open}
+        aria-haspopup="listbox"
+        className={`h-full font-orbitron text-[9px] tracking-[0.06em] px-3 min-h-[44px] rounded-sm border transition-all duration-150 cursor-pointer [touch-action:manipulation] whitespace-nowrap ${FOCUS_RING} ${
+          isActive
+            ? 'bg-cyan-500/10 border-cyan-600/40 text-cyan-300 shadow-[0_0_10px_rgba(0,200,255,0.10)]'
+            : open
+            ? 'bg-slate-800/60 border-slate-600/60 text-slate-200'
+            : 'bg-slate-900/40 border-slate-700/40 text-slate-400 hover:text-slate-200 hover:bg-slate-800/50'
+        }`}
+      >
+        {buttonLabel}
+        <span className={`ml-1.5 inline-block transition-transform duration-150 ${open ? 'rotate-180' : ''}`}>▾</span>
+      </button>
+
+      {open && (
+        <div
+          role="listbox"
+          aria-label={ariaLabel}
+          className="absolute right-0 top-full mt-1 z-50 bg-[#0a0b14] border border-slate-700/60 shadow-xl shadow-black/80 py-1 min-w-[160px] max-h-[60vh] overflow-y-auto"
+        >
+          {chips.map(chip => (
+            <button
+              key={chip.value}
+              role="option"
+              aria-selected={value === chip.value}
+              onClick={() => { onChange(chip.value); setOpen(false) }}
+              className={`w-full text-left font-orbitron text-[9px] tracking-[0.05em] py-2.5 transition-all duration-150 cursor-pointer [touch-action:manipulation] ${FOCUS_RING} ${
+                value === chip.value
+                  ? 'text-cyan-300 bg-cyan-500/[0.08] border-l-2 border-l-cyan-500/60 pl-[10px] pr-3'
+                  : 'text-slate-400 hover:text-slate-200 hover:bg-white/[0.04] border-l-2 border-l-transparent pl-[10px] pr-3'
+              }`}
+            >
+              {chip.label}
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   )
 }
