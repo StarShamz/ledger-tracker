@@ -53,6 +53,7 @@ function matchesResource(order: Order, filter: ResourceFilter): boolean {
   if (filter === 'all') return true
   const items = order.resources.map(r => r.item.toLowerCase())
   switch (filter) {
+    case 'ether':     return (order.completion?.resources ?? []).some(r => r.item.toLowerCase() === 'ether')
     case 'jade':      return items.some(i => i === 'jade')
     case 'vespium':   return items.some(i => i.includes('vespium'))
     case 'silicate':  return items.some(i => i.includes('silicate'))

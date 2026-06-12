@@ -25,6 +25,7 @@ const STATUS_TABS: { value: StatusFilter; label: string }[] = [
 
 const RESOURCE_CHIPS: { value: ResourceFilter; label: string }[] = [
   { value: 'all', label: 'All' },
+  { value: 'ether', label: 'Ether' },
   { value: 'jade', label: 'Jade' },
   { value: 'vespium', label: 'Vespium' },
   { value: 'silicate', label: 'Silicate' },

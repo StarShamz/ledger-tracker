@@ -65,6 +65,7 @@ export type StatusFilter = 'all' | 'recommended' | 'in_progress' | 'available' |
 
 export type ResourceFilter =
   | 'all'
+  | 'ether'
   | 'jade'
   | 'vespium'
   | 'silicate'
