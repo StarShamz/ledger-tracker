@@ -22,6 +22,7 @@ const CONTRIBUTORS: Contributor[] = [
   { name: 'Archetype', discord: 'archetype1245' },
   { name: 'Kartonis' },
   { name: 'donhue', discord: 'don.hue' },
+  { name: 'Riqz', discord: 'nemesis00571' },
 ]
 
 export default function CreditsPanel() {
