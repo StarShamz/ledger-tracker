@@ -33,7 +33,7 @@ export default function ProgressHeader({
             <p className="font-spacemono text-[9px] tracking-[0.2em] text-slate-400 uppercase mb-1.5">
               Chad&apos;s Galactic Mining Empire
             </p>
-            <h1 className="font-orbitron text-sm font-bold tracking-[0.12em] text-cyan-200 uppercase leading-snug [text-shadow:0_0_18px_rgba(0,212,255,0.45)]">
+            <h1 className="font-orbitron text-3xl font-bold tracking-[0.12em] text-cyan-200 uppercase leading-snug [text-shadow:0_0_18px_rgba(0,212,255,0.45)]">
               Ledger Planner
             </h1>
             <div className="flex items-center gap-2 mt-2">
