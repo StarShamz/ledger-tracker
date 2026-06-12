@@ -104,6 +104,14 @@ export default function SearchFilter({
   onCharacterChange,
   completedFlash = 0,
 }: SearchFilterProps) {
+  const hasActiveFilters = resourceFilter !== 'all' || rewardFilter !== 'all' || characterFilter !== 'all'
+
+  function clearFilters() {
+    onResourceChange('all')
+    onRewardChange('all')
+    onCharacterChange('all')
+  }
+
   return (
     <div className="bg-black/98 backdrop-blur-xl border-b border-cyan-600/25 px-4 py-3 space-y-2.5 sticky top-0 z-10">
       <div className="max-w-2xl mx-auto space-y-2.5">
@@ -149,28 +157,38 @@ export default function SearchFilter({
         </div>
 
         {/* Resource + Reward + Character dropdowns */}
-        <div className="flex gap-1 justify-end flex-wrap">
-          <FilterDropdown
-            label="Resource"
-            ariaLabel="Filter by resource"
-            chips={RESOURCE_CHIPS}
-            value={resourceFilter}
-            onChange={onResourceChange}
-          />
-          <FilterDropdown
-            label="Reward"
-            ariaLabel="Filter by reward"
-            chips={REWARD_CHIPS}
-            value={rewardFilter}
-            onChange={onRewardChange}
-          />
-          <FilterDropdown
-            label="Character"
-            ariaLabel="Filter by character"
-            chips={CHARACTER_CHIPS}
-            value={characterFilter}
-            onChange={onCharacterChange}
-          />
+        <div className="flex gap-1 items-center flex-wrap">
+          {hasActiveFilters && (
+            <button
+              onClick={clearFilters}
+              className={`font-orbitron text-[9px] tracking-[0.06em] px-3 min-h-[44px] rounded-sm border border-slate-700/40 bg-slate-900/40 text-slate-400 transition-all duration-150 cursor-pointer [touch-action:manipulation] whitespace-nowrap hover:text-rose-300 hover:border-rose-700/40 hover:bg-rose-500/[0.06] ${FOCUS_RING}`}
+            >
+              ✕ Clear filters
+            </button>
+          )}
+          <div className="flex gap-1 justify-end flex-wrap ml-auto">
+            <FilterDropdown
+              label="Resource"
+              ariaLabel="Filter by resource"
+              chips={RESOURCE_CHIPS}
+              value={resourceFilter}
+              onChange={onResourceChange}
+            />
+            <FilterDropdown
+              label="Reward"
+              ariaLabel="Filter by reward"
+              chips={REWARD_CHIPS}
+              value={rewardFilter}
+              onChange={onRewardChange}
+            />
+            <FilterDropdown
+              label="Character"
+              ariaLabel="Filter by character"
+              chips={CHARACTER_CHIPS}
+              value={characterFilter}
+              onChange={onCharacterChange}
+            />
+          </div>
         </div>
 
       </div>
