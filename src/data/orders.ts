@@ -1317,7 +1317,7 @@ export const orders: Order[] = [
     npc: 'Meepa Torani',
     completion: {
       resources: [
-        { item: 'Vespium Frame', quantityDisplay: '400.00k' },
+        { item: 'Silicate Glass', quantityDisplay: '400.00k' },
         { item: 'Silicate Brick', quantityDisplay: '400.00k' },
         { item: 'Industrial Bit', quantityDisplay: '2.00m' },
         { item: 'Silicate Concrete', quantityDisplay: '2.00m' },
@@ -1339,7 +1339,7 @@ export const orders: Order[] = [
     npc: 'Meepa Torani',
     completion: {
       resources: [
-        { item: 'Vespium Frame', quantityDisplay: '1.00m' },
+        { item: 'Silicate Glass', quantityDisplay: '1.00m' },
         { item: 'Silicate Brick', quantityDisplay: '1.00m' },
         { item: 'Industrial Bit', quantityDisplay: '10.00m' },
         { item: 'Silicate Concrete', quantityDisplay: '10.00m' },
