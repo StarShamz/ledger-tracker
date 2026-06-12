@@ -614,6 +614,16 @@ export const orders: Order[] = [
     requiredOrderIds: [37],
     resources: [],
     actions: [{ type: 'endurance_synthesizer_potion', quantity: 8 }],
+    completion: {
+      resources: [
+        { item: 'Endurance Booster Potion', quantityDisplay: '3' },
+        { item: 'Precision Booster Potion', quantityDisplay: '2' },
+        { item: 'Detection Booster Potion', quantityDisplay: '2' },
+        { item: 'Power Booster Potion', quantityDisplay: '1' },
+      ],
+      actions: [],
+    },
+    rewards: ['+14 Max Stamina', '+10 Ether'],
   },
   // 42
   {
@@ -1120,6 +1130,11 @@ export const orders: Order[] = [
     requiredOrderIds: [45],
     resources: [{ item: 'Jade', quantityDisplay: '60 billion' }],
     actions: [],
+    completion: {
+      resources: [{ item: 'Jade', quantityDisplay: '200.00b' }],
+      actions: [],
+    },
+    rewards: ['x1.4 Jade', 'x1.2 Tokenium'],
   },
   // 73
   {
