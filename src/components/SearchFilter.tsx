@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef, useEffect, useState } from 'react'
+import { NPC_IMAGES } from '@/data/npcs'
 import type { CharacterFilter, ResourceFilter, RewardFilter, StatusFilter } from '@/types'
 
 interface SearchFilterProps {
@@ -57,21 +58,25 @@ const REWARD_CHIPS: { value: RewardFilter; label: string }[] = [
   { value: 'attribute_points', label: 'Attr. Points' },
 ]
 
-const CHARACTER_CHIPS: { value: CharacterFilter; label: string }[] = [
+const CHARACTER_NAMES = [
+  'Bhramari',
+  'Clank',
+  'Donathan Creel',
+  'Eidelaine Eeko',
+  'Gama Kamalon',
+  'Gerbo',
+  'Meepa Torani',
+  'Minalima Lin',
+  'Puri Puri',
+  'Samos Sula',
+  'Tank Timmerson',
+  'The Ether Hoarder',
+  'The Twins',
+]
+
+const CHARACTER_CHIPS: { value: CharacterFilter; label: string; image?: string }[] = [
   { value: 'all', label: 'All' },
-  { value: 'Bhramari', label: 'Bhramari' },
-  { value: 'Clank', label: 'Clank' },
-  { value: 'Donathan Creel', label: 'Donathan Creel' },
-  { value: 'Eidelaine Eeko', label: 'Eidelaine Eeko' },
-  { value: 'Gama Kamalon', label: 'Gama Kamalon' },
-  { value: 'Gerbo', label: 'Gerbo' },
-  { value: 'Meepa Torani', label: 'Meepa Torani' },
-  { value: 'Minalima Lin', label: 'Minalima Lin' },
-  { value: 'Puri Puri', label: 'Puri Puri' },
-  { value: 'Samos Sula', label: 'Samos Sula' },
-  { value: 'Tank Timmerson', label: 'Tank Timmerson' },
-  { value: 'The Ether Hoarder', label: 'The Ether Hoarder' },
-  { value: 'The Twins', label: 'The Twins' },
+  ...CHARACTER_NAMES.map(name => ({ value: name, label: name, image: NPC_IMAGES[name] })),
 ]
 
 const FOCUS_RING = 'focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-cyan-500/50 focus-visible:ring-offset-1 focus-visible:ring-offset-black'
@@ -182,7 +187,7 @@ function FilterDropdown<T extends string>({
 }: {
   label: string
   ariaLabel: string
-  chips: { value: T; label: string }[]
+  chips: { value: T; label: string; image?: string }[]
   value: T
   onChange: (v: T) => void
 }) {
@@ -208,6 +213,7 @@ function FilterDropdown<T extends string>({
   const active = chips.find(c => c.value === value)
   const buttonLabel = value === 'all' ? label : active?.label ?? label
   const isActive = value !== 'all'
+  const hasImages = chips.some(c => c.image)
 
   return (
     <div ref={ref} className="relative flex-shrink-0">
@@ -215,7 +221,7 @@ function FilterDropdown<T extends string>({
         onClick={() => setOpen(v => !v)}
         aria-expanded={open}
         aria-haspopup="listbox"
-        className={`h-full font-orbitron text-[9px] tracking-[0.06em] px-3 min-h-[44px] rounded-sm border transition-all duration-150 cursor-pointer [touch-action:manipulation] whitespace-nowrap ${FOCUS_RING} ${
+        className={`h-full inline-flex items-center gap-1.5 font-orbitron text-[9px] tracking-[0.06em] px-3 min-h-[44px] rounded-sm border transition-all duration-150 cursor-pointer [touch-action:manipulation] whitespace-nowrap ${FOCUS_RING} ${
           isActive
             ? 'bg-cyan-500/10 border-cyan-600/40 text-cyan-300 shadow-[0_0_10px_rgba(0,200,255,0.10)]'
             : open
@@ -223,8 +229,11 @@ function FilterDropdown<T extends string>({
             : 'bg-slate-900/40 border-slate-700/40 text-slate-400 hover:text-slate-200 hover:bg-slate-800/50'
         }`}
       >
+        {isActive && active?.image && (
+          <img src={active.image} alt="" className="w-5 h-5 -ml-0.5 rounded-full object-cover ring-1 ring-cyan-500/40 flex-shrink-0" />
+        )}
         {buttonLabel}
-        <span className={`ml-1.5 inline-block transition-transform duration-150 ${open ? 'rotate-180' : ''}`}>▾</span>
+        <span className={`inline-block transition-transform duration-150 ${open ? 'rotate-180' : ''}`}>▾</span>
       </button>
 
       {open && (
@@ -239,13 +248,18 @@ function FilterDropdown<T extends string>({
               role="option"
               aria-selected={value === chip.value}
               onClick={() => { onChange(chip.value); setOpen(false) }}
-              className={`w-full text-left font-orbitron text-[9px] tracking-[0.05em] py-2.5 transition-all duration-150 cursor-pointer [touch-action:manipulation] ${FOCUS_RING} ${
+              className={`w-full flex items-center gap-2 text-left font-orbitron text-[9px] tracking-[0.05em] py-2 transition-all duration-150 cursor-pointer [touch-action:manipulation] ${FOCUS_RING} ${
                 value === chip.value
                   ? 'text-cyan-300 bg-cyan-500/[0.08] border-l-2 border-l-cyan-500/60 pl-[10px] pr-3'
                   : 'text-slate-400 hover:text-slate-200 hover:bg-white/[0.04] border-l-2 border-l-transparent pl-[10px] pr-3'
               }`}
             >
-              {chip.label}
+              {hasImages && (
+                chip.image
+                  ? <img src={chip.image} alt="" className="w-6 h-6 rounded-full object-cover flex-shrink-0" />
+                  : <span className="w-6 h-6 rounded-full bg-slate-800 border border-slate-700/60 flex-shrink-0" />
+              )}
+              <span className="truncate">{chip.label}</span>
             </button>
           ))}
         </div>
