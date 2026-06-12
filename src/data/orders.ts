@@ -1456,6 +1456,11 @@ export const orders: Order[] = [
     requiredOrderIds: [93],
     resources: [{ item: 'Low Grade Gel', quantityDisplay: '500' }],
     actions: [],
+    completion: {
+      resources: [{ item: 'Low Grade Gel', quantityDisplay: '11.20k' }],
+      actions: [],
+    },
+    rewards: ['+65 Ether', 'x1.5 Credits'],
   },
   // 95
   {
@@ -1706,6 +1711,16 @@ export const orders: Order[] = [
     requiredOrderIds: [113],
     resources: [{ item: 'Vespium Frame', quantityDisplay: '100,000' }],
     actions: [],
+    completion: {
+      resources: [
+        { item: 'Vespium Plate', quantityDisplay: '100.00k' },
+        { item: 'Vespium Rod', quantityDisplay: '60.00k' },
+        { item: 'Vespium Frame', quantityDisplay: '12.50k' },
+        { item: 'Vespium Wire', quantityDisplay: '2750' },
+      ],
+      actions: [],
+    },
+    rewards: ['+2 Attribute Points'],
   },
   // 115
   {
