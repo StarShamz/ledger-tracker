@@ -331,6 +331,11 @@ export const orders: Order[] = [
     requiredOrderIds: [12],
     resources: [{ item: 'Vespium', quantityDisplay: '40,000' }],
     actions: [],
+    completion: {
+      resources: [{ item: 'Vespium', quantityDisplay: '185.00k' }],
+      actions: [],
+    },
+    rewards: ['x1.06 EXP', 'x1.03 Worthless Rock', 'x1.05 Jade'],
   },
   // 23
   {
@@ -435,12 +440,14 @@ export const orders: Order[] = [
     actions: [],
     completion: {
       resources: [
-        { item: 'Vespium Ingot', quantityDisplay: '8k' },
-        { item: 'Vespium Rod', quantityDisplay: '5k' },
-        { item: 'Vespium Plate', quantityDisplay: '5k' },
+        { item: 'Vespium Ingot', quantityDisplay: '8000' },
+        { item: 'Vespium Plate', quantityDisplay: '5000' },
+        { item: 'Vespium Rod', quantityDisplay: '5000' },
+        { item: 'Vespium Frame', quantityDisplay: '80' },
       ],
       actions: [],
     },
+    rewards: ['x1.32 Vespium', '+5% Crafting Speed', 'x1.35 EXP'],
   },
   // 30
   {
@@ -494,6 +501,14 @@ export const orders: Order[] = [
       { item: 'Worthless Rock', quantityDisplay: '1 quadrillion' },
     ],
     actions: [],
+    completion: {
+      resources: [
+        { item: 'Worthless Rock', quantityDisplay: '20.00qa' },
+        { item: 'Vespium', quantityDisplay: '10.00b' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.05 EXP', 'x1.04 Worthless Rock', 'x1.05 Vespium'],
   },
   // 34
   {
@@ -1081,6 +1096,14 @@ export const orders: Order[] = [
       { item: 'Vespium', quantityDisplay: '10¹⁹' },
     ],
     actions: [],
+    completion: {
+      resources: [
+        { item: 'Worthless Rock', quantityDisplay: '700.00o' },
+        { item: 'Vespium', quantityDisplay: '30.00qu' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.17 EXP', 'x1.09 Worthless Rock', 'x1.12 Vespium'],
   },
   // 71
   {
@@ -1439,6 +1462,11 @@ export const orders: Order[] = [
     requiredOrderIds: [95],
     resources: [{ item: 'Low Grade Gel', quantityDisplay: '2,000' }],
     actions: [],
+    completion: {
+      resources: [{ item: 'Low Grade Gel', quantityDisplay: '51.20k' }],
+      actions: [],
+    },
+    rewards: ['+75 Ether', '+10% Crafting Speed'],
   },
   // 97
   {
@@ -1582,6 +1610,11 @@ export const orders: Order[] = [
     requiredOrderIds: [53],
     resources: [{ item: 'Vespium Plate', quantityDisplay: '50,000' }],
     actions: [],
+    completion: {
+      resources: [{ item: 'Vespium Plate', quantityDisplay: '27.50k' }],
+      actions: [],
+    },
+    rewards: ['x1.08 Vespium', 'x1.05 Credits'],
   },
   // 109
   {
