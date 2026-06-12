@@ -365,9 +365,10 @@ function ResourceRequirementRow({
   const reqState = meetsRequirement(stats.resources[r.item], r.quantityDisplay)
   const icon = RESOURCE_ICONS[r.item]
   const qty = raw ? r.quantityDisplay : r.quantityDisplay !== null ? fmtQty(r.quantityDisplay) : null
+  const suffix = raw ? ' ' : '+ '
   return (
     <RequirementRow state={reqState} kind="resource">
-      {verb} {qty !== null ? `${qty}+ ` : 'any '}
+      {verb} {qty !== null ? `${qty}${suffix}` : 'any '}
       {icon && <img src={icon} alt="" aria-hidden="true" className="inline-block w-3.5 h-3.5 object-contain align-middle mx-0.5" />}
       {r.item}
     </RequirementRow>
