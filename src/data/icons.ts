@@ -16,5 +16,5 @@ export const RESOURCE_ICONS: Record<string, string> = {
 
 export const ACTION_ICONS: Record<string, string> = {
   chad_infusion:                url('1443273269573849289'),   // Chad
-  endurance_synthesizer_potion: url('1511695677393076367'),   // Endurance Potion
+  endurance_synthesizer_potion: url('1511695677393076367'),   // Endurance Booster Potion
 }

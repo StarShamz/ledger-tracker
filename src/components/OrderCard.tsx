@@ -387,7 +387,7 @@ function ActionRequirementRow({ a, stats }: { a: ActionRequirement; stats: Playe
       {icon && <img src={icon} alt="" aria-hidden="true" className="inline-block w-3.5 h-3.5 object-contain align-middle mr-1" />}
       {isCI
         ? `TI Level ${a.quantity}+ (${a.quantity}+ Chad Infusions)`
-        : `Craft ${a.quantity}+ Endurance Synthesizer Potion${a.quantity > 1 ? 's' : ''}`}
+        : `Craft ${a.quantity}+ Endurance Synthesizer Booster Potion${a.quantity > 1 ? 's' : ''}`}
     </RequirementRow>
   )
 }
@@ -504,7 +504,7 @@ function OrderPreview({
                   {icon && <img src={icon} alt="" aria-hidden="true" className="inline-block w-3.5 h-3.5 object-contain align-middle mr-1" />}
                   {isCI
                     ? `TI Level ${a.quantity}+`
-                    : `Craft ${a.quantity}+ Endurance Potion${a.quantity > 1 ? 's' : ''}`}
+                    : `Craft ${a.quantity}+ Endurance Booster Potion${a.quantity > 1 ? 's' : ''}`}
                 </RequirementRow>
               )
             })}
