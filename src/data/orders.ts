@@ -790,6 +790,11 @@ export const orders: Order[] = [
     requiredOrderIds: [51],
     resources: [],
     actions: [{ type: 'chad_infusion', quantity: 39 }],
+    completion: {
+      resources: [{ item: 'Ether', quantityDisplay: '204' }],
+      actions: [],
+    },
+    rewards: ['x1.18 Jade'],
   },
   // 53
   {
@@ -1252,6 +1257,16 @@ export const orders: Order[] = [
       { item: 'Silicate Glass', quantityDisplay: '10,000' },
     ],
     actions: [],
+    completion: {
+      resources: [
+        { item: 'Silicate Glass', quantityDisplay: '10,000' },
+        { item: 'Silicate Brick', quantityDisplay: '10,000' },
+        { item: 'Industrial Bit', quantityDisplay: '40.00k' },
+        { item: 'Silicate Concrete', quantityDisplay: '40.00k' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.16 Craftable Sell Price', 'x1.08 Credits'],
   },
   // 83
   {
@@ -1531,6 +1546,14 @@ export const orders: Order[] = [
       { item: 'Scorchium', quantityDisplay: '300,000' },
     ],
     actions: [],
+    completion: {
+      resources: [
+        { item: 'Hydracite', quantityDisplay: '400.00k' },
+        { item: 'Scorchium', quantityDisplay: '300.00k' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.6 EXP', '+10 Ether'],
   },
   // 100
   {
