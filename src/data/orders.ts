@@ -1232,6 +1232,11 @@ export const orders: Order[] = [
     requiredOrderIds: [79],
     resources: [{ item: 'Vespium Ingot', quantityDisplay: '50 million' }],
     actions: [],
+    completion: {
+      resources: [{ item: 'Vespium Ingot', quantityDisplay: '100.00m' }],
+      actions: [],
+    },
+    rewards: ['/5 Crafter Cost Reduction'],
   },
   // 81
   {
@@ -1565,6 +1570,14 @@ export const orders: Order[] = [
       { item: 'Scorchium', quantityDisplay: '800,000' },
     ],
     actions: [],
+    completion: {
+      resources: [
+        { item: 'Hydracite', quantityDisplay: '1.00m' },
+        { item: 'Scorchium', quantityDisplay: '800.00k' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.7 EXP', '+10 Ether'],
   },
   // 101
   {
