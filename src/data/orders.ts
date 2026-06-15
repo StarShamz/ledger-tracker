@@ -756,6 +756,16 @@ export const orders: Order[] = [
     requiredOrderIds: [41],
     resources: [],
     actions: [{ type: 'endurance_synthesizer_potion', quantity: 14 }],
+    completion: {
+      resources: [
+        { item: 'Endurance Booster Potion', quantityDisplay: '3' },
+        { item: 'Precision Booster Potion', quantityDisplay: '2' },
+        { item: 'Detection Booster Potion', quantityDisplay: '2' },
+        { item: 'Power Booster Potion', quantityDisplay: '2' },
+      ],
+      actions: [],
+    },
+    rewards: ['+16 Max Stamina', '+10 Ether'],
   },
   // 50
   {
