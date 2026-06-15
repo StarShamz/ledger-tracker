@@ -657,7 +657,7 @@ export const orders: Order[] = [
         { item: 'Industrial Bit', quantityDisplay: '50.00k' },
         { item: 'Silicate Concrete', quantityDisplay: '37.50k' },
         { item: 'Silicate Glass', quantityDisplay: '2250' },
-        { item: 'Silicate Concrete', quantityDisplay: '2000' },
+        { item: 'Silicate Brick', quantityDisplay: '2000' },
       ],
       actions: [],
     },
