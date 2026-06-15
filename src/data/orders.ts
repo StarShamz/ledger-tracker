@@ -1697,7 +1697,7 @@ export const orders: Order[] = [
       resources: [{ item: 'Vespium Frame', quantityDisplay: '1000' }],
       actions: [],
     },
-    rewards: ['+5% Crafting Speed', '/1.2 Rig Cost'],
+    rewards: ['+5% Crafting Speed', '/1.2 Craft Cost'],
   },
   // 111
   {
