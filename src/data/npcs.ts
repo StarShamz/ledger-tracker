@@ -48,6 +48,7 @@ export const NPC_IMAGES: Record<string, string> = {
   'The Ether Hoarder': '/npcs/the-entity.webp',
   'Donathan Creel':    '/npcs/donathan-creel.webp',
   'Samos Sula':        '/npcs/samos-sula.webp',
+  'Bhramari':          '/npcs/bhramari.webp',
 }
 
 export function getOrderNpc(order: Order): string | undefined {
