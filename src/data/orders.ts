@@ -1589,6 +1589,14 @@ export const orders: Order[] = [
       { item: 'Scorchium', quantityDisplay: '2 million' },
     ],
     actions: [],
+    completion: {
+      resources: [
+        { item: 'Hydracite', quantityDisplay: '10.00m' },
+        { item: 'Scorchium', quantityDisplay: '4.00m' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.8 EXP', '+10 Ether'],
   },
   // 102
   {
