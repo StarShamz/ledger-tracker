@@ -26,6 +26,7 @@ const CONTRIBUTORS: Contributor[] = [
   { name: 'Nag', discord: 'nagtv' },
   { name: 'RatBoy', discord: 'ratboy_xxvi' },
   { name: 'Salz', discord: 'salz90' },
+  { name: 'uncleSamuel' },
 ]
 
 export default function CreditsPanel() {
