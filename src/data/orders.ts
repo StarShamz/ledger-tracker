@@ -1840,6 +1840,6 @@ export const orders: Order[] = [
       resources: [{ item: 'Vespium Wire', quantityDisplay: '22.00k' }],
       actions: [],
     },
-    rewards: ['x1.1 Tokenium Canister', '+20% Crafting Speed', '+5% Rig Speed'],
+    rewards: ['x1.1 Tokenium Canister', '+20% Crafting Speed', '+15% All Rig Output'],
   },
 ]
