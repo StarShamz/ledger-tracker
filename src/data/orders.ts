@@ -1163,6 +1163,11 @@ export const orders: Order[] = [
     requiredOrderIds: [72],
     resources: [{ item: 'Jade', quantityDisplay: '400 billion' }],
     actions: [],
+    completion: {
+      resources: [{ item: 'Jade', quantityDisplay: '1.00t' }],
+      actions: [],
+    },
+    rewards: ['x1.85 EXP'],
   },
   // 74
   {
