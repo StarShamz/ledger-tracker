@@ -122,7 +122,7 @@ export default function Page() {
     'ledger-completed',
     []
   )
-  const [inProgressArray, setInProgressArray] = useLocalStorage<number[]>(
+  const [inProgressArray, setInProgressArray, inProgressLoaded] = useLocalStorage<number[]>(
     'ledger-inprogress',
     []
   )
@@ -157,7 +157,22 @@ export default function Page() {
   const deferredSearch = useDeferredValue(searchQuery)
 
   const completedIds = useMemo(() => new Set(completedArray), [completedArray])
-  const inProgressIds = useMemo(() => new Set(inProgressArray), [inProgressArray])
+  // Pinned orders that aren't completed yet. A completed order is never "in progress",
+  // so derive this rather than trusting the raw saved list.
+  const activeInProgressIds = useMemo(
+    () => new Set(inProgressArray.filter(id => !completedIds.has(id))),
+    [inProgressArray, completedIds]
+  )
+
+  // Keep the completed and in-progress sets disjoint. Once an order is completed —
+  // directly, via the prerequisite cascade in toggleCompleted, or via the stats
+  // inference — it must not linger as a stale in-progress pin. Runs after load to
+  // clean any previously-saved overlap, and whenever the completed set changes.
+  useEffect(() => {
+    if (!isLoaded || !inProgressLoaded) return
+    if (!inProgressArray.some(id => completedIds.has(id))) return
+    setInProgressArray(prev => prev.filter(id => !completedIds.has(id)))
+  }, [isLoaded, inProgressLoaded, completedIds, inProgressArray, setInProgressArray])
 
   const toggleCompleted = useCallback(
     (id: number) => {
@@ -243,7 +258,7 @@ export default function Page() {
 
     if (statusFilter === 'in_progress') {
       return orders.filter(order =>
-        inProgressIds.has(order.id) &&
+        activeInProgressIds.has(order.id) &&
         matchesResource(order, resourceFilter) &&
         matchesReward(order, rewardFilter) &&
         matchesCharacter(order, characterFilter) &&
@@ -260,13 +275,13 @@ export default function Page() {
       const matchSearch = matchesSearch(order, deferredSearch)
       return matchStatus && matchResource && matchReward && matchCharacter && matchSearch
     })
-  }, [statuses, statusFilter, resourceFilter, rewardFilter, characterFilter, deferredSearch, unlockPotential, inProgressIds])
+  }, [statuses, statusFilter, resourceFilter, rewardFilter, characterFilter, deferredSearch, unlockPotential, activeInProgressIds])
 
   const inProgressOrders = useMemo(
-    () => inProgressArray
+    () => [...activeInProgressIds]
       .map(id => orders.find(o => o.id === id))
-      .filter((o): o is typeof orders[0] => o !== undefined && !completedIds.has(o.id)),
-    [inProgressArray, completedIds]
+      .filter((o): o is typeof orders[0] => o !== undefined),
+    [activeInProgressIds]
   )
 
   if (!isLoaded || !statsLoaded) {
@@ -276,6 +291,11 @@ export default function Page() {
       </div>
     )
   }
+
+  // The pinned-orders band is a working tracker for the browse views. It's redundant
+  // on its own tab and out of place on the Completed tab (those orders aren't done).
+  const showInProgressBand =
+    statusFilter !== 'in_progress' && statusFilter !== 'completed' && inProgressOrders.length > 0
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -313,7 +333,7 @@ export default function Page() {
         <div className="max-w-2xl mx-auto space-y-1.5">
 
           {/* In-progress section */}
-          {statusFilter !== 'in_progress' && inProgressOrders.length > 0 && (
+          {showInProgressBand && (
             <div className="mb-2 bg-amber-950/20 border border-amber-500/10 px-2 pt-2 pb-2 -mx-1 rounded-sm">
               <div className="flex items-center gap-2 mb-2 px-0.5">
                 <span className="font-orbitron text-[8px] tracking-[0.3em] text-amber-400/80 uppercase">In Progress</span>
@@ -349,7 +369,7 @@ export default function Page() {
           {(() => {
             const mainOrders = statusFilter === 'in_progress'
               ? filteredOrders
-              : filteredOrders.filter(o => !inProgressIds.has(o.id))
+              : filteredOrders.filter(o => !activeInProgressIds.has(o.id))
 
             if (mainOrders.length === 0) {
               if (statusFilter === 'in_progress' && inProgressOrders.length === 0) {
@@ -360,7 +380,7 @@ export default function Page() {
                   </div>
                 )
               }
-              if (statusFilter !== 'in_progress' && inProgressOrders.length > 0) {
+              if (showInProgressBand) {
                 return null
               }
               return (
