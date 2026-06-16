@@ -86,7 +86,7 @@ export const orders: Order[] = [
     actions: [],
     npc: 'Clank',
     completion: {
-      resources: [{ item: 'Vespium Frame', quantityDisplay: '90' }],
+      resources: [{ item: 'Silicate Glass', quantityDisplay: '90' }],
       actions: [],
     },
     rewards: ['x1.07 EXP', 'x1.04 Jade', 'x1.04 Tokenium'],
