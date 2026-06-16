@@ -1062,6 +1062,11 @@ export const orders: Order[] = [
     requiredOrderIds: [52],
     resources: [],
     actions: [{ type: 'chad_infusion', quantity: 43 }],
+    completion: {
+      resources: [{ item: 'Ether', quantityDisplay: '150' }],
+      actions: [],
+    },
+    rewards: ['+1 Attribute Point'],
   },
   // 67
   {
@@ -1638,6 +1643,14 @@ export const orders: Order[] = [
       { item: 'Scorchium', quantityDisplay: '10 million' },
     ],
     actions: [],
+    completion: {
+      resources: [
+        { item: 'Hydracite', quantityDisplay: '250.00m' },
+        { item: 'Scorchium', quantityDisplay: '150.00m' },
+      ],
+      actions: [],
+    },
+    rewards: ['x2 EXP', '+10 Ether'],
   },
   // 104
   {
@@ -1840,6 +1853,6 @@ export const orders: Order[] = [
       resources: [{ item: 'Vespium Wire', quantityDisplay: '22.00k' }],
       actions: [],
     },
-    rewards: ['x1.1 Tokenium Canister', '+20% Crafting Speed', '+15% All Rig Output'],
+    rewards: ['x1.1 Tokenium Canister', '+20% Crafting Speed', '+15% Rig Speed'],
   },
 ]
