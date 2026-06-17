@@ -146,7 +146,7 @@ export const orders: Order[] = [
     npc: 'Donathan Creel',
     completion: {
       resources: [
-        { item: 'Vespium Frame', quantityDisplay: '60' },
+        { item: 'Silicate Glass', quantityDisplay: '60' },
         { item: 'Vespium', quantityDisplay: '5000' },
         { item: 'Vespium Plate', quantityDisplay: '300' },
       ],
