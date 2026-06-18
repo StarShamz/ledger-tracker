@@ -1190,6 +1190,11 @@ export const orders: Order[] = [
     requiredOrderIds: [74],
     resources: [{ item: 'Jade', quantityDisplay: '5 trillion' }],
     actions: [],
+    completion: {
+      resources: [{ item: 'Jade', quantityDisplay: '100t' }],
+      actions: [],
+    },
+    rewards: ['+1 Attribute Point'],
   },
   // 76
   {
@@ -1435,6 +1440,16 @@ export const orders: Order[] = [
       { item: 'Silicate Glass', quantityDisplay: '5 million' },
     ],
     actions: [],
+    completion: {
+      resources: [
+        { item: 'Silicate Glass', quantityDisplay: '8.00m' },
+        { item: 'Silicate Brick', quantityDisplay: '8.00m' },
+        { item: 'Industrial Bit', quantityDisplay: '100.00m' },
+        { item: 'Silicate Concrete', quantityDisplay: '100.00m' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.4 Craftable Sell Price', 'x1.3 Credits'],
   },
   // 90
   {
