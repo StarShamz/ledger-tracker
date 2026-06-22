@@ -1075,6 +1075,11 @@ export const orders: Order[] = [
     requiredOrderIds: [66],
     resources: [],
     actions: [{ type: 'chad_infusion', quantity: 47 }],
+    completion: {
+      resources: [{ item: 'Ether', quantityDisplay: '333' }],
+      actions: [],
+    },
+    rewards: ['+54 Core'],
   },
   // 68
   {
@@ -1142,6 +1147,16 @@ export const orders: Order[] = [
     requiredOrderIds: [49],
     resources: [],
     actions: [{ type: 'endurance_synthesizer_potion', quantity: 21 }],
+    completion: {
+      resources: [
+        { item: 'Endurance Booster Potion', quantityDisplay: '3' },
+        { item: 'Precision Booster Potion', quantityDisplay: '3' },
+        { item: 'Detection Booster Potion', quantityDisplay: '3' },
+        { item: 'Power Booster Potion', quantityDisplay: '3' },
+      ],
+      actions: [],
+    },
+    rewards: ['+18 Max Stamina', '+15 Ether'],
   },
   // 72
   {
@@ -1679,6 +1694,11 @@ export const orders: Order[] = [
     requiredOrderIds: [103],
     resources: [{ item: 'Hydracite', quantityDisplay: '100 million' }],
     actions: [],
+    completion: {
+      resources: [{ item: 'Hydracite', quantityDisplay: '10.00b' }],
+      actions: [],
+    },
+    rewards: ['+2 Attribute Points'],
   },
   // 105
   {
@@ -1687,6 +1707,11 @@ export const orders: Order[] = [
     requiredOrderIds: [103],
     resources: [{ item: 'Scorchium', quantityDisplay: '100 million' }],
     actions: [],
+    completion: {
+      resources: [{ item: 'Scorchium', quantityDisplay: '10.00b' }],
+      actions: [],
+    },
+    rewards: ['x2 Craftable Sell Price'],
   },
   // 106
   {
