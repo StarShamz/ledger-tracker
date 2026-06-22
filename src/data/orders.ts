@@ -1476,6 +1476,16 @@ export const orders: Order[] = [
       { item: 'Silicate Glass', quantityDisplay: '10 million' },
     ],
     actions: [],
+    completion: {
+      resources: [
+        { item: 'Silicate Glass', quantityDisplay: '50.00m' },
+        { item: 'Silicate Brick', quantityDisplay: '50.00m' },
+        { item: 'Industrial Bit', quantityDisplay: '500.00m' },
+        { item: 'Silicate Concrete', quantityDisplay: '500.00m' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.42 Craftable Sell Price', 'x1.34 Credits'],
   },
   // 91
   {
