@@ -441,7 +441,7 @@ export default function StatsPanel({ stats, onChange, onApplyInference }: StatsP
               </label>
               <input
                 type="text"
-                inputMode="decimal"
+                inputMode="text"
                 value={stats.resources['Ether'] ?? ''}
                 onChange={e => onChange(setResource(stats, 'Ether', e.target.value))}
                 placeholder="current balance"
@@ -473,7 +473,7 @@ export default function StatsPanel({ stats, onChange, onApplyInference }: StatsP
                     </label>
                     <input
                       type="text"
-                      inputMode="decimal"
+                      inputMode="text"
                       value={stats.resources[item] ?? ''}
                       onChange={e => onChange(setResource(stats, item, e.target.value))}
                       placeholder="all-time gained"
