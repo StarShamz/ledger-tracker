@@ -29,6 +29,7 @@ const CONTRIBUTORS: Contributor[] = [
   { name: 'uncleSamuel' },
   { name: 'placestamphere' },
   { name: 'solacespecs' },
+  { name: 'andrewtabs' },
 ]
 
 export default function CreditsPanel() {
