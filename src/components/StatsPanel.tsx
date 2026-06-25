@@ -11,6 +11,9 @@ interface StatsPanelProps {
   stats: PlayerStats
   onChange: (stats: PlayerStats) => void
   onApplyInference: (ids: number[]) => void
+  completedArray: number[]
+  inProgressArray: number[]
+  onImportOrders: (completed: number[], inProgress: number[]) => void
 }
 
 const RESOURCE_GROUPS: { label: string; items: string[] }[] = [
@@ -75,7 +78,7 @@ function setResource(stats: PlayerStats, item: string, value: string): PlayerSta
   return { ...stats, resources: { ...stats.resources, [item]: value } }
 }
 
-export default function StatsPanel({ stats, onChange, onApplyInference }: StatsPanelProps) {
+export default function StatsPanel({ stats, onChange, onApplyInference, completedArray, inProgressArray, onImportOrders }: StatsPanelProps) {
   const [result, setResult] = useState<InferenceResult | null>(null)
   const [checkedIds, setCheckedIds] = useState<Set<number>>(new Set())
   const [flaggedOrders, setFlaggedOrders] = useState<Map<number, RiskyResource[]>>(new Map())
@@ -138,12 +141,17 @@ export default function StatsPanel({ stats, onChange, onApplyInference }: StatsP
   }
 
   function handleExport() {
-    const json = JSON.stringify(stats, null, 2)
+    const payload = {
+      ...stats,
+      completedOrders: completedArray,
+      inProgressOrders: inProgressArray,
+    }
+    const json = JSON.stringify(payload, null, 2)
     const blob = new Blob([json], { type: 'application/json' })
     const url = URL.createObjectURL(blob)
     const a = document.createElement('a')
     a.href = url
-    a.download = 'ledger-stats.json'
+    a.download = 'ledger-save.json'
     a.click()
     URL.revokeObjectURL(url)
   }
@@ -163,8 +171,15 @@ export default function StatsPanel({ stats, onChange, onApplyInference }: StatsP
           resources: typeof data.resources === 'object' && data.resources !== null ? data.resources : {},
           totalOrdersCompleted: typeof data.totalOrdersCompleted === 'string' ? data.totalOrdersCompleted : '',
         })
+        const completed = Array.isArray(data.completedOrders)
+          ? data.completedOrders.filter((x: unknown) => typeof x === 'number')
+          : []
+        const inProgress = Array.isArray(data.inProgressOrders)
+          ? data.inProgressOrders.filter((x: unknown) => typeof x === 'number')
+          : []
+        onImportOrders(completed, inProgress)
       } catch {
-        setImportError('Invalid file — make sure it is a stats JSON exported from this tool.')
+        setImportError('Invalid file — make sure it is a save JSON exported from this tool.')
       }
     }
     reader.readAsText(file)

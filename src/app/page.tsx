@@ -297,6 +297,12 @@ export default function Page() {
             setCompletedArray(ids)
             setStatsOpen(false)
           }}
+          completedArray={completedArray}
+          inProgressArray={inProgressArray}
+          onImportOrders={(completed, inProgress) => {
+            setCompletedArray(completed)
+            setInProgressArray(inProgress)
+          }}
         />
       </BottomSheet>
       {creditsOpen && <CreditsPanel />}
