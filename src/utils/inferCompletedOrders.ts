@@ -48,6 +48,7 @@ export function getAllDependents(orderId: number): Set<number> {
  * Returns true if the order can be attempted given the current completed set and stats.
  * Lenient: a missing stat is treated as "unknown → assume ok" to avoid under-inferring.
  * Only blocks if a stat is explicitly entered and falls below the requirement.
+ * Checks both unlock requirements (resources/actions) and completion requirements.
  */
 function isUnlockable(order: Order, completed: Set<number>, stats: PlayerStats): boolean {
   if (completed.size < order.minOrders) return false
@@ -55,7 +56,7 @@ function isUnlockable(order: Order, completed: Set<number>, stats: PlayerStats):
 
   for (const r of order.resources) {
     const amt = stats.resources[r.item]
-    if (!amt?.trim()) continue  // missing → assume ok
+    if (!amt?.trim()) continue
     const player = parseQuantity(amt)
     if (player === null) continue
     if (r.quantityDisplay === null) {
@@ -68,9 +69,31 @@ function isUnlockable(order: Order, completed: Set<number>, stats: PlayerStats):
 
   for (const a of order.actions) {
     const playerStr = a.type === 'chad_infusion' ? stats.tiLevel : stats.potionsCrafted
-    if (!playerStr?.trim()) continue  // missing → assume ok
+    if (!playerStr?.trim()) continue
     const player = parseQuantity(playerStr)
     if (player !== null && player < BigInt(a.quantity)) return false
+  }
+
+  if (order.completion) {
+    for (const r of order.completion.resources) {
+      const amt = stats.resources[r.item]
+      if (!amt?.trim()) continue
+      const player = parseQuantity(amt)
+      if (player === null) continue
+      if (r.quantityDisplay === null) {
+        if (player <= 0n) return false
+      } else {
+        const req = parseQuantity(r.quantityDisplay)
+        if (req !== null && player < req) return false
+      }
+    }
+
+    for (const a of order.completion.actions) {
+      const playerStr = a.type === 'chad_infusion' ? stats.tiLevel : stats.potionsCrafted
+      if (!playerStr?.trim()) continue
+      const player = parseQuantity(playerStr)
+      if (player !== null && player < BigInt(a.quantity)) return false
+    }
   }
 
   return true
@@ -143,6 +166,17 @@ export function inferCompletedOrders(
         const playerStr = a.type === 'chad_infusion' ? stats.tiLevel : stats.potionsCrafted
         if (!playerStr?.trim()) {
           missingStats.add(a.type === 'chad_infusion' ? 'Infusions Done (TIs)' : 'Potions Crafted')
+        }
+      }
+      if (order.completion) {
+        for (const r of order.completion.resources) {
+          if (!stats.resources[r.item]?.trim()) missingStats.add(r.item)
+        }
+        for (const a of order.completion.actions) {
+          const playerStr = a.type === 'chad_infusion' ? stats.tiLevel : stats.potionsCrafted
+          if (!playerStr?.trim()) {
+            missingStats.add(a.type === 'chad_infusion' ? 'Infusions Done (TIs)' : 'Potions Crafted')
+          }
         }
       }
     }

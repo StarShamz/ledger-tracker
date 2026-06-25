@@ -21,7 +21,7 @@ const RESOURCE_GROUPS: { label: string; items: string[] }[] = [
     items: ['Vespium', 'Vespium Ingot', 'Vespium Plate', 'Vespium Rod', 'Vespium Frame', 'Vespium Wire'],
   },
   { label: 'Jade', items: ['Jade'] },
-  { label: 'Potions', items: ['Hydracite', 'Scorchium'] },
+  { label: 'Ore', items: ['Hydracite', 'Scorchium'] },
   { label: 'Tokenium', items: ['Tokenium', 'Tokenium Canister'] },
   { label: 'Other', items: ['Low Grade Gel'] },
 ]
@@ -35,7 +35,8 @@ type RiskyResource = { item: string; pct: number; reqDisplay: string; haveDispla
 
 function getRiskyResources(order: Order, stats: PlayerStats): RiskyResource[] {
   const risky: RiskyResource[] = []
-  for (const r of order.resources) {
+  const requirements = order.completion?.resources ?? order.resources
+  for (const r of requirements) {
     if (r.quantityDisplay === null) continue
     const playerStr = stats.resources[r.item]
     if (!playerStr?.trim()) continue
@@ -193,9 +194,6 @@ export default function StatsPanel({ stats, onChange, onApplyInference }: StatsP
         <div className="border-l-[2px] border-l-cyan-600/35 border border-l-0 border-cyan-800/12 bg-cyan-500/[0.025] px-3 py-3 space-y-3">
           <p className="font-orbitron text-[9px] font-semibold text-cyan-400/80 uppercase tracking-[0.2em]">
             Calculate Completions
-          </p>
-          <p className="text-xs text-amber-400/80">
-            Work in progress — order completion calculation may be inaccurate until all order data has been gathered.
           </p>
           <p className="text-xs text-slate-400">
             This will automatically calculate what orders you may have realistically completed, given the stats you have provided below. Some orders may be flagged for your manual approval in an effort to prevent incomplete orders from being automatically completed.
