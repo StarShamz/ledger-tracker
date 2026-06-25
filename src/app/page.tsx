@@ -9,6 +9,7 @@ import SearchFilter from '@/components/SearchFilter'
 import OrderCard from '@/components/OrderCard'
 import StatsPanel from '@/components/StatsPanel'
 import CreditsPanel from '@/components/CreditsPanel'
+import BottomSheet from '@/components/BottomSheet'
 import { parseQuantity } from '@/utils/parseQuantity'
 import { getAllPrerequisites, getAllDependents } from '@/utils/inferCompletedOrders'
 import type { CharacterFilter, Order, OrderStatus, PlayerStats, ResourceFilter, RewardFilter, StatusFilter } from '@/types'
@@ -288,13 +289,16 @@ export default function Page() {
         onCreditsToggle={() => setCreditsOpen(v => !v)}
         onReset={handleReset}
       />
-      {statsOpen && (
+      <BottomSheet open={statsOpen} onClose={() => setStatsOpen(false)}>
         <StatsPanel
           stats={stats}
           onChange={setStats}
-          onApplyInference={ids => setCompletedArray(ids)}
+          onApplyInference={ids => {
+            setCompletedArray(ids)
+            setStatsOpen(false)
+          }}
         />
-      )}
+      </BottomSheet>
       {creditsOpen && <CreditsPanel />}
       <SearchFilter
         searchQuery={searchQuery}
