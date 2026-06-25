@@ -54,7 +54,7 @@ export default function ProgressHeader({
                   : 'border-slate-700/60 text-slate-400 hover:text-slate-200 hover:border-slate-500'
               }`}
             >
-              Stats
+              Stats / Calc
             </button>
 
             <button
@@ -138,6 +138,12 @@ export default function ProgressHeader({
           <span className="text-[10px] text-slate-400 font-spacemono tabular-nums">{pct.toFixed(1)}% COMPLETE</span>
           <span className="text-[10px] text-slate-400 font-spacemono tabular-nums">{totalCount} ORDERS</span>
         </div>
+        <button
+          onClick={onStatsToggle}
+          className="mt-2 text-[10px] font-spacemono text-slate-500 hover:text-cyan-400 transition-colors cursor-pointer text-left"
+        >
+          ✦ Enter your stats to auto-fill your completed orders
+        </button>
       </div>
     </header>
   )
