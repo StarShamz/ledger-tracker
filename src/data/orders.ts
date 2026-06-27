@@ -1753,6 +1753,15 @@ export const orders: Order[] = [
       { item: 'Scorchium', quantityDisplay: '2 billion' },
     ],
     actions: [],
+    npc: 'The Twins',
+    completion: {
+      resources: [
+        { item: 'Hydracite', quantityDisplay: '300.00b' },
+        { item: 'Scorchium', quantityDisplay: '200.00b' },
+      ],
+      actions: [],
+    },
+    rewards: ['x2.12 EXP', '+10 Ether'],
   },
   // 108
   {
