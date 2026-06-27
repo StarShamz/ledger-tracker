@@ -447,7 +447,7 @@ export const orders: Order[] = [
       ],
       actions: [],
     },
-    rewards: ['x1.32 Vespium', '+5% Crafting Speed', 'x1.35 EXP'],
+    rewards: ['x1.32 Vespium', '+5% Crafting Speed', 'x1.35 Credits'],
   },
   // 30
   {
