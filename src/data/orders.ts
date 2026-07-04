@@ -1928,4 +1928,352 @@ export const orders: Order[] = [
     },
     rewards: ['x1.1 Tokenium Canister', '+20% Crafting Speed', '+15% Rig Speed'],
   },
+  // 120
+  {
+    id: 120,
+    minOrders: 0,
+    requiredOrderIds: [],
+    resources: [],
+    actions: [],
+    npc: 'Gerbo',
+    completion: {
+      resources: [{ item: 'Worthless Rock', quantityDisplay: '1.00e40' }],
+      actions: [],
+    },
+    rewards: ['x1.12 Worthless Rock', 'x1.04 All Rig Yield', '+5 Core'],
+  },
+  // 121
+  {
+    id: 121,
+    minOrders: 0,
+    requiredOrderIds: [],
+    resources: [],
+    actions: [],
+    npc: 'Gerbo',
+    completion: {
+      resources: [{ item: 'Vespium', quantityDisplay: '8.00o' }],
+      actions: [],
+    },
+    rewards: ['x1.15 Jade'],
+  },
+  // 122
+  {
+    id: 122,
+    minOrders: 0,
+    requiredOrderIds: [],
+    resources: [],
+    actions: [],
+    npc: 'Gerbo',
+    completion: {
+      resources: [
+        { item: 'Worthless Rock', quantityDisplay: '4.20e42' },
+        { item: 'Vespium', quantityDisplay: '690.00o' },
+      ],
+      actions: [],
+    },
+    rewards: ['+1 Attribute Point'],
+  },
+  // 123
+  {
+    id: 123,
+    minOrders: 0,
+    requiredOrderIds: [],
+    resources: [],
+    actions: [],
+    npc: 'Gama Kamalon',
+    completion: {
+      resources: [
+        { item: 'Hydracite', quantityDisplay: '400.00m' },
+        { item: 'Low Grade Gel', quantityDisplay: '100.00k' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.02 Tokenium Canister', 'x1.03 Hydracite'],
+  },
+  // 124
+  {
+    id: 124,
+    minOrders: 0,
+    requiredOrderIds: [],
+    resources: [],
+    actions: [],
+    npc: 'Minalima Lin',
+    completion: {
+      resources: [{ item: 'Jade', quantityDisplay: '5.00qa' }],
+      actions: [],
+    },
+    rewards: ['x1.1 Hydracite'],
+  },
+  // 125
+  {
+    id: 125,
+    minOrders: 0,
+    requiredOrderIds: [],
+    resources: [],
+    actions: [],
+    npc: 'Minalima Lin',
+    completion: {
+      resources: [{ item: 'Jade', quantityDisplay: '10.00qa' }],
+      actions: [],
+    },
+    rewards: ['x1.1 All Rig Yield'],
+  },
+  // 128
+  {
+    id: 128,
+    minOrders: 0,
+    requiredOrderIds: [],
+    resources: [],
+    actions: [],
+    npc: 'Eidelaine Eeko',
+    completion: {
+      resources: [
+        { item: 'Precision Booster Potion', quantityDisplay: '2' },
+        { item: 'Scorchium', quantityDisplay: '75.00m' },
+      ],
+      actions: [],
+    },
+    rewards: ['+3 Critical Power'],
+  },
+  // 129
+  {
+    id: 129,
+    minOrders: 0,
+    requiredOrderIds: [],
+    resources: [],
+    actions: [],
+    npc: 'The Ether Hoarder',
+    completion: {
+      resources: [{ item: 'Ether', quantityDisplay: '272' }],
+      actions: [],
+    },
+    rewards: ['+1 Attribute Point', '+2% Critical Power'],
+  },
+  // 137
+  {
+    id: 137,
+    minOrders: 0,
+    requiredOrderIds: [],
+    resources: [],
+    actions: [],
+    npc: 'Puri Puri',
+    completion: {
+      resources: [
+        { item: 'Vespium Frame', quantityDisplay: '22.00k' },
+        { item: 'Vespium Wire', quantityDisplay: '2000' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.05 Jade', 'x1.1 Credits', 'x1.1 EXP'],
+  },
+  // 138
+  {
+    id: 138,
+    minOrders: 0,
+    requiredOrderIds: [],
+    resources: [],
+    actions: [],
+    npc: 'Puri Puri',
+    completion: {
+      resources: [
+        { item: 'Silicate Glass', quantityDisplay: '80.00k' },
+        { item: 'Vespium Wire', quantityDisplay: '4500' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.12 All Rig Yield', 'x1.1 Vespium'],
+  },
+  // 139
+  {
+    id: 139,
+    minOrders: 0,
+    requiredOrderIds: [],
+    resources: [],
+    actions: [],
+    npc: 'Puri Puri',
+    completion: {
+      resources: [{ item: 'Vespium Frame', quantityDisplay: '100.00k' }],
+      actions: [],
+    },
+    rewards: ['+15% Crafting Speed', 'x1.15 All Rig Yield'],
+  },
+  // 141
+  {
+    id: 141,
+    minOrders: 0,
+    requiredOrderIds: [],
+    resources: [],
+    actions: [],
+    npc: 'Tank Timmerson',
+    completion: {
+      resources: [
+        { item: 'Industrial Bit', quantityDisplay: '50.00m' },
+        { item: 'Vespium Rod', quantityDisplay: '200.00k' },
+      ],
+      actions: [],
+    },
+    rewards: ['+2% Crafter Duplication Chance'],
+  },
+  // 142
+  {
+    id: 142,
+    minOrders: 0,
+    requiredOrderIds: [],
+    resources: [],
+    actions: [],
+    npc: 'Tank Timmerson',
+    completion: {
+      resources: [
+        { item: 'Vespium Plate', quantityDisplay: '300.00k' },
+        { item: 'Vespium Rod', quantityDisplay: '300.00k' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.05 Craftable Sell Price', 'x1.05 All Rig Yield'],
+  },
+  // 144
+  {
+    id: 144,
+    minOrders: 0,
+    requiredOrderIds: [],
+    resources: [],
+    actions: [],
+    npc: 'Tank Timmerson',
+    completion: {
+      resources: [{ item: 'Vespium', quantityDisplay: '1.00n' }],
+      actions: [],
+    },
+    rewards: ['+2% Crafter Duplication Chance', '+10% Crafting Speed', '/2 Craft Cost'],
+  },
+  // 145
+  {
+    id: 145,
+    minOrders: 0,
+    requiredOrderIds: [],
+    resources: [],
+    actions: [],
+    npc: 'Bhramari',
+    completion: {
+      resources: [
+        { item: 'Low Grade Gel', quantityDisplay: '300' },
+        { item: 'Vespium Wire', quantityDisplay: '10' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.05 Forgie Output'],
+  },
+  // 146
+  {
+    id: 146,
+    minOrders: 0,
+    requiredOrderIds: [],
+    resources: [],
+    actions: [],
+    npc: 'Bhramari',
+    completion: {
+      resources: [
+        { item: 'Low Grade Gel', quantityDisplay: '3000' },
+        { item: 'Vespium Wire', quantityDisplay: '100' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.07 Forgie Output'],
+  },
+  // 147
+  {
+    id: 147,
+    minOrders: 0,
+    requiredOrderIds: [],
+    resources: [],
+    actions: [],
+    npc: 'Bhramari',
+    completion: {
+      resources: [
+        { item: 'Low Grade Gel', quantityDisplay: '30.00k' },
+        { item: 'Vespium Wire', quantityDisplay: '1000' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.089 Forgie Output'],
+  },
+  // 149
+  {
+    id: 149,
+    minOrders: 0,
+    requiredOrderIds: [],
+    resources: [],
+    actions: [],
+    npc: 'Samos Sula',
+    completion: {
+      resources: [{ item: 'Vespium Wire', quantityDisplay: '8888' }],
+      actions: [],
+    },
+    rewards: ['x1.04 All Rig Yield', '/2 Rig Cost'],
+  },
+  // 150
+  {
+    id: 150,
+    minOrders: 0,
+    requiredOrderIds: [],
+    resources: [],
+    actions: [],
+    npc: 'Donathan Creel',
+    completion: {
+      resources: [
+        { item: 'Industrial Bit', quantityDisplay: '10.00m' },
+        { item: 'Silicate Concrete', quantityDisplay: '10.00m' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.05 Craftable Sell Price', 'x1.05 Credits'],
+  },
+  // 153
+  {
+    id: 153,
+    minOrders: 0,
+    requiredOrderIds: [],
+    resources: [],
+    actions: [],
+    npc: 'Samos Sula',
+    completion: {
+      resources: [{ item: 'Vespium Rod', quantityDisplay: '5.00m' }],
+      actions: [],
+    },
+    rewards: ['/4 Rig Cost'],
+  },
+  // 154
+  {
+    id: 154,
+    minOrders: 0,
+    requiredOrderIds: [],
+    resources: [],
+    actions: [],
+    npc: 'Donathan Creel',
+    completion: {
+      resources: [
+        { item: 'Industrial Bit', quantityDisplay: '35.00m' },
+        { item: 'Low Grade Gel', quantityDisplay: '62.50k' },
+        { item: 'Vespium Rod', quantityDisplay: '62.50k' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.04 EXP', 'x1.04 Vespium', 'x1.04 Tokenium'],
+  },
+  // 155
+  {
+    id: 155,
+    minOrders: 0,
+    requiredOrderIds: [],
+    resources: [],
+    actions: [],
+    npc: 'Donathan Creel',
+    completion: {
+      resources: [
+        { item: 'Silicate Concrete', quantityDisplay: '37.00m' },
+        { item: 'Silicate Glass', quantityDisplay: '500.00k' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.04 Tokenium', 'x1.06 Hydracite', 'x1.02 Scorchium'],
+  },
 ]
