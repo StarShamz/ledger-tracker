@@ -2051,8 +2051,15 @@ export const orders: Order[] = [
     requiredOrderIds: [71],
     resources: [{ item: 'Hydracite', quantityDisplay: '10.00m' }],
     actions: [{ type: 'endurance_synthesizer_potion', quantity: 30 }],
-    completion: { resources: [], actions: [] },
-    rewards: [],
+    npc: 'The Twins',
+    completion: {
+      resources: [
+        { item: 'Endurance Booster Potion', quantityDisplay: '2' },
+        { item: 'Hydracite', quantityDisplay: '50.00m' },
+      ],
+      actions: [],
+    },
+    rewards: ['+75 Max Stamina', '+10 Core'],
   },
   // 128
   {
