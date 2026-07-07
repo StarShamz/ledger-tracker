@@ -110,7 +110,7 @@ export const orders: Order[] = [
     id: 8,
     minOrders: 5,
     requiredOrderIds: [1],
-    resources: [{ item: 'Vespium', quantityDisplay: '500' }],
+    resources: [{ item: 'Vespium', quantityDisplay: null }],
     actions: [],
     npc: 'Gerbo',
     completion: {
@@ -223,7 +223,7 @@ export const orders: Order[] = [
     minOrders: 8,
     requiredOrderIds: [5],
     resources: [
-      { item: 'Tokenium Canister', quantityDisplay: '300' },
+      { item: 'Tokenium Canister', quantityDisplay: '100' },
       { item: 'Silicate Concrete', quantityDisplay: '10,000' },
     ],
     actions: [],
@@ -273,7 +273,7 @@ export const orders: Order[] = [
     id: 18,
     minOrders: 9,
     requiredOrderIds: [14],
-    resources: [{ item: 'Jade', quantityDisplay: '8,000' }],
+    resources: [{ item: 'Jade', quantityDisplay: '5,000' }],
     actions: [],
     npc: 'Minalima Lin',
     completion: {
@@ -313,9 +313,9 @@ export const orders: Order[] = [
   // 21
   {
     id: 21,
-    minOrders: 15,
+    minOrders: 14,
     requiredOrderIds: [18],
-    resources: [{ item: 'Jade', quantityDisplay: '20,000' }],
+    resources: [{ item: 'Jade', quantityDisplay: '15,000' }],
     actions: [],
     npc: 'Minalima Lin',
     completion: {
@@ -327,9 +327,9 @@ export const orders: Order[] = [
   // 22
   {
     id: 22,
-    minOrders: 16,
+    minOrders: 15,
     requiredOrderIds: [12],
-    resources: [{ item: 'Vespium', quantityDisplay: '40,000' }],
+    resources: [{ item: 'Vespium', quantityDisplay: '20,000' }],
     actions: [],
     completion: {
       resources: [{ item: 'Vespium', quantityDisplay: '185.00k' }],
@@ -340,11 +340,11 @@ export const orders: Order[] = [
   // 23
   {
     id: 23,
-    minOrders: 17,
+    minOrders: 16,
     requiredOrderIds: [10],
     resources: [
-      { item: 'Silicate Glass', quantityDisplay: '25' },
-      { item: 'Silicate Brick', quantityDisplay: '25' },
+      { item: 'Silicate Glass', quantityDisplay: null },
+      { item: 'Silicate Brick', quantityDisplay: null },
     ],
     actions: [],
     npc: 'Donathan Creel',
@@ -360,7 +360,7 @@ export const orders: Order[] = [
   // 24
   {
     id: 24,
-    minOrders: 17,
+    minOrders: 16,
     requiredOrderIds: [20],
     resources: [],
     actions: [{ type: 'chad_infusion', quantity: 15 }],
@@ -374,7 +374,7 @@ export const orders: Order[] = [
   // 25
   {
     id: 25,
-    minOrders: 17,
+    minOrders: 16,
     requiredOrderIds: [15],
     resources: [{ item: 'Vespium Frame', quantityDisplay: null }],
     actions: [],
@@ -392,9 +392,9 @@ export const orders: Order[] = [
   // 26
   {
     id: 26,
-    minOrders: 17,
+    minOrders: 16,
     requiredOrderIds: [16],
-    resources: [{ item: 'Silicate Concrete', quantityDisplay: '50,000' }],
+    resources: [{ item: 'Silicate Concrete', quantityDisplay: '20,000' }],
     actions: [],
     npc: 'Clank',
     completion: {
@@ -406,9 +406,9 @@ export const orders: Order[] = [
   // 27
   {
     id: 27,
-    minOrders: 16,
+    minOrders: 15,
     requiredOrderIds: [13],
-    resources: [{ item: 'Vespium Ingot', quantityDisplay: '10,000' }],
+    resources: [{ item: 'Vespium Ingot', quantityDisplay: '5,000' }],
     actions: [],
     npc: 'Tank Timmerson',
     completion: {
@@ -494,7 +494,7 @@ export const orders: Order[] = [
   // 33
   {
     id: 33,
-    minOrders: 25,
+    minOrders: 24,
     requiredOrderIds: [22],
     resources: [
       { item: 'Vespium', quantityDisplay: '1 billion' },
@@ -513,7 +513,7 @@ export const orders: Order[] = [
   // 34
   {
     id: 34,
-    minOrders: 26,
+    minOrders: 25,
     requiredOrderIds: [],
     resources: [],
     actions: [{ type: 'endurance_synthesizer_potion', quantity: 1 }],
@@ -527,7 +527,7 @@ export const orders: Order[] = [
   // 35
   {
     id: 35,
-    minOrders: 26,
+    minOrders: 25,
     requiredOrderIds: [21],
     resources: [{ item: 'Jade', quantityDisplay: '200,000' }],
     actions: [],
@@ -541,7 +541,7 @@ export const orders: Order[] = [
   // 36
   {
     id: 36,
-    minOrders: 27,
+    minOrders: 26,
     requiredOrderIds: [35],
     resources: [{ item: 'Jade', quantityDisplay: '10 million' }],
     actions: [],
@@ -555,7 +555,7 @@ export const orders: Order[] = [
   // 37
   {
     id: 37,
-    minOrders: 28,
+    minOrders: 27,
     requiredOrderIds: [34],
     resources: [],
     actions: [{ type: 'endurance_synthesizer_potion', quantity: 4 }],
@@ -568,7 +568,7 @@ export const orders: Order[] = [
   // 38
   {
     id: 38,
-    minOrders: 29,
+    minOrders: 28,
     requiredOrderIds: [13],
     resources: [{ item: 'Vespium Ingot', quantityDisplay: '60,000' }],
     actions: [],
@@ -582,7 +582,7 @@ export const orders: Order[] = [
   // 39
   {
     id: 39,
-    minOrders: 30,
+    minOrders: 29,
     requiredOrderIds: [26],
     resources: [{ item: 'Silicate Brick', quantityDisplay: '6,000' }],
     actions: [],
@@ -596,7 +596,7 @@ export const orders: Order[] = [
   // 40
   {
     id: 40,
-    minOrders: 31,
+    minOrders: 30,
     requiredOrderIds: [36],
     resources: [{ item: 'Jade', quantityDisplay: '100 million' }],
     actions: [],
@@ -610,7 +610,7 @@ export const orders: Order[] = [
   // 41
   {
     id: 41,
-    minOrders: 32,
+    minOrders: 31,
     requiredOrderIds: [37],
     resources: [],
     actions: [{ type: 'endurance_synthesizer_potion', quantity: 8 }],
@@ -628,7 +628,7 @@ export const orders: Order[] = [
   // 42
   {
     id: 42,
-    minOrders: 33,
+    minOrders: 32,
     requiredOrderIds: [32],
     resources: [],
     actions: [{ type: 'chad_infusion', quantity: 31 }],
@@ -734,7 +734,7 @@ export const orders: Order[] = [
   // 48
   {
     id: 48,
-    minOrders: 39,
+    minOrders: 38,
     requiredOrderIds: [25],
     resources: [{ item: 'Vespium Frame', quantityDisplay: '1,500' }],
     actions: [],
@@ -752,7 +752,7 @@ export const orders: Order[] = [
   // 49
   {
     id: 49,
-    minOrders: 40,
+    minOrders: 39,
     requiredOrderIds: [41],
     resources: [],
     actions: [{ type: 'endurance_synthesizer_potion', quantity: 14 }],
@@ -770,7 +770,7 @@ export const orders: Order[] = [
   // 50
   {
     id: 50,
-    minOrders: 41,
+    minOrders: 40,
     requiredOrderIds: [45],
     resources: [{ item: 'Jade', quantityDisplay: '10 billion' }],
     actions: [],
@@ -783,7 +783,7 @@ export const orders: Order[] = [
   // 51
   {
     id: 51,
-    minOrders: 42,
+    minOrders: 41,
     requiredOrderIds: [42],
     resources: [],
     actions: [{ type: 'chad_infusion', quantity: 35 }],
@@ -796,7 +796,7 @@ export const orders: Order[] = [
   // 52
   {
     id: 52,
-    minOrders: 49,
+    minOrders: 48,
     requiredOrderIds: [51],
     resources: [],
     actions: [{ type: 'chad_infusion', quantity: 39 }],
@@ -809,7 +809,7 @@ export const orders: Order[] = [
   // 53
   {
     id: 53,
-    minOrders: 42,
+    minOrders: 41,
     requiredOrderIds: [29],
     resources: [
       { item: 'Vespium Frame', quantityDisplay: '1,000' },
@@ -833,7 +833,7 @@ export const orders: Order[] = [
   // 54
   {
     id: 54,
-    minOrders: 43,
+    minOrders: 42,
     requiredOrderIds: [39],
     resources: [{ item: 'Industrial Bit', quantityDisplay: '4 million' }],
     actions: [],
@@ -847,7 +847,7 @@ export const orders: Order[] = [
   // 55
   {
     id: 55,
-    minOrders: 43,
+    minOrders: 42,
     requiredOrderIds: [33],
     resources: [
       { item: 'Worthless Rock', quantityDisplay: '10²²' },
@@ -867,7 +867,7 @@ export const orders: Order[] = [
   // 56
   {
     id: 56,
-    minOrders: 31,
+    minOrders: 30,
     requiredOrderIds: [46],
     resources: [{ item: 'Vespium Wire', quantityDisplay: null }],
     actions: [],
@@ -881,7 +881,7 @@ export const orders: Order[] = [
   // 57
   {
     id: 57,
-    minOrders: 44,
+    minOrders: 43,
     requiredOrderIds: [28],
     resources: [{ item: 'Low Grade Gel', quantityDisplay: null }],
     actions: [],
@@ -915,7 +915,7 @@ export const orders: Order[] = [
   // 59
   {
     id: 59,
-    minOrders: 31,
+    minOrders: 30,
     requiredOrderIds: [58],
     resources: [
       { item: 'Hydracite', quantityDisplay: '50' },
@@ -935,7 +935,7 @@ export const orders: Order[] = [
   // 60
   {
     id: 60,
-    minOrders: 37,
+    minOrders: 36,
     requiredOrderIds: [59],
     resources: [
       { item: 'Hydracite', quantityDisplay: '100' },
@@ -955,7 +955,7 @@ export const orders: Order[] = [
   // 61
   {
     id: 61,
-    minOrders: 42,
+    minOrders: 41,
     requiredOrderIds: [60],
     resources: [
       { item: 'Hydracite', quantityDisplay: '3,000' },
@@ -974,7 +974,7 @@ export const orders: Order[] = [
   // 62
   {
     id: 62,
-    minOrders: 45,
+    minOrders: 44,
     requiredOrderIds: [61],
     resources: [
       { item: 'Hydracite', quantityDisplay: '10,000' },
@@ -994,7 +994,7 @@ export const orders: Order[] = [
   // 63
   {
     id: 63,
-    minOrders: 50,
+    minOrders: 49,
     requiredOrderIds: [62],
     resources: [
       { item: 'Hydracite', quantityDisplay: '40,000' },
@@ -1014,7 +1014,7 @@ export const orders: Order[] = [
   // 64
   {
     id: 64,
-    minOrders: 53,
+    minOrders: 52,
     requiredOrderIds: [48],
     resources: [
       { item: 'Industrial Bit', quantityDisplay: '2 million' },
@@ -1036,7 +1036,7 @@ export const orders: Order[] = [
   // 65
   {
     id: 65,
-    minOrders: 55,
+    minOrders: 54,
     requiredOrderIds: [48],
     resources: [
       { item: 'Silicate Glass', quantityDisplay: '100,000' },
@@ -1058,7 +1058,7 @@ export const orders: Order[] = [
   // 66
   {
     id: 66,
-    minOrders: 66,
+    minOrders: 65,
     requiredOrderIds: [52],
     resources: [],
     actions: [{ type: 'chad_infusion', quantity: 43 }],
@@ -1071,7 +1071,7 @@ export const orders: Order[] = [
   // 67
   {
     id: 67,
-    minOrders: 71,
+    minOrders: 70,
     requiredOrderIds: [66],
     resources: [],
     actions: [{ type: 'chad_infusion', quantity: 47 }],
@@ -1084,7 +1084,7 @@ export const orders: Order[] = [
   // 68
   {
     id: 68,
-    minOrders: 56,
+    minOrders: 55,
     requiredOrderIds: [55],
     resources: [
       { item: 'Worthless Rock', quantityDisplay: '10²⁵' },
@@ -1104,7 +1104,7 @@ export const orders: Order[] = [
   // 69
   {
     id: 69,
-    minOrders: 58,
+    minOrders: 57,
     requiredOrderIds: [68],
     resources: [
       { item: 'Worthless Rock', quantityDisplay: '10²⁸' },
@@ -1124,7 +1124,7 @@ export const orders: Order[] = [
   // 70
   {
     id: 70,
-    minOrders: 60,
+    minOrders: 59,
     requiredOrderIds: [69],
     resources: [
       { item: 'Worthless Rock', quantityDisplay: '10²⁹' },
@@ -1143,7 +1143,7 @@ export const orders: Order[] = [
   // 71
   {
     id: 71,
-    minOrders: 62,
+    minOrders: 61,
     requiredOrderIds: [49],
     resources: [],
     actions: [{ type: 'endurance_synthesizer_potion', quantity: 21 }],
@@ -1161,7 +1161,7 @@ export const orders: Order[] = [
   // 72
   {
     id: 72,
-    minOrders: 56,
+    minOrders: 55,
     requiredOrderIds: [45],
     resources: [{ item: 'Jade', quantityDisplay: '60 billion' }],
     actions: [],
@@ -1174,7 +1174,7 @@ export const orders: Order[] = [
   // 73
   {
     id: 73,
-    minOrders: 63,
+    minOrders: 62,
     requiredOrderIds: [72],
     resources: [{ item: 'Jade', quantityDisplay: '400 billion' }],
     actions: [],
@@ -1187,7 +1187,7 @@ export const orders: Order[] = [
   // 74
   {
     id: 74,
-    minOrders: 66,
+    minOrders: 65,
     requiredOrderIds: [73],
     resources: [{ item: 'Jade', quantityDisplay: '1 trillion' }],
     actions: [],
@@ -1201,7 +1201,7 @@ export const orders: Order[] = [
   // 75
   {
     id: 75,
-    minOrders: 71,
+    minOrders: 70,
     requiredOrderIds: [74],
     resources: [{ item: 'Jade', quantityDisplay: '5 trillion' }],
     actions: [],
@@ -1214,7 +1214,7 @@ export const orders: Order[] = [
   // 76
   {
     id: 76,
-    minOrders: 51,
+    minOrders: 50,
     requiredOrderIds: [38],
     resources: [{ item: 'Vespium Ingot', quantityDisplay: '1 million' }],
     actions: [],
@@ -1227,7 +1227,7 @@ export const orders: Order[] = [
   // 77
   {
     id: 77,
-    minOrders: 56,
+    minOrders: 55,
     requiredOrderIds: [76],
     resources: [{ item: 'Vespium Ingot', quantityDisplay: '5 million' }],
     actions: [],
@@ -1241,7 +1241,7 @@ export const orders: Order[] = [
   // 78
   {
     id: 78,
-    minOrders: 63,
+    minOrders: 62,
     requiredOrderIds: [77],
     resources: [{ item: 'Vespium Ingot', quantityDisplay: '10 million' }],
     actions: [],
@@ -1255,7 +1255,7 @@ export const orders: Order[] = [
   // 79
   {
     id: 79,
-    minOrders: 71,
+    minOrders: 70,
     requiredOrderIds: [78],
     resources: [{ item: 'Vespium Ingot', quantityDisplay: '20 million' }],
     actions: [],
@@ -1268,7 +1268,7 @@ export const orders: Order[] = [
   // 80
   {
     id: 80,
-    minOrders: 73,
+    minOrders: 72,
     requiredOrderIds: [79],
     resources: [{ item: 'Vespium Ingot', quantityDisplay: '50 million' }],
     actions: [],
@@ -1281,7 +1281,7 @@ export const orders: Order[] = [
   // 81
   {
     id: 81,
-    minOrders: 75,
+    minOrders: 74,
     requiredOrderIds: [80],
     resources: [{ item: 'Vespium Ingot', quantityDisplay: '200 million' }],
     actions: [],
@@ -1295,7 +1295,7 @@ export const orders: Order[] = [
   // 82
   {
     id: 82,
-    minOrders: 47,
+    minOrders: 46,
     requiredOrderIds: [43],
     resources: [
       { item: 'Silicate Brick', quantityDisplay: '10,000' },
@@ -1316,7 +1316,7 @@ export const orders: Order[] = [
   // 83
   {
     id: 83,
-    minOrders: 53,
+    minOrders: 52,
     requiredOrderIds: [82],
     resources: [
       { item: 'Silicate Brick', quantityDisplay: '50,000' },
@@ -1338,7 +1338,7 @@ export const orders: Order[] = [
   // 84
   {
     id: 84,
-    minOrders: 53,
+    minOrders: 52,
     requiredOrderIds: [83],
     resources: [
       { item: 'Silicate Brick', quantityDisplay: '100,000' },
@@ -1360,7 +1360,7 @@ export const orders: Order[] = [
   // 85
   {
     id: 85,
-    minOrders: 61,
+    minOrders: 60,
     requiredOrderIds: [84],
     resources: [
       { item: 'Silicate Brick', quantityDisplay: '300,000' },
@@ -1382,7 +1382,7 @@ export const orders: Order[] = [
   // 86
   {
     id: 86,
-    minOrders: 65,
+    minOrders: 64,
     requiredOrderIds: [85],
     resources: [
       { item: 'Silicate Brick', quantityDisplay: '500,000' },
@@ -1404,7 +1404,7 @@ export const orders: Order[] = [
   // 87
   {
     id: 87,
-    minOrders: 69,
+    minOrders: 68,
     requiredOrderIds: [86],
     resources: [
       { item: 'Silicate Brick', quantityDisplay: '800,000' },
@@ -1426,7 +1426,7 @@ export const orders: Order[] = [
   // 88
   {
     id: 88,
-    minOrders: 73,
+    minOrders: 72,
     requiredOrderIds: [87],
     resources: [
       { item: 'Silicate Brick', quantityDisplay: '2 million' },
@@ -1448,7 +1448,7 @@ export const orders: Order[] = [
   // 89
   {
     id: 89,
-    minOrders: 77,
+    minOrders: 76,
     requiredOrderIds: [88],
     resources: [
       { item: 'Silicate Brick', quantityDisplay: '5 million' },
@@ -1469,7 +1469,7 @@ export const orders: Order[] = [
   // 90
   {
     id: 90,
-    minOrders: 81,
+    minOrders: 80,
     requiredOrderIds: [89],
     resources: [
       { item: 'Silicate Brick', quantityDisplay: '10 million' },
@@ -1490,7 +1490,7 @@ export const orders: Order[] = [
   // 91
   {
     id: 91,
-    minOrders: 57,
+    minOrders: 56,
     requiredOrderIds: [54],
     resources: [{ item: 'Silicate Concrete', quantityDisplay: '10 million' }],
     actions: [],
@@ -1504,7 +1504,7 @@ export const orders: Order[] = [
   // 92
   {
     id: 92,
-    minOrders: 66,
+    minOrders: 65,
     requiredOrderIds: [91],
     resources: [{ item: 'Low Grade Gel', quantityDisplay: null }],
     actions: [],
@@ -1518,7 +1518,7 @@ export const orders: Order[] = [
   // 93
   {
     id: 93,
-    minOrders: 71,
+    minOrders: 70,
     requiredOrderIds: [92],
     resources: [{ item: 'Low Grade Gel', quantityDisplay: '500' }],
     actions: [],
@@ -1532,7 +1532,7 @@ export const orders: Order[] = [
   // 94
   {
     id: 94,
-    minOrders: 76,
+    minOrders: 75,
     requiredOrderIds: [93],
     resources: [{ item: 'Low Grade Gel', quantityDisplay: '500' }],
     actions: [],
@@ -1545,7 +1545,7 @@ export const orders: Order[] = [
   // 95
   {
     id: 95,
-    minOrders: 81,
+    minOrders: 80,
     requiredOrderIds: [94],
     resources: [{ item: 'Low Grade Gel', quantityDisplay: '1,000' }],
     actions: [],
@@ -1558,7 +1558,7 @@ export const orders: Order[] = [
   // 96
   {
     id: 96,
-    minOrders: 86,
+    minOrders: 85,
     requiredOrderIds: [95],
     resources: [{ item: 'Low Grade Gel', quantityDisplay: '2,000' }],
     actions: [],
@@ -1571,7 +1571,7 @@ export const orders: Order[] = [
   // 97
   {
     id: 97,
-    minOrders: 91,
+    minOrders: 90,
     requiredOrderIds: [96],
     resources: [{ item: 'Low Grade Gel', quantityDisplay: '10,000' }],
     actions: [],
@@ -1585,7 +1585,7 @@ export const orders: Order[] = [
   // 98
   {
     id: 98,
-    minOrders: 58,
+    minOrders: 57,
     requiredOrderIds: [63],
     resources: [
       { item: 'Hydracite', quantityDisplay: '100,000' },
@@ -1604,7 +1604,7 @@ export const orders: Order[] = [
   // 99
   {
     id: 99,
-    minOrders: 61,
+    minOrders: 60,
     requiredOrderIds: [98],
     resources: [
       { item: 'Hydracite', quantityDisplay: '400,000' },
@@ -1623,7 +1623,7 @@ export const orders: Order[] = [
   // 100
   {
     id: 100,
-    minOrders: 64,
+    minOrders: 63,
     requiredOrderIds: [99],
     resources: [
       { item: 'Hydracite', quantityDisplay: '1 million' },
@@ -1642,7 +1642,7 @@ export const orders: Order[] = [
   // 101
   {
     id: 101,
-    minOrders: 67,
+    minOrders: 66,
     requiredOrderIds: [100],
     resources: [
       { item: 'Hydracite', quantityDisplay: '3 million' },
@@ -1661,7 +1661,7 @@ export const orders: Order[] = [
   // 102
   {
     id: 102,
-    minOrders: 70,
+    minOrders: 69,
     requiredOrderIds: [101],
     resources: [
       { item: 'Hydracite', quantityDisplay: '7 million' },
@@ -1681,7 +1681,7 @@ export const orders: Order[] = [
   // 103
   {
     id: 103,
-    minOrders: 73,
+    minOrders: 72,
     requiredOrderIds: [102],
     resources: [
       { item: 'Hydracite', quantityDisplay: '20 million' },
@@ -1700,7 +1700,7 @@ export const orders: Order[] = [
   // 104
   {
     id: 104,
-    minOrders: 76,
+    minOrders: 75,
     requiredOrderIds: [103],
     resources: [{ item: 'Hydracite', quantityDisplay: '100 million' }],
     actions: [],
@@ -1713,7 +1713,7 @@ export const orders: Order[] = [
   // 105
   {
     id: 105,
-    minOrders: 76,
+    minOrders: 75,
     requiredOrderIds: [103],
     resources: [{ item: 'Scorchium', quantityDisplay: '100 million' }],
     actions: [],
@@ -1726,7 +1726,7 @@ export const orders: Order[] = [
   // 106
   {
     id: 106,
-    minOrders: 73,
+    minOrders: 72,
     requiredOrderIds: [102],
     resources: [
       { item: 'Hydracite', quantityDisplay: '500 million' },
@@ -1746,7 +1746,7 @@ export const orders: Order[] = [
   // 107
   {
     id: 107,
-    minOrders: 76,
+    minOrders: 75,
     requiredOrderIds: [102],
     resources: [
       { item: 'Hydracite', quantityDisplay: '3 billion' },
@@ -1766,7 +1766,7 @@ export const orders: Order[] = [
   // 108
   {
     id: 108,
-    minOrders: 45,
+    minOrders: 44,
     requiredOrderIds: [53],
     resources: [{ item: 'Vespium Plate', quantityDisplay: '50,000' }],
     actions: [],
@@ -1779,7 +1779,7 @@ export const orders: Order[] = [
   // 109
   {
     id: 109,
-    minOrders: 51,
+    minOrders: 50,
     requiredOrderIds: [108],
     resources: [{ item: 'Vespium Rod', quantityDisplay: '50,000' }],
     actions: [],
@@ -1792,7 +1792,7 @@ export const orders: Order[] = [
   // 110
   {
     id: 110,
-    minOrders: 60,
+    minOrders: 59,
     requiredOrderIds: [109],
     resources: [{ item: 'Vespium Frame', quantityDisplay: '1,000' }],
     actions: [],
@@ -1806,7 +1806,7 @@ export const orders: Order[] = [
   // 111
   {
     id: 111,
-    minOrders: 64,
+    minOrders: 63,
     requiredOrderIds: [110],
     resources: [{ item: 'Vespium Plate', quantityDisplay: '100,000' }],
     actions: [],
@@ -1820,7 +1820,7 @@ export const orders: Order[] = [
   // 112
   {
     id: 112,
-    minOrders: 68,
+    minOrders: 67,
     requiredOrderIds: [111],
     resources: [{ item: 'Vespium Rod', quantityDisplay: '100,000' }],
     actions: [],
@@ -1834,7 +1834,7 @@ export const orders: Order[] = [
   // 113
   {
     id: 113,
-    minOrders: 76,
+    minOrders: 75,
     requiredOrderIds: [112],
     resources: [{ item: 'Vespium Frame', quantityDisplay: '10,000' }],
     actions: [],
@@ -1847,7 +1847,7 @@ export const orders: Order[] = [
   // 114
   {
     id: 114,
-    minOrders: 81,
+    minOrders: 80,
     requiredOrderIds: [113],
     resources: [{ item: 'Vespium Frame', quantityDisplay: '100,000' }],
     actions: [],
@@ -1865,7 +1865,7 @@ export const orders: Order[] = [
   // 115
   {
     id: 115,
-    minOrders: 62,
+    minOrders: 61,
     requiredOrderIds: [65],
     resources: [
       { item: 'Industrial Bit', quantityDisplay: '100,000' },
@@ -1885,7 +1885,7 @@ export const orders: Order[] = [
   // 116
   {
     id: 116,
-    minOrders: 64,
+    minOrders: 63,
     requiredOrderIds: [115],
     resources: [{ item: 'Vespium Wire', quantityDisplay: '500' }],
     actions: [],
@@ -1898,7 +1898,7 @@ export const orders: Order[] = [
   // 117
   {
     id: 117,
-    minOrders: 67,
+    minOrders: 66,
     requiredOrderIds: [116],
     resources: [
       { item: 'Vespium Wire', quantityDisplay: '1,000' },
@@ -1917,7 +1917,7 @@ export const orders: Order[] = [
   // 118
   {
     id: 118,
-    minOrders: 71,
+    minOrders: 70,
     requiredOrderIds: [117],
     resources: [{ item: 'Vespium Wire', quantityDisplay: '1,000' }],
     actions: [],
@@ -1928,12 +1928,22 @@ export const orders: Order[] = [
     },
     rewards: ['x1.1 Tokenium Canister', '+20% Crafting Speed', '+15% Rig Speed'],
   },
+  // 119
+  {
+    id: 119,
+    minOrders: 100,
+    requiredOrderIds: [70],
+    resources: [{ item: 'Vespium', quantityDisplay: '500.00sx' }],
+    actions: [],
+    completion: { resources: [], actions: [] },
+    rewards: [],
+  },
   // 120
   {
     id: 120,
-    minOrders: 0,
-    requiredOrderIds: [],
-    resources: [],
+    minOrders: 104,
+    requiredOrderIds: [119],
+    resources: [{ item: 'Worthless Rock', quantityDisplay: '5e38' }],
     actions: [],
     npc: 'Gerbo',
     completion: {
@@ -1945,9 +1955,9 @@ export const orders: Order[] = [
   // 121
   {
     id: 121,
-    minOrders: 0,
-    requiredOrderIds: [],
-    resources: [],
+    minOrders: 106,
+    requiredOrderIds: [120],
+    resources: [{ item: 'Vespium', quantityDisplay: '50.00sp' }],
     actions: [],
     npc: 'Gerbo',
     completion: {
@@ -1959,9 +1969,12 @@ export const orders: Order[] = [
   // 122
   {
     id: 122,
-    minOrders: 0,
-    requiredOrderIds: [],
-    resources: [],
+    minOrders: 112,
+    requiredOrderIds: [121],
+    resources: [
+      { item: 'Vespium', quantityDisplay: '20.00o' },
+      { item: 'Worthless Rock', quantityDisplay: '5e40' },
+    ],
     actions: [],
     npc: 'Gerbo',
     completion: {
@@ -1976,9 +1989,12 @@ export const orders: Order[] = [
   // 123
   {
     id: 123,
-    minOrders: 0,
-    requiredOrderIds: [],
-    resources: [],
+    minOrders: 105,
+    requiredOrderIds: [118],
+    resources: [
+      { item: 'Hydracite', quantityDisplay: '100.00m' },
+      { item: 'Low Grade Gel', quantityDisplay: '60.00k' },
+    ],
     actions: [],
     npc: 'Gama Kamalon',
     completion: {
@@ -1993,9 +2009,9 @@ export const orders: Order[] = [
   // 124
   {
     id: 124,
-    minOrders: 0,
-    requiredOrderIds: [],
-    resources: [],
+    minOrders: 103,
+    requiredOrderIds: [75],
+    resources: [{ item: 'Jade', quantityDisplay: '70.00t' }],
     actions: [],
     npc: 'Minalima Lin',
     completion: {
@@ -2007,9 +2023,9 @@ export const orders: Order[] = [
   // 125
   {
     id: 125,
-    minOrders: 0,
-    requiredOrderIds: [],
-    resources: [],
+    minOrders: 112,
+    requiredOrderIds: [124],
+    resources: [{ item: 'Jade', quantityDisplay: '700.00t' }],
     actions: [],
     npc: 'Minalima Lin',
     completion: {
@@ -2018,13 +2034,33 @@ export const orders: Order[] = [
     },
     rewards: ['x1.1 All Rig Yield'],
   },
+  // 126
+  {
+    id: 126,
+    minOrders: 120,
+    requiredOrderIds: [125],
+    resources: [{ item: 'Jade', quantityDisplay: '7.00qa' }],
+    actions: [],
+    completion: { resources: [], actions: [] },
+    rewards: [],
+  },
+  // 127
+  {
+    id: 127,
+    minOrders: 88,
+    requiredOrderIds: [71],
+    resources: [{ item: 'Hydracite', quantityDisplay: '10.00m' }],
+    actions: [{ type: 'endurance_synthesizer_potion', quantity: 30 }],
+    completion: { resources: [], actions: [] },
+    rewards: [],
+  },
   // 128
   {
     id: 128,
-    minOrders: 0,
-    requiredOrderIds: [],
-    resources: [],
-    actions: [],
+    minOrders: 94,
+    requiredOrderIds: [127],
+    resources: [{ item: 'Scorchium', quantityDisplay: '20.00m' }],
+    actions: [{ type: 'endurance_synthesizer_potion', quantity: 36 }],
     npc: 'Eidelaine Eeko',
     completion: {
       resources: [
@@ -2038,10 +2074,10 @@ export const orders: Order[] = [
   // 129
   {
     id: 129,
-    minOrders: 0,
-    requiredOrderIds: [],
+    minOrders: 130,
+    requiredOrderIds: [67],
     resources: [],
-    actions: [],
+    actions: [{ type: 'chad_infusion', quantity: 53 }],
     npc: 'The Ether Hoarder',
     completion: {
       resources: [{ item: 'Ether', quantityDisplay: '272' }],
@@ -2049,12 +2085,85 @@ export const orders: Order[] = [
     },
     rewards: ['+1 Attribute Point', '+2% Critical Power'],
   },
+  // 130
+  {
+    id: 130,
+    minOrders: 142,
+    requiredOrderIds: [129],
+    resources: [],
+    actions: [{ type: 'chad_infusion', quantity: 65 }],
+    completion: { resources: [], actions: [] },
+    rewards: [],
+  },
+  // 131
+  {
+    id: 131,
+    minOrders: 128,
+    requiredOrderIds: [126],
+    resources: [{ item: 'Jade', quantityDisplay: '70.00qa' }],
+    actions: [],
+    completion: { resources: [], actions: [] },
+    rewards: [],
+  },
+  // 132
+  {
+    id: 132,
+    minOrders: 133,
+    requiredOrderIds: [131],
+    resources: [{ item: 'Jade', quantityDisplay: '700.00qa' }],
+    actions: [],
+    completion: { resources: [], actions: [] },
+    rewards: [],
+  },
+  // 133
+  {
+    id: 133,
+    minOrders: 112,
+    requiredOrderIds: [123],
+    resources: [{ item: 'Scorchium', quantityDisplay: '500.00m' }],
+    actions: [],
+    completion: { resources: [], actions: [] },
+    rewards: [],
+  },
+  // 134
+  {
+    id: 134,
+    minOrders: 102,
+    requiredOrderIds: [128],
+    resources: [],
+    actions: [{ type: 'endurance_synthesizer_potion', quantity: 50 }],
+    completion: { resources: [], actions: [] },
+    rewards: [],
+  },
+  // 135
+  {
+    id: 135,
+    minOrders: 125,
+    requiredOrderIds: [134],
+    resources: [],
+    actions: [{ type: 'endurance_synthesizer_potion', quantity: 70 }],
+    completion: { resources: [], actions: [] },
+    rewards: [],
+  },
+  // 136
+  {
+    id: 136,
+    minOrders: 134,
+    requiredOrderIds: [135],
+    resources: [],
+    actions: [{ type: 'endurance_synthesizer_potion', quantity: 100 }],
+    completion: { resources: [], actions: [] },
+    rewards: [],
+  },
   // 137
   {
     id: 137,
-    minOrders: 0,
-    requiredOrderIds: [],
-    resources: [],
+    minOrders: 88,
+    requiredOrderIds: [114],
+    resources: [
+      { item: 'Vespium Frame', quantityDisplay: '100.00k' },
+      { item: 'Vespium Wire', quantityDisplay: '1.00k' },
+    ],
     actions: [],
     npc: 'Puri Puri',
     completion: {
@@ -2069,9 +2178,12 @@ export const orders: Order[] = [
   // 138
   {
     id: 138,
-    minOrders: 0,
-    requiredOrderIds: [],
-    resources: [],
+    minOrders: 101,
+    requiredOrderIds: [137],
+    resources: [
+      { item: 'Silicate Glass', quantityDisplay: '100.00k' },
+      { item: 'Vespium Wire', quantityDisplay: '1.00k' },
+    ],
     actions: [],
     npc: 'Puri Puri',
     completion: {
@@ -2086,9 +2198,9 @@ export const orders: Order[] = [
   // 139
   {
     id: 139,
-    minOrders: 0,
-    requiredOrderIds: [],
-    resources: [],
+    minOrders: 116,
+    requiredOrderIds: [138],
+    resources: [{ item: 'Vespium Frame', quantityDisplay: '300.00k' }],
     actions: [],
     npc: 'Puri Puri',
     completion: {
@@ -2097,11 +2209,21 @@ export const orders: Order[] = [
     },
     rewards: ['+15% Crafting Speed', 'x1.15 All Rig Yield'],
   },
+  // 140
+  {
+    id: 140,
+    minOrders: 130,
+    requiredOrderIds: [139],
+    resources: [{ item: 'Vespium Frame', quantityDisplay: '800.00k' }],
+    actions: [],
+    completion: { resources: [], actions: [] },
+    rewards: [],
+  },
   // 141
   {
     id: 141,
-    minOrders: 0,
-    requiredOrderIds: [],
+    minOrders: 94,
+    requiredOrderIds: [81],
     resources: [],
     actions: [],
     npc: 'Tank Timmerson',
@@ -2117,8 +2239,8 @@ export const orders: Order[] = [
   // 142
   {
     id: 142,
-    minOrders: 0,
-    requiredOrderIds: [],
+    minOrders: 108,
+    requiredOrderIds: [141],
     resources: [],
     actions: [],
     npc: 'Tank Timmerson',
@@ -2131,11 +2253,21 @@ export const orders: Order[] = [
     },
     rewards: ['x1.05 Craftable Sell Price', 'x1.05 All Rig Yield'],
   },
+  // 143
+  {
+    id: 143,
+    minOrders: 120,
+    requiredOrderIds: [142],
+    resources: [],
+    actions: [],
+    completion: { resources: [], actions: [] },
+    rewards: [],
+  },
   // 144
   {
     id: 144,
-    minOrders: 0,
-    requiredOrderIds: [],
+    minOrders: 136,
+    requiredOrderIds: [143],
     resources: [],
     actions: [],
     npc: 'Tank Timmerson',
@@ -2148,9 +2280,12 @@ export const orders: Order[] = [
   // 145
   {
     id: 145,
-    minOrders: 0,
-    requiredOrderIds: [],
-    resources: [],
+    minOrders: 60,
+    requiredOrderIds: [57],
+    resources: [
+      { item: 'Low Grade Gel', quantityDisplay: '100' },
+      { item: 'Vespium Wire', quantityDisplay: null },
+    ],
     actions: [],
     npc: 'Bhramari',
     completion: {
@@ -2165,8 +2300,8 @@ export const orders: Order[] = [
   // 146
   {
     id: 146,
-    minOrders: 0,
-    requiredOrderIds: [],
+    minOrders: 82,
+    requiredOrderIds: [145],
     resources: [],
     actions: [],
     npc: 'Bhramari',
@@ -2182,8 +2317,8 @@ export const orders: Order[] = [
   // 147
   {
     id: 147,
-    minOrders: 0,
-    requiredOrderIds: [],
+    minOrders: 102,
+    requiredOrderIds: [146],
     resources: [],
     actions: [],
     npc: 'Bhramari',
@@ -2196,11 +2331,21 @@ export const orders: Order[] = [
     },
     rewards: ['x1.089 Forgie Output'],
   },
+  // 148
+  {
+    id: 148,
+    minOrders: 129,
+    requiredOrderIds: [147],
+    resources: [],
+    actions: [],
+    completion: { resources: [], actions: [] },
+    rewards: [],
+  },
   // 149
   {
     id: 149,
-    minOrders: 0,
-    requiredOrderIds: [],
+    minOrders: 126,
+    requiredOrderIds: [56],
     resources: [],
     actions: [],
     npc: 'Samos Sula',
@@ -2213,8 +2358,8 @@ export const orders: Order[] = [
   // 150
   {
     id: 150,
-    minOrders: 0,
-    requiredOrderIds: [],
+    minOrders: 115,
+    requiredOrderIds: [47],
     resources: [],
     actions: [],
     npc: 'Donathan Creel',
@@ -2227,11 +2372,31 @@ export const orders: Order[] = [
     },
     rewards: ['x1.05 Craftable Sell Price', 'x1.05 Credits'],
   },
+  // 151
+  {
+    id: 151,
+    minOrders: 128,
+    requiredOrderIds: [150],
+    resources: [],
+    actions: [],
+    completion: { resources: [], actions: [] },
+    rewards: [],
+  },
+  // 152
+  {
+    id: 152,
+    minOrders: 146,
+    requiredOrderIds: [97],
+    resources: [],
+    actions: [],
+    completion: { resources: [], actions: [] },
+    rewards: [],
+  },
   // 153
   {
     id: 153,
-    minOrders: 0,
-    requiredOrderIds: [],
+    minOrders: 135,
+    requiredOrderIds: [149],
     resources: [],
     actions: [],
     npc: 'Samos Sula',
@@ -2244,8 +2409,8 @@ export const orders: Order[] = [
   // 154
   {
     id: 154,
-    minOrders: 0,
-    requiredOrderIds: [],
+    minOrders: 133,
+    requiredOrderIds: [151],
     resources: [],
     actions: [],
     npc: 'Donathan Creel',
@@ -2262,8 +2427,8 @@ export const orders: Order[] = [
   // 155
   {
     id: 155,
-    minOrders: 0,
-    requiredOrderIds: [],
+    minOrders: 137,
+    requiredOrderIds: [154],
     resources: [],
     actions: [],
     npc: 'Donathan Creel',
