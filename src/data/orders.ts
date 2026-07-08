@@ -2109,8 +2109,12 @@ export const orders: Order[] = [
     requiredOrderIds: [126],
     resources: [{ item: 'Jade', quantityDisplay: '70.00qa' }],
     actions: [],
-    completion: { resources: [], actions: [] },
-    rewards: [],
+    npc: 'Minalima Lin',
+    completion: {
+      resources: [{ item: 'Jade', quantityDisplay: '1.00qu' }],
+      actions: [],
+    },
+    rewards: ['+50 Core'],
   },
   // 132
   {
