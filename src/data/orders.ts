@@ -1935,8 +1935,16 @@ export const orders: Order[] = [
     requiredOrderIds: [70],
     resources: [{ item: 'Vespium', quantityDisplay: '500.00sx' }],
     actions: [],
-    completion: { resources: [], actions: [] },
-    rewards: [],
+    npc: 'Gerbo',
+    completion: {
+      resources: [
+        { item: 'Jade', quantityDisplay: '80.00t' },
+        { item: 'Vespium', quantityDisplay: '8.00sp' },
+        { item: 'Scorchium', quantityDisplay: '100.00m' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.05 Jade', 'x1.05 Vespium', 'x1.05 Scorchium'],
   },
   // 120
   {
