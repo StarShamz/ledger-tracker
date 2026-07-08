@@ -2223,8 +2223,17 @@ export const orders: Order[] = [
     requiredOrderIds: [139],
     resources: [{ item: 'Vespium Frame', quantityDisplay: '800.00k' }],
     actions: [],
-    completion: { resources: [], actions: [] },
-    rewards: [],
+    npc: 'Puri Puri',
+    completion: {
+      resources: [
+        { item: 'Vespium Plate', quantityDisplay: '1.00m' },
+        { item: 'Vespium Rod', quantityDisplay: '1.00m' },
+        { item: 'Vespium Frame', quantityDisplay: '125.00k' },
+        { item: 'Vespium Wire', quantityDisplay: '27.50k' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.3 Hydracite', 'x1.15 Scorchium', '+4% Crafter Duplication Chance'],
   },
   // 141
   {
