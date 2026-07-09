@@ -2059,7 +2059,7 @@ export const orders: Order[] = [
     requiredOrderIds: [71],
     resources: [{ item: 'Hydracite', quantityDisplay: '10.00m' }],
     actions: [{ type: 'endurance_synthesizer_potion', quantity: 30 }],
-    npc: 'The Twins',
+    npc: 'Eidelaine Eeko',
     completion: {
       resources: [
         { item: 'Endurance Booster Potion', quantityDisplay: '2' },
@@ -2262,7 +2262,7 @@ export const orders: Order[] = [
       ],
       actions: [],
     },
-    rewards: ['+2% Crafter Duplication Chance'],
+    rewards: ['+2% Crafter Duplication Chance', 'x1.04 Craftable Sell Price'],
   },
   // 142
   {
