@@ -2288,8 +2288,16 @@ export const orders: Order[] = [
     requiredOrderIds: [142],
     resources: [],
     actions: [],
-    completion: { resources: [], actions: [] },
-    rewards: [],
+    npc: 'Tank Timmerson',
+    completion: {
+      resources: [
+        { item: 'Vespium Plate', quantityDisplay: '300.00k' },
+        { item: 'Low Grade Gel', quantityDisplay: '10000' },
+        { item: 'Scorchium', quantityDisplay: '200.00m' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.1 Forgie Output'],
   },
   // 144
   {
