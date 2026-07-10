@@ -2439,8 +2439,17 @@ export const orders: Order[] = [
     requiredOrderIds: [97],
     resources: [],
     actions: [],
-    completion: { resources: [], actions: [] },
-    rewards: [],
+    npc: 'Clank',
+    completion: {
+      resources: [
+        { item: 'Low Grade Gel', quantityDisplay: '4.00m' },
+        { item: 'Vespium Plate', quantityDisplay: '20.00m' },
+        { item: 'Industrial Bit', quantityDisplay: '250.00m' },
+        { item: 'Hydracite', quantityDisplay: '100.00b' },
+      ],
+      actions: [],
+    },
+    rewards: ['+2 Attribute Points'],
   },
   // 153
   {
@@ -2490,5 +2499,137 @@ export const orders: Order[] = [
       actions: [],
     },
     rewards: ['x1.04 Tokenium', 'x1.06 Hydracite', 'x1.02 Scorchium'],
+  },
+  // 156
+  {
+    id: 156,
+    minOrders: 0,
+    requiredOrderIds: [],
+    resources: [],
+    actions: [],
+    npc: 'Bhramari',
+    completion: {
+      resources: [{ item: 'Silicate Concrete', quantityDisplay: '200.00m' }],
+      actions: [],
+    },
+    rewards: ['x1.25 Vespium'],
+  },
+  // 157
+  {
+    id: 157,
+    minOrders: 0,
+    requiredOrderIds: [],
+    resources: [],
+    actions: [],
+    npc: 'Bhramari',
+    completion: {
+      resources: [{ item: 'Industrial Bit', quantityDisplay: '200.00m' }],
+      actions: [],
+    },
+    rewards: ['x1.1 Credits', 'x1.03 Forgie Output'],
+  },
+  // 158
+  {
+    id: 158,
+    minOrders: 0,
+    requiredOrderIds: [],
+    resources: [],
+    actions: [],
+    npc: 'Bhramari',
+    completion: {
+      resources: [
+        { item: 'Industrial Bit', quantityDisplay: '100.00m' },
+        { item: 'Silicate Concrete', quantityDisplay: '50.00m' },
+        { item: 'Vespium Rod', quantityDisplay: '120.00k' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.16 Vespium', 'x1.02 Forgie Output'],
+  },
+  // 159
+  {
+    id: 159,
+    minOrders: 0,
+    requiredOrderIds: [],
+    resources: [],
+    actions: [],
+    npc: 'Gama Kamalon',
+    completion: {
+      resources: [
+        { item: 'Industrial Bit', quantityDisplay: '145.00m' },
+        { item: 'Vespium Frame', quantityDisplay: '200.00k' },
+        { item: 'Scorchium', quantityDisplay: '5.00b' },
+        { item: 'Hydracite', quantityDisplay: '1.00b' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.09 Tokenium', 'x1.07 Hydracite', 'x1.05 Scorchium'],
+  },
+  // 160
+  {
+    id: 160,
+    minOrders: 0,
+    requiredOrderIds: [],
+    resources: [],
+    actions: [],
+    npc: 'Tank Timmerson',
+    completion: {
+      resources: [{ item: 'Vespium Ingot', quantityDisplay: '1.00b' }],
+      actions: [],
+    },
+    rewards: ['/10 Rig Cost'],
+  },
+  // 161
+  {
+    id: 161,
+    minOrders: 0,
+    requiredOrderIds: [],
+    resources: [],
+    actions: [],
+    npc: 'Samos Sula',
+    completion: {
+      resources: [
+        { item: 'Industrial Bit', quantityDisplay: '14.20m' },
+        { item: 'Low Grade Gel', quantityDisplay: '80.00k' },
+        { item: 'Vespium Wire', quantityDisplay: '65.00k' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.2 All Rig Yield', '+10 Core'],
+  },
+  // 163
+  {
+    id: 163,
+    minOrders: 0,
+    requiredOrderIds: [],
+    resources: [],
+    actions: [],
+    npc: 'Meepa Torani',
+    completion: {
+      resources: [
+        { item: 'Industrial Bit', quantityDisplay: '750.00m' },
+        { item: 'Silicate Concrete', quantityDisplay: '720.00m' },
+        { item: 'Low Grade Gel', quantityDisplay: '200.00k' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.44 Craftable Sell Price', 'x1.36 Credits', 'x1.1 Hydracite'],
+  },
+  // 166
+  {
+    id: 166,
+    minOrders: 0,
+    requiredOrderIds: [],
+    resources: [],
+    actions: [],
+    npc: 'Samos Sula',
+    completion: {
+      resources: [
+        { item: 'Low Grade Gel', quantityDisplay: '800.00k' },
+        { item: 'Vespium Wire', quantityDisplay: '100.00k' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.25 All Rig Yield', '+15 Core'],
   },
 ]
