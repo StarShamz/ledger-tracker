@@ -2415,8 +2415,15 @@ export const orders: Order[] = [
     requiredOrderIds: [150],
     resources: [],
     actions: [],
-    completion: { resources: [], actions: [] },
-    rewards: [],
+    npc: 'Donathan Creel',
+    completion: {
+      resources: [
+        { item: 'Industrial Bit', quantityDisplay: '50.00m' },
+        { item: 'Silicate Concrete', quantityDisplay: '50.00m' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.06 Craftable Sell Price', 'x1.06 Credits'],
   },
   // 152
   {
