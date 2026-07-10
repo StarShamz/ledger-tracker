@@ -1,5 +1,4 @@
-const CDN = 'https://cdn.discordapp.com/emojis'
-const url = (id: string) => `${CDN}/${id}.webp?size=32`
+const url = (id: string) => `/icons/${id}.webp`
 
 export const RESOURCE_ICONS: Record<string, string> = {
   'Industrial Bit':    url('1511695621180883014'), // Boxes
