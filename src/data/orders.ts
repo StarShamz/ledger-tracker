@@ -2141,8 +2141,15 @@ export const orders: Order[] = [
     requiredOrderIds: [123],
     resources: [{ item: 'Scorchium', quantityDisplay: '500.00m' }],
     actions: [],
-    completion: { resources: [], actions: [] },
-    rewards: [],
+    npc: 'Gama Kamalon',
+    completion: {
+      resources: [
+        { item: 'Scorchium', quantityDisplay: '2.00b' },
+        { item: 'Silicate Brick', quantityDisplay: '5.00m' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.03 Tokenium Canister', 'x1.04 Scorchium'],
   },
   // 134
   {
