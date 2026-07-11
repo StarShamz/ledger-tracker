@@ -2381,8 +2381,15 @@ export const orders: Order[] = [
     requiredOrderIds: [147],
     resources: [],
     actions: [],
-    completion: { resources: [], actions: [] },
-    rewards: [],
+    npc: 'Bhramari',
+    completion: {
+      resources: [
+        { item: 'Low Grade Gel', quantityDisplay: '300.00k' },
+        { item: 'Vespium Wire', quantityDisplay: '10,000' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.09 Forgie Output'],
   },
   // 149
   {
@@ -2577,7 +2584,7 @@ export const orders: Order[] = [
       resources: [{ item: 'Vespium Ingot', quantityDisplay: '1.00b' }],
       actions: [],
     },
-    rewards: ['/10 Rig Cost'],
+    rewards: ['/10 Crafter Cost Reduction'],
   },
   // 161
   {
