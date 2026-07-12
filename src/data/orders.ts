@@ -2622,6 +2622,24 @@ export const orders: Order[] = [
     },
     rewards: ['x1.44 Craftable Sell Price', 'x1.36 Credits', 'x1.1 Hydracite'],
   },
+  // 164
+  {
+    id: 164,
+    minOrders: 0,
+    requiredOrderIds: [],
+    resources: [],
+    actions: [],
+    npc: 'Gama Kamalon',
+    completion: {
+      resources: [
+        { item: 'Hydracite', quantityDisplay: '300.00b' },
+        { item: 'Scorchium', quantityDisplay: '400.00b' },
+        { item: 'Jade', quantityDisplay: '500.00qa' },
+      ],
+      actions: [],
+    },
+    rewards: ['+3 Attribute Point', '+42 Core'],
+  },
   // 166
   {
     id: 166,
