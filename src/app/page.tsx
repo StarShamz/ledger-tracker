@@ -252,6 +252,26 @@ export default function Page() {
       )
     }
 
+    if (statusFilter === 'locked') {
+      return orders
+        .filter(order =>
+          statuses.get(order.id) === 'locked' &&
+          matchesResource(order, resourceFilter) &&
+          matchesReward(order, rewardFilter) &&
+          matchesCharacter(order, characterFilter) &&
+          matchesSearch(order, deferredSearch)
+        )
+        .sort((a, b) => {
+          const awayA = Math.max(0, a.minOrders - completedIds.size)
+          const awayB = Math.max(0, b.minOrders - completedIds.size)
+          if (awayA !== awayB) return awayA - awayB
+          const unmetA = a.requiredOrderIds.filter(id => !completedIds.has(id)).length
+          const unmetB = b.requiredOrderIds.filter(id => !completedIds.has(id)).length
+          if (unmetA !== unmetB) return unmetA - unmetB
+          return a.id - b.id
+        })
+    }
+
     return orders.filter(order => {
       const status = statuses.get(order.id)!
       const matchStatus = statusFilter === 'all' ? status !== 'completed' : status === statusFilter
@@ -261,7 +281,7 @@ export default function Page() {
       const matchSearch = matchesSearch(order, deferredSearch)
       return matchStatus && matchResource && matchReward && matchCharacter && matchSearch
     })
-  }, [statuses, statusFilter, resourceFilter, rewardFilter, characterFilter, deferredSearch, unlockPotential, inProgressIds])
+  }, [statuses, statusFilter, resourceFilter, rewardFilter, characterFilter, deferredSearch, unlockPotential, inProgressIds, completedIds])
 
   const inProgressOrders = useMemo(
     () => inProgressArray

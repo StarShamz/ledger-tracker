@@ -162,6 +162,11 @@ export default function OrderCard({
                   +{unlockCount}
                 </span>
               )}
+              {status === 'locked' && order.minOrders > completedCount && (
+                <span className="font-spacemono text-[9px] px-1.5 py-0.5 rounded-sm border border-slate-500/40 bg-slate-600/20 text-slate-400">
+                  {order.minOrders - completedCount} away
+                </span>
+              )}
             </div>
           </div>
 
