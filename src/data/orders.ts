@@ -2158,8 +2158,14 @@ export const orders: Order[] = [
     requiredOrderIds: [128],
     resources: [],
     actions: [{ type: 'endurance_synthesizer_potion', quantity: 51 }],
-    completion: { resources: [], actions: [] },
-    rewards: [],
+    completion: {
+      resources: [
+        { item: 'Endurance Booster Potion', quantityDisplay: '5' },
+        { item: 'Power Booster Potion', quantityDisplay: '5' },
+      ],
+      actions: [],
+    },
+    rewards: ['+100 Max Stamina', '+1% Critical Power'],
   },
   // 135
   {
@@ -2524,7 +2530,7 @@ export const orders: Order[] = [
   // 157
   {
     id: 157,
-    minOrders: 0,
+    minOrders: 145,
     requiredOrderIds: [],
     resources: [],
     actions: [],
@@ -2556,7 +2562,7 @@ export const orders: Order[] = [
   // 159
   {
     id: 159,
-    minOrders: 0,
+    minOrders: 144,
     requiredOrderIds: [],
     resources: [],
     actions: [],
@@ -2589,7 +2595,7 @@ export const orders: Order[] = [
   // 161
   {
     id: 161,
-    minOrders: 0,
+    minOrders: 142,
     requiredOrderIds: [],
     resources: [],
     actions: [],
