@@ -2050,7 +2050,7 @@ export const orders: Order[] = [
     resources: [{ item: 'Jade', quantityDisplay: '7.00qa' }],
     actions: [],
     completion: { resources: [], actions: [] },
-    rewards: [],
+    rewards: ['+2 Attribute Points'],
   },
   // 127
   {
