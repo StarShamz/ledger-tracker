@@ -2653,7 +2653,7 @@ export const orders: Order[] = [
     requiredOrderIds: [],
     resources: [],
     actions: [],
-    npc: '',
+    npc: 'Gama Kamalon',
     completion: {
       resources: [
         { item: 'Industrial Bit', quantityDisplay: '5.00b' },
