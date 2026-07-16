@@ -2646,6 +2646,23 @@ export const orders: Order[] = [
     },
     rewards: ['+3 Attribute Point', '+42 Core'],
   },
+  // 165
+  {
+    id: 165,
+    minOrders: 0,
+    requiredOrderIds: [],
+    resources: [],
+    actions: [],
+    npc: '',
+    completion: {
+      resources: [
+        { item: 'Industrial Bit', quantityDisplay: '5.00b' },
+        { item: 'Low Grade Gel', quantityDisplay: '1.00m' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.2 Tokenium', 'x1.05 Tokenium Canister'],
+  },
   // 166
   {
     id: 166,
