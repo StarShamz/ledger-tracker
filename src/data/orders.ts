@@ -2049,7 +2049,7 @@ export const orders: Order[] = [
     requiredOrderIds: [125],
     resources: [{ item: 'Jade', quantityDisplay: '7.00qa' }],
     actions: [],
-    completion: { resources: [], actions: [] },
+    completion: { resources: [{ item: 'Jade', quantityDisplay: '100.00qa' }], actions: [] },
     rewards: ['+2 Attribute Points'],
   },
   // 127
@@ -2131,8 +2131,9 @@ export const orders: Order[] = [
     requiredOrderIds: [131],
     resources: [{ item: 'Jade', quantityDisplay: '700.00qa' }],
     actions: [],
-    completion: { resources: [], actions: [] },
-    rewards: [],
+    npc: 'Minalima Lin',
+    completion: { resources: [{ item: 'Jade', quantityDisplay: '10.00qu' }], actions: [] },
+    rewards: ['+100 Ether'],
   },
   // 133
   {
