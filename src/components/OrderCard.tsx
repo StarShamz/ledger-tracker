@@ -432,7 +432,7 @@ function UnlockRow({
   )
 }
 
-function OrderPreview({
+export function OrderPreview({
   orderId,
   x,
   y,

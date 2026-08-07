@@ -8,6 +8,7 @@ import { useLocalStorage } from '@/hooks/useLocalStorage'
 import { parseQuantity } from '@/utils/parseQuantity'
 import { DEFAULT_STATS } from '@/types'
 import type { Order, OrderStatus, PlayerStats } from '@/types'
+import { OrderPreview } from '@/components/OrderCard'
 
 function getStatus(order: Order, completedIds: Set<number>, stats: PlayerStats): OrderStatus {
   if (completedIds.has(order.id)) return 'completed'
@@ -70,6 +71,19 @@ export default function TimelinePage() {
   const [completedArray,, isLoaded] = useLocalStorage<number[]>('ledger-completed', [])
   const [stats] = useLocalStorage<PlayerStats>('ledger-stats', DEFAULT_STATS)
   const [jumpValue, setJumpValue] = useState('')
+  const [tooltip, setTooltip] = useState<{ orderId: number; x: number; y: number } | null>(null)
+
+  function handleRowMouseEnter(e: React.MouseEvent<HTMLDivElement>, orderId: number) {
+    const rect = e.currentTarget.getBoundingClientRect()
+    const tooltipW = 288
+    const margin = 8
+    const rawX = rect.right + 10 + tooltipW > window.innerWidth
+      ? rect.left - tooltipW - 10
+      : rect.right + 10
+    const x = Math.max(margin, Math.min(rawX, window.innerWidth - tooltipW - margin))
+    const y = Math.max(margin, Math.min(rect.top, window.innerHeight - 320))
+    setTooltip({ orderId, x, y })
+  }
 
   const completedIds = useMemo(() => new Set(completedArray), [completedArray])
 
@@ -171,7 +185,9 @@ export default function TimelinePage() {
                 return (
                   <div
                     key={order.id}
-                    className={`flex items-stretch border-l-2 ${STATUS_BORDER[status]} ${STATUS_BG[status]}`}
+                    className={`flex items-stretch border-l-2 ${STATUS_BORDER[status]} ${STATUS_BG[status]} cursor-default`}
+                    onMouseEnter={e => handleRowMouseEnter(e, order.id)}
+                    onMouseLeave={() => setTooltip(null)}
                   >
                     {/* NPC Portrait */}
                     <div className="w-11 shrink-0 flex items-center justify-center px-1.5">
@@ -235,6 +251,16 @@ export default function TimelinePage() {
           — end of timeline —
         </div>
       </div>
+
+      {tooltip && (
+        <OrderPreview
+          orderId={tooltip.orderId}
+          x={tooltip.x}
+          y={tooltip.y}
+          completedIds={completedIds}
+          stats={stats}
+        />
+      )}
     </div>
   )
 }
