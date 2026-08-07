@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 
 interface ProgressHeaderProps {
   completedCount: number
@@ -46,6 +47,13 @@ export default function ProgressHeader({
           </div>
 
           <div className="flex items-center gap-2 pt-1 flex-shrink-0">
+            <Link
+              href="/timeline"
+              className="font-orbitron text-[10px] tracking-[0.08em] px-3 py-2 min-h-[44px] rounded-sm border border-slate-700/60 text-slate-400 hover:text-slate-200 hover:border-slate-500 transition-all duration-150 flex items-center cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-cyan-500/50 focus-visible:ring-offset-1 focus-visible:ring-offset-black"
+            >
+              Timeline
+            </Link>
+
             <button
               onClick={onStatsToggle}
               className={`font-orbitron text-[10px] tracking-[0.08em] px-3 py-2 min-h-[44px] rounded-sm border transition-all duration-150 cursor-pointer [touch-action:manipulation] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-cyan-500/50 focus-visible:ring-offset-1 focus-visible:ring-offset-black ${
