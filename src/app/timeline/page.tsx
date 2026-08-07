@@ -136,7 +136,15 @@ export default function TimelinePage() {
       {/* Content */}
       <div className="max-w-2xl mx-auto py-2">
         {grouped.map(([minOrders, group]) => {
-          const groupCompleted = group.filter(o => completedIds.has(o.id)).length
+          const withStatus = group.map(order => ({
+            order,
+            status: isLoaded ? getStatus(order, completedIds, stats) : 'locked' as OrderStatus,
+          }))
+          const visible = withStatus.filter(({ status }) => status !== 'completed')
+          if (visible.length === 0) return null
+
+          const groupCompleted = group.length - visible.length
+
           return (
             <div key={minOrders}>
               {/* Group header */}
@@ -153,17 +161,16 @@ export default function TimelinePage() {
               </div>
 
               {/* Order rows */}
-              {group.map(order => {
-                const status = isLoaded ? getStatus(order, completedIds, stats) : 'locked'
+              {visible.map(({ order, status }) => {
                 const npc = getOrderNpc(order)
                 const completionSummary = getCompletionSummary(order)
                 const firstReward = order.rewards?.[0] ?? '—'
-                const isCompleted = status === 'completed'
+                const isLocked = status === 'locked'
 
                 return (
                   <div
                     key={order.id}
-                    className={`flex items-start gap-0 border-l-2 ${STATUS_BORDER[status]} ${STATUS_BG[status]} ${isCompleted ? 'opacity-40' : ''} transition-opacity`}
+                    className={`flex items-center gap-0 border-l-2 ${STATUS_BORDER[status]} ${STATUS_BG[status]}`}
                   >
                     {/* Order ID */}
                     <span className="font-spacemono text-[10px] text-slate-500 w-[64px] shrink-0 px-3 py-2.5 tabular-nums">
@@ -176,14 +183,20 @@ export default function TimelinePage() {
                     </span>
 
                     {/* Completion cost */}
-                    <span className="font-spacemono text-[10px] text-slate-300 flex-1 py-2.5 truncate pr-3 min-w-0">
+                    <span className={`font-spacemono text-[10px] flex-1 py-2.5 truncate pr-3 min-w-0 ${isLocked ? 'text-slate-600' : 'text-slate-300'}`}>
                       {completionSummary}
                     </span>
 
-                    {/* First reward */}
-                    <span className="font-spacemono text-[10px] text-emerald-400/70 shrink-0 py-2.5 px-3 text-right max-w-[140px] truncate">
-                      {firstReward}
-                    </span>
+                    {/* Locked badge or first reward */}
+                    {isLocked ? (
+                      <span className="font-orbitron text-[8px] tracking-[0.1em] text-slate-600 border border-slate-800 px-1.5 py-0.5 rounded-sm shrink-0 mx-3">
+                        LOCKED
+                      </span>
+                    ) : (
+                      <span className="font-spacemono text-[10px] text-emerald-400/70 shrink-0 py-2.5 px-3 text-right max-w-[140px] truncate">
+                        {firstReward}
+                      </span>
+                    )}
                   </div>
                 )
               })}
