@@ -4,7 +4,7 @@ export interface ResourceRequirement {
 }
 
 export interface ActionRequirement {
-  type: 'chad_infusion' | 'endurance_synthesizer_potion'
+  type: 'chad_infusion' | 'chad_level' | 'endurance_synthesizer_potion'
   quantity: number
 }
 
@@ -27,6 +27,7 @@ export interface Order {
 
 export interface PlayerStats {
   tiLevel: string             // TI level = Chad Infusions performed
+  chadLevel: string           // Chad Level (separate from TI count)
   potionsCrafted: string      // Endurance Synthesizer Potions crafted
   resources: Record<string, string>  // item name → all-time gained (stored as string)
   totalOrdersCompleted: string  // in-game count used by the inference engine
@@ -34,6 +35,7 @@ export interface PlayerStats {
 
 export const DEFAULT_STATS: PlayerStats = {
   tiLevel: '',
+  chadLevel: '',
   potionsCrafted: '',
   resources: {},
   totalOrdersCompleted: '',
@@ -51,6 +53,8 @@ export const ALL_RESOURCE_NAMES: readonly string[] = [
   'Silicate Glass',
   'Silicate Brick',
   'Silicate Concrete',
+  'Reinforced Concrete',
+  'Battery',
   'Industrial Bit',
   'Tokenium Canister',
   'Hydracite',

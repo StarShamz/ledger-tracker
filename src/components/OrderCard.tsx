@@ -381,8 +381,9 @@ function ResourceRequirementRow({
 }
 
 function ActionRequirementRow({ a, stats }: { a: ActionRequirement; stats: PlayerStats }) {
-  const isCI = a.type === 'chad_infusion'
-  const playerStr = isCI ? stats.tiLevel : stats.potionsCrafted
+  const playerStr = a.type === 'chad_infusion' ? stats.tiLevel
+    : a.type === 'chad_level' ? stats.chadLevel
+    : stats.potionsCrafted
   const actionState: ReqState = playerStr?.trim()
     ? (parseQuantity(playerStr) ?? 0n) >= BigInt(a.quantity) ? 'met' : 'unmet'
     : 'unknown'
@@ -390,8 +391,10 @@ function ActionRequirementRow({ a, stats }: { a: ActionRequirement; stats: Playe
   return (
     <RequirementRow state={actionState} kind="action">
       {icon && <img src={icon} alt="" aria-hidden="true" className="inline-block w-3.5 h-3.5 object-contain align-middle mr-1" />}
-      {isCI
+      {a.type === 'chad_infusion'
         ? `TI Level ${a.quantity}+ (${a.quantity}+ Chad Infusions)`
+        : a.type === 'chad_level'
+        ? `Chad Level ${a.quantity}+`
         : `Craft ${a.quantity}+ Endurance Synthesizer Booster Potion${a.quantity > 1 ? 's' : ''}`}
     </RequirementRow>
   )
@@ -498,8 +501,9 @@ function OrderPreview({
               )
             })}
             {order.actions.map(a => {
-              const isCI = a.type === 'chad_infusion'
-              const playerStr = isCI ? stats.tiLevel : stats.potionsCrafted
+              const playerStr = a.type === 'chad_infusion' ? stats.tiLevel
+                : a.type === 'chad_level' ? stats.chadLevel
+                : stats.potionsCrafted
               const actionState: ReqState = playerStr?.trim()
                 ? (parseQuantity(playerStr) ?? 0n) >= BigInt(a.quantity) ? 'met' : 'unmet'
                 : 'unknown'
@@ -507,8 +511,10 @@ function OrderPreview({
               return (
                 <RequirementRow key={a.type} state={actionState} kind="action">
                   {icon && <img src={icon} alt="" aria-hidden="true" className="inline-block w-3.5 h-3.5 object-contain align-middle mr-1" />}
-                  {isCI
+                  {a.type === 'chad_infusion'
                     ? `TI Level ${a.quantity}+`
+                    : a.type === 'chad_level'
+                    ? `Chad Level ${a.quantity}+`
                     : `Craft ${a.quantity}+ Endurance Booster Potion${a.quantity > 1 ? 's' : ''}`}
                 </RequirementRow>
               )

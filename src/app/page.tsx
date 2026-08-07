@@ -42,7 +42,7 @@ function getStatus(
   }
 
   for (const a of order.actions) {
-    const playerStr = a.type === 'chad_infusion' ? stats.tiLevel : stats.potionsCrafted
+    const playerStr = a.type === 'chad_infusion' ? stats.tiLevel : a.type === 'chad_level' ? stats.chadLevel : stats.potionsCrafted
     if (!playerStr?.trim()) continue
     const player = parseQuantity(playerStr)
     if (player !== null && player < BigInt(a.quantity)) return 'needs_resources'
@@ -58,7 +58,7 @@ function matchesResource(order: Order, filter: ResourceFilter): boolean {
     case 'ether':     return (order.completion?.resources ?? []).some(r => r.item.toLowerCase() === 'ether')
     case 'jade':      return items.some(i => i === 'jade')
     case 'vespium':   return items.some(i => i.includes('vespium'))
-    case 'silicate':  return items.some(i => i.includes('silicate'))
+    case 'silicate':  return items.some(i => i.includes('silicate') || i === 'reinforced concrete' || i === 'battery')
     case 'industrial': return items.some(i => i === 'industrial bit')
     case 'hydracite': return items.some(i => i === 'hydracite')
     case 'scorchium': return items.some(i => i === 'scorchium')

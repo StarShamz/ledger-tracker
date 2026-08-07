@@ -18,7 +18,7 @@ interface StatsPanelProps {
 
 const RESOURCE_GROUPS: { label: string; items: string[] }[] = [
   { label: 'Worthless Rock', items: ['Worthless Rock'] },
-  { label: 'Silicate', items: ['Industrial Bit', 'Silicate Glass', 'Silicate Brick', 'Silicate Concrete'] },
+  { label: 'Silicate', items: ['Industrial Bit', 'Silicate Glass', 'Silicate Brick', 'Silicate Concrete', 'Reinforced Concrete', 'Battery'] },
   {
     label: 'Vespium',
     items: ['Vespium', 'Vespium Ingot', 'Vespium Plate', 'Vespium Rod', 'Vespium Frame', 'Vespium Wire'],
@@ -167,6 +167,7 @@ export default function StatsPanel({ stats, onChange, onApplyInference, complete
         if (typeof data !== 'object' || data === null) throw new Error()
         onChange({
           tiLevel: typeof data.tiLevel === 'string' ? data.tiLevel : '',
+          chadLevel: typeof data.chadLevel === 'string' ? data.chadLevel : '',
           potionsCrafted: typeof data.potionsCrafted === 'string' ? data.potionsCrafted : '',
           resources: typeof data.resources === 'object' && data.resources !== null ? data.resources : {},
           totalOrdersCompleted: typeof data.totalOrdersCompleted === 'string' ? data.totalOrdersCompleted : '',
@@ -417,6 +418,19 @@ export default function StatsPanel({ stats, onChange, onApplyInference, complete
               </div>
               <div>
                 <label className="flex items-center gap-1 text-xs text-slate-300 mb-0.5">
+                  Chad Level
+                </label>
+                <input
+                  type="text"
+                  inputMode="numeric"
+                  value={stats.chadLevel ?? ''}
+                  onChange={e => onChange({ ...stats, chadLevel: e.target.value })}
+                  placeholder="e.g. 66"
+                  className={INPUT_CLASSES}
+                />
+              </div>
+              <div>
+                <label className="flex items-center gap-1 text-xs text-slate-300 mb-0.5">
                   {ACTION_ICONS.endurance_synthesizer_potion && (
                     <img src={ACTION_ICONS.endurance_synthesizer_potion} alt="" aria-hidden="true" className="w-3.5 h-3.5 object-contain flex-shrink-0" />
                   )}
@@ -521,7 +535,7 @@ export default function StatsPanel({ stats, onChange, onApplyInference, complete
           />
           <button
             onClick={() => {
-              onChange({ tiLevel: '', potionsCrafted: '', resources: {}, totalOrdersCompleted: '' })
+              onChange({ tiLevel: '', chadLevel: '', potionsCrafted: '', resources: {}, totalOrdersCompleted: '' })
               setResult(null)
               setCheckedIds(new Set())
               setImportError(null)

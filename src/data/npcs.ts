@@ -5,9 +5,11 @@ import type { Order } from '@/types'
 // the first match with a known NPC determines the order's requester.
 const RESOURCE_NPC: Record<string, string> = {
   'Industrial Bit':    'Meepa Torani',
-  'Silicate Glass':    'Meepa Torani',
-  'Silicate Brick':    'Meepa Torani',
-  'Silicate Concrete': 'Meepa Torani',
+  'Silicate Glass':      'Meepa Torani',
+  'Silicate Brick':      'Meepa Torani',
+  'Silicate Concrete':   'Meepa Torani',
+  'Reinforced Concrete': 'Meepa Torani',
+  'Battery':             'Meepa Torani',
   'Hydracite':         'The Twins',
   'Scorchium':         'The Twins',
   'Worthless Rock':    'Gerbo',
@@ -49,6 +51,8 @@ export const NPC_IMAGES: Record<string, string> = {
   'Donathan Creel':    '/npcs/donathan-creel.webp',
   'Samos Sula':        '/npcs/samos-sula.webp',
   'Bhramari':          '/npcs/bhramari.webp',
+  'Nyra Voss':         '/npcs/nyra-voss.webp',
+  'Wrecket':           '/npcs/wrecket.webp',
 }
 
 export function getOrderNpc(order: Order): string | undefined {

@@ -2106,7 +2106,7 @@ export const orders: Order[] = [
     minOrders: 143,
     requiredOrderIds: [129],
     resources: [],
-    actions: [{ type: 'chad_infusion', quantity: 66 }],
+    actions: [{ type: 'chad_level', quantity: 66 }],
     completion: { resources: [], actions: [] },
     rewards: [],
   },
@@ -2175,8 +2175,14 @@ export const orders: Order[] = [
     requiredOrderIds: [134],
     resources: [],
     actions: [{ type: 'endurance_synthesizer_potion', quantity: 71 }],
-    completion: { resources: [], actions: [] },
-    rewards: [],
+    completion: {
+      resources: [
+        { item: 'Endurance Booster Potion', quantityDisplay: '2' },
+        { item: 'Power Booster Potion', quantityDisplay: '3' },
+      ],
+      actions: [],
+    },
+    rewards: ['+80 Max Stamina', 'x1.25 EXP'],
   },
   // 136
   {
@@ -2463,7 +2469,7 @@ export const orders: Order[] = [
       ],
       actions: [],
     },
-    rewards: ['+2 Attribute Points'],
+    rewards: ['+2 Attribute Point'],
   },
   // 153
   {
@@ -2540,7 +2546,7 @@ export const orders: Order[] = [
       resources: [{ item: 'Industrial Bit', quantityDisplay: '200.00m' }],
       actions: [],
     },
-    rewards: ['x1.1 Credits', 'x1.03 Forgie Output'],
+    rewards: ['x1.1 Credit', 'x1.03 Forgie Output'],
   },
   // 158
   {
@@ -2591,7 +2597,7 @@ export const orders: Order[] = [
       resources: [{ item: 'Vespium Ingot', quantityDisplay: '1.00b' }],
       actions: [],
     },
-    rewards: ['/10 Crafter Cost Reduction'],
+    rewards: ['/10 Rig Cost'],
   },
   // 161
   {
@@ -2609,7 +2615,24 @@ export const orders: Order[] = [
       ],
       actions: [],
     },
-    rewards: ['x1.2 All Rig Yield', '+10 Core'],
+    rewards: ['x1.2 Rig Output', '+10 Core'],
+  },
+  // 162
+  {
+    id: 162,
+    minOrders: 0,
+    requiredOrderIds: [],
+    resources: [],
+    actions: [],
+    npc: 'The Twins',
+    completion: {
+      resources: [
+        { item: 'Hydracite', quantityDisplay: '7.77t' },
+        { item: 'Scorchium', quantityDisplay: '7.77t' },
+      ],
+      actions: [],
+    },
+    rewards: ['+1 Attribute Point', 'x2 Credit'],
   },
   // 163
   {
@@ -2627,7 +2650,7 @@ export const orders: Order[] = [
       ],
       actions: [],
     },
-    rewards: ['x1.44 Craftable Sell Price', 'x1.36 Credits', 'x1.1 Hydracite'],
+    rewards: ['x1.44 Craftable Sell Price', 'x1.36 Credit', 'x1.1 Hydracite'],
   },
   // 164
   {
@@ -2679,6 +2702,677 @@ export const orders: Order[] = [
       ],
       actions: [],
     },
-    rewards: ['x1.25 All Rig Yield', '+15 Core'],
+    rewards: ['x1.25 Rig Output', '+15 Core'],
+  },
+  // 167
+  {
+    id: 167,
+    minOrders: 154,
+    requiredOrderIds: [160],
+    resources: [],
+    actions: [],
+    npc: 'Tank Timmerson',
+    completion: {
+      resources: [
+        { item: 'Vespium Ingot', quantityDisplay: '300.00m' },
+        { item: 'Vespium Plate', quantityDisplay: '10.00m' },
+      ],
+      actions: [],
+    },
+    rewards: ['/4 Crafter Cost', 'x1.2 Worthless Rock'],
+  },
+  // 168
+  {
+    id: 168,
+    minOrders: 156,
+    requiredOrderIds: [122],
+    resources: [],
+    actions: [],
+    npc: 'Gerbo',
+    completion: {
+      resources: [
+        { item: 'Worthless Rock', quantityDisplay: '9.99e47' },
+        { item: 'Vespium', quantityDisplay: '9.99n' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.08 Credit', 'x1.08 Worthless Rock', 'x1.08 Jade'],
+  },
+  // 169
+  {
+    id: 169,
+    minOrders: 158,
+    requiredOrderIds: [158],
+    resources: [],
+    actions: [],
+    npc: 'Bhramari',
+    completion: {
+      resources: [{ item: 'Vespium Frame', quantityDisplay: '500.00k' }],
+      actions: [],
+    },
+    rewards: ['x1.01 Forgie Output', 'x1.09 Hydracite'],
+  },
+  // 170
+  {
+    id: 170,
+    minOrders: 161,
+    requiredOrderIds: [155],
+    resources: [],
+    actions: [],
+    npc: 'Donathan Creel',
+    completion: {
+      resources: [
+        { item: 'Silicate Glass', quantityDisplay: '25.00m' },
+        { item: 'Hydracite', quantityDisplay: '700.00b' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.26 Credit', 'x1.07 Hydracite'],
+  },
+  // 171
+  {
+    id: 171,
+    minOrders: 162,
+    requiredOrderIds: [152],
+    resources: [],
+    actions: [],
+    npc: 'Clank',
+    completion: {
+      resources: [{ item: 'Scorchium', quantityDisplay: '5.00t' }],
+      actions: [],
+    },
+    rewards: ['x1.35 Hydracite', 'x1.35 Scorchium'],
+  },
+  // 172
+  {
+    id: 172,
+    minOrders: 163,
+    requiredOrderIds: [167],
+    resources: [],
+    actions: [],
+    npc: 'Tank Timmerson',
+    completion: {
+      resources: [
+        { item: 'Vespium Ingot', quantityDisplay: '320.00m' },
+        { item: 'Vespium Rod', quantityDisplay: '15.00m' },
+      ],
+      actions: [],
+    },
+    rewards: ['/4.15 Crafter Cost', 'x1.12 Worthless Rock', 'x1.29 Vespium'],
+  },
+  // 173
+  {
+    id: 173,
+    minOrders: 164,
+    requiredOrderIds: [168],
+    resources: [],
+    actions: [],
+    npc: 'Gerbo',
+    completion: {
+      resources: [
+        { item: 'Worthless Rock', quantityDisplay: '9.99e49' },
+        { item: 'Vespium', quantityDisplay: '999.00n' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.14 Credit', 'x1.14 Worthless Rock', 'x1.06 Hydracite'],
+  },
+  // 174
+  {
+    id: 174,
+    minOrders: 165,
+    requiredOrderIds: [163],
+    resources: [],
+    actions: [],
+    npc: 'Meepa Torani',
+    completion: {
+      resources: [
+        { item: 'Industrial Bit', quantityDisplay: '860.00m' },
+        { item: 'Silicate Concrete', quantityDisplay: '820.00m' },
+        { item: 'Silicate Brick', quantityDisplay: '1.00m' },
+        { item: 'Low Grade Gel', quantityDisplay: '500.00k' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.46 Craftable Sell Price', 'x1.37 Credit', 'x1.11 Hydracite'],
+  },
+  // 175
+  {
+    id: 175,
+    minOrders: 166,
+    requiredOrderIds: [169],
+    resources: [],
+    actions: [],
+    npc: 'Bhramari',
+    completion: {
+      resources: [
+        { item: 'Vespium Frame', quantityDisplay: '1.00m' },
+        { item: 'Vespium Wire', quantityDisplay: '100.00k' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.01 Forgie Output', 'x1.09 Hydracite'],
+  },
+  // 176
+  {
+    id: 176,
+    minOrders: 167,
+    requiredOrderIds: [136],
+    resources: [],
+    actions: [{ type: 'endurance_synthesizer_potion', quantity: 111 }],
+    completion: { resources: [], actions: [] },
+    rewards: [],
+  },
+  // 177
+  {
+    id: 177,
+    minOrders: 168,
+    requiredOrderIds: [165],
+    resources: [{ item: 'Tokenium Canister', quantityDisplay: '1×10²⁴' }],
+    actions: [],
+    completion: { resources: [], actions: [] },
+    rewards: [],
+  },
+  // 178
+  {
+    id: 178,
+    minOrders: 169,
+    requiredOrderIds: [170],
+    resources: [{ item: 'Tokenium Canister', quantityDisplay: '1×10²⁴' }],
+    actions: [],
+    completion: { resources: [], actions: [] },
+    rewards: [],
+  },
+  // 179
+  {
+    id: 179,
+    minOrders: 170,
+    requiredOrderIds: [132],
+    resources: [{ item: 'Tokenium Canister', quantityDisplay: '1×10²⁴' }],
+    actions: [],
+    completion: { resources: [], actions: [] },
+    rewards: [],
+  },
+  // 180
+  {
+    id: 180,
+    minOrders: 171,
+    requiredOrderIds: [176],
+    resources: [],
+    actions: [{ type: 'endurance_synthesizer_potion', quantity: 126 }],
+    completion: { resources: [], actions: [] },
+    rewards: [],
+  },
+  // 181
+  {
+    id: 181,
+    minOrders: 172,
+    requiredOrderIds: [166],
+    resources: [{ item: 'Tokenium Canister', quantityDisplay: '1×10²⁴' }],
+    actions: [],
+    npc: 'Samos Sula',
+    completion: {
+      resources: [
+        { item: 'Low Grade Gel', quantityDisplay: '1.00m' },
+        { item: 'Vespium Wire', quantityDisplay: '300.00k' },
+      ],
+      actions: [],
+    },
+    rewards: ['x2 Rig Output', '+22 Core'],
+  },
+  // 182
+  {
+    id: 182,
+    minOrders: 173,
+    requiredOrderIds: [172],
+    resources: [{ item: 'Tokenium Canister', quantityDisplay: '1×10²⁴' }],
+    actions: [],
+    completion: { resources: [], actions: [] },
+    rewards: [],
+  },
+  // 183
+  {
+    id: 183,
+    minOrders: 174,
+    requiredOrderIds: [177, 185],
+    resources: [
+      { item: 'Tokenium Canister', quantityDisplay: '1×10²⁴' },
+      { item: 'Battery', quantityDisplay: null },
+    ],
+    actions: [],
+    npc: 'Gama Kamalon',
+    completion: {
+      resources: [{ item: 'Battery', quantityDisplay: '20' }],
+      actions: [],
+    },
+    rewards: ['x1.02 Tokenium Canister', 'x1.04 Tokenium', 'x1.55 EXP'],
+  },
+  // 184
+  {
+    id: 184,
+    minOrders: 0,
+    requiredOrderIds: [],
+    resources: [{ item: 'Reinforced Concrete', quantityDisplay: null }],
+    actions: [],
+    npc: 'Nyra Voss',
+    completion: {
+      resources: [{ item: 'Reinforced Concrete', quantityDisplay: '8' }],
+      actions: [],
+    },
+    rewards: ['+20% Crafting Speed'],
+  },
+  // 185
+  {
+    id: 185,
+    minOrders: 0,
+    requiredOrderIds: [],
+    resources: [{ item: 'Battery', quantityDisplay: null }],
+    actions: [],
+    npc: 'Wrecket',
+    completion: {
+      resources: [{ item: 'Battery', quantityDisplay: '3' }],
+      actions: [],
+    },
+    rewards: ['x1.05 Hydracite', 'x1.05 Tokenium'],
+  },
+  // 186
+  {
+    id: 186,
+    minOrders: 176,
+    requiredOrderIds: [174, 184],
+    resources: [{ item: 'Reinforced Concrete', quantityDisplay: '2' }],
+    actions: [],
+    npc: 'Meepa Torani',
+    completion: {
+      resources: [{ item: 'Reinforced Concrete', quantityDisplay: '100' }],
+      actions: [],
+    },
+    rewards: ['x1.3 Credit', 'x1.15 Worthless Rock'],
+  },
+  // 187
+  {
+    id: 187,
+    minOrders: 179,
+    requiredOrderIds: [173],
+    resources: [{ item: 'Tokenium Canister', quantityDisplay: '1×10²⁴' }],
+    actions: [],
+    npc: 'Gerbo',
+    completion: {
+      resources: [
+        { item: 'Worthless Rock', quantityDisplay: '9.99e50' },
+        { item: 'Vespium', quantityDisplay: '9.99d' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.1 Vespium', 'x1.17 Worthless Rock'],
+  },
+  // 188
+  {
+    id: 188,
+    minOrders: 180,
+    requiredOrderIds: [162],
+    resources: [{ item: 'Tokenium Canister', quantityDisplay: '5×10²⁴' }],
+    actions: [],
+    npc: 'The Twins',
+    completion: {
+      resources: [{ item: 'Hydracite', quantityDisplay: '444.00t' }],
+      actions: [],
+    },
+    rewards: ['+4.44% Crafter Duplication Chance', '+44 Core'],
+  },
+  // 189
+  {
+    id: 189,
+    minOrders: 188,
+    requiredOrderIds: [188],
+    resources: [{ item: 'Tokenium Canister', quantityDisplay: '1×10²⁵' }],
+    actions: [],
+    npc: 'The Twins',
+    completion: {
+      resources: [{ item: 'Scorchium', quantityDisplay: '4.44qa' }],
+      actions: [],
+    },
+    rewards: ['+30% Crafter Speed', 'x3 EXP'],
+  },
+  // 190
+  {
+    id: 190,
+    minOrders: 189,
+    requiredOrderIds: [171],
+    resources: [{ item: 'Tokenium Canister', quantityDisplay: '1×10²⁵' }],
+    actions: [],
+    npc: 'Clank',
+    completion: {
+      resources: [
+        { item: 'Industrial Bit', quantityDisplay: '500.00b' },
+        { item: 'Silicate Concrete', quantityDisplay: '500.00b' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.2 Hydracite', '+20% Crafter Speed', '+2.74% Crafter Duplication Chance'],
+  },
+  // 191
+  {
+    id: 191,
+    minOrders: 188,
+    requiredOrderIds: [183],
+    resources: [],
+    actions: [],
+    npc: 'Gama Kamalon',
+    completion: {
+      resources: [{ item: 'Battery', quantityDisplay: '30' }],
+      actions: [],
+    },
+    rewards: ['x1.03 Tokenium Canister', 'x1.07 Tokenium', 'x1.32 EXP'],
+  },
+  // 192
+  {
+    id: 192,
+    minOrders: 181,
+    requiredOrderIds: [184],
+    resources: [],
+    actions: [],
+    completion: { resources: [], actions: [] },
+    rewards: [],
+  },
+  // 193
+  {
+    id: 193,
+    minOrders: 186,
+    requiredOrderIds: [192],
+    resources: [],
+    actions: [],
+    npc: 'Nyra Voss',
+    completion: {
+      resources: [{ item: 'Reinforced Concrete', quantityDisplay: '65' }],
+      actions: [],
+    },
+    rewards: ['x1.16 EXP', 'x1.07 Hydracite'],
+  },
+  // 194
+  {
+    id: 194,
+    minOrders: 183,
+    requiredOrderIds: [182],
+    resources: [],
+    actions: [],
+    npc: 'Tank Timmerson',
+    completion: {
+      resources: [
+        { item: 'Vespium', quantityDisplay: '5.00d' },
+        { item: 'Vespium Plate', quantityDisplay: '6.00m' },
+        { item: 'Battery', quantityDisplay: '11' },
+      ],
+      actions: [],
+    },
+    rewards: ['/4.95 Crafter Cost', '+10% Crafter Speed', '+1.18% Crafter Duplication Chance'],
+  },
+  // 195
+  {
+    id: 195,
+    minOrders: 185,
+    requiredOrderIds: [185],
+    resources: [],
+    actions: [],
+    completion: { resources: [], actions: [] },
+    rewards: [],
+  },
+  // 196
+  {
+    id: 196,
+    minOrders: 187,
+    requiredOrderIds: [193],
+    resources: [],
+    actions: [],
+    npc: 'Nyra Voss',
+    completion: {
+      resources: [{ item: 'Reinforced Concrete', quantityDisplay: '112' }],
+      actions: [],
+    },
+    rewards: ['x1.2 EXP', '+18 Core'],
+  },
+  // 197
+  {
+    id: 197,
+    minOrders: 188,
+    requiredOrderIds: [181],
+    resources: [],
+    actions: [],
+    npc: 'Samos Sula',
+    completion: {
+      resources: [
+        { item: 'Vespium Wire', quantityDisplay: '1.00m' },
+        { item: 'Battery', quantityDisplay: '72' },
+      ],
+      actions: [],
+    },
+    rewards: ['x2 Rig Output', '+7 Core'],
+  },
+  // 198
+  {
+    id: 198,
+    minOrders: 187,
+    requiredOrderIds: [178],
+    resources: [],
+    actions: [],
+    completion: { resources: [], actions: [] },
+    rewards: [],
+  },
+  // 199
+  {
+    id: 199,
+    minOrders: 189,
+    requiredOrderIds: [196],
+    resources: [{ item: 'Tokenium Canister', quantityDisplay: '3×10²⁵' }],
+    actions: [],
+    npc: 'Minalima Lin',
+    completion: {
+      resources: [
+        { item: 'Jade', quantityDisplay: '10.00sx' },
+        { item: 'Hydracite', quantityDisplay: '1.00qa' },
+        { item: 'Scorchium', quantityDisplay: '1.00qa' },
+      ],
+      actions: [],
+    },
+    rewards: ['+1 Attribute Point', '+250 Ether'],
+  },
+  // 200
+  {
+    id: 200,
+    minOrders: 190,
+    requiredOrderIds: [196],
+    resources: [{ item: 'Tokenium Canister', quantityDisplay: '4×10²⁵' }],
+    actions: [],
+    npc: 'Nyra Voss',
+    completion: {
+      resources: [{ item: 'Reinforced Concrete', quantityDisplay: '330' }],
+      actions: [],
+    },
+    rewards: ['+200 Max Stamina', '+8 Core', 'x1.1 EXP'],
+  },
+  // 201
+  {
+    id: 201,
+    minOrders: 191,
+    requiredOrderIds: [180],
+    resources: [],
+    actions: [{ type: 'endurance_synthesizer_potion', quantity: 141 }],
+    completion: { resources: [], actions: [] },
+    rewards: [],
+  },
+  // 202
+  {
+    id: 202,
+    minOrders: 190,
+    requiredOrderIds: [195],
+    resources: [{ item: 'Tokenium Canister', quantityDisplay: '4×10²⁵' }],
+    actions: [],
+    npc: 'Wrecket',
+    completion: {
+      resources: [{ item: 'Battery', quantityDisplay: '80' }],
+      actions: [],
+    },
+    rewards: ['x1.08 Tokenium', 'x1.19 Credit'],
+  },
+  // 203
+  {
+    id: 203,
+    minOrders: 190,
+    requiredOrderIds: [191],
+    resources: [{ item: 'Tokenium Canister', quantityDisplay: '4×10²⁵' }],
+    actions: [],
+    npc: 'Gama Kamalon',
+    completion: {
+      resources: [{ item: 'Battery', quantityDisplay: '275' }],
+      actions: [],
+    },
+    rewards: ['x1.1 Tokenium Canister'],
+  },
+  // 204
+  {
+    id: 204,
+    minOrders: 201,
+    requiredOrderIds: [199],
+    resources: [],
+    actions: [],
+    npc: 'Minalima Lin',
+    completion: {
+      resources: [{ item: 'Jade', quantityDisplay: '100.00sx' }],
+      actions: [],
+    },
+    rewards: ['x5 EXP'],
+  },
+  // 205
+  {
+    id: 205,
+    minOrders: 194,
+    requiredOrderIds: [197],
+    resources: [],
+    actions: [],
+    npc: 'Samos Sula',
+    completion: {
+      resources: [
+        { item: 'Vespium Wire', quantityDisplay: '2.00m' },
+        { item: 'Battery', quantityDisplay: '112' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.3 Rig Output', '+3.58% Rig Speed', '+8 Core'],
+  },
+  // 206
+  {
+    id: 206,
+    minOrders: 197,
+    requiredOrderIds: [194],
+    resources: [],
+    actions: [],
+    completion: { resources: [], actions: [] },
+    rewards: [],
+  },
+  // 207
+  {
+    id: 207,
+    minOrders: 199,
+    requiredOrderIds: [190],
+    resources: [{ item: 'Tokenium Canister', quantityDisplay: '5×10²⁵' }],
+    actions: [],
+    completion: { resources: [], actions: [] },
+    rewards: [],
+  },
+  // 208
+  {
+    id: 208,
+    minOrders: 200,
+    requiredOrderIds: [200],
+    resources: [{ item: 'Tokenium Canister', quantityDisplay: '5×10²⁵' }],
+    actions: [],
+    npc: 'Nyra Voss',
+    completion: {
+      resources: [{ item: 'Reinforced Concrete', quantityDisplay: '1400' }],
+      actions: [],
+    },
+    rewards: ['+18 Core', 'x1.2 EXP'],
+  },
+  // 209
+  {
+    id: 209,
+    minOrders: 189,
+    requiredOrderIds: [175],
+    resources: [{ item: 'Tokenium Canister', quantityDisplay: '5×10²⁵' }],
+    actions: [],
+    npc: 'Bhramari',
+    completion: {
+      resources: [
+        { item: 'Vespium Rod', quantityDisplay: '10.00m' },
+        { item: 'Battery', quantityDisplay: '100' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.03 Forgie Output', 'x1.05 Scorchium', '+16% Crafter Duplication Chance'],
+  },
+  // 210
+  {
+    id: 210,
+    minOrders: 199,
+    requiredOrderIds: [186],
+    resources: [{ item: 'Tokenium Canister', quantityDisplay: '5×10²⁵' }],
+    actions: [],
+    npc: 'Meepa Torani',
+    completion: {
+      resources: [
+        { item: 'Reinforced Concrete', quantityDisplay: '1000' },
+        { item: 'Battery', quantityDisplay: '100' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.5 Credit'],
+  },
+  // 211
+  {
+    id: 211,
+    minOrders: 196,
+    requiredOrderIds: [187],
+    resources: [{ item: 'Tokenium Canister', quantityDisplay: '5×10²⁵' }],
+    actions: [],
+    npc: 'Gerbo',
+    completion: {
+      resources: [{ item: 'Vespium', quantityDisplay: '5.00e36' }],
+      actions: [],
+    },
+    rewards: ['x2 Vespium', '+1 Attribute Point'],
+  },
+  // 212
+  {
+    id: 212,
+    minOrders: 201,
+    requiredOrderIds: [206],
+    resources: [{ item: 'Tokenium Canister', quantityDisplay: '5×10²⁵' }],
+    actions: [],
+    npc: 'Tank Timmerson',
+    completion: {
+      resources: [
+        { item: 'Vespium', quantityDisplay: '3.00e36' },
+        { item: 'Battery', quantityDisplay: '500' },
+      ],
+      actions: [],
+    },
+    rewards: ['/10 Crafter Cost', '+20% Crafter Speed', '+1.38% Crafter Duplication Chance'],
+  },
+  // 213
+  {
+    id: 213,
+    minOrders: 202,
+    requiredOrderIds: [208],
+    resources: [],
+    actions: [],
+    npc: 'Nyra Voss',
+    completion: {
+      resources: [
+        { item: 'Reinforced Concrete', quantityDisplay: '20.00k' },
+        { item: 'Battery', quantityDisplay: '2000' },
+      ],
+      actions: [],
+    },
+    rewards: ['+125 Core'],
   },
 ]
