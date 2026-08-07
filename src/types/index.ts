@@ -41,6 +41,34 @@ export const DEFAULT_STATS: PlayerStats = {
   totalOrdersCompleted: '',
 }
 
+// Maps each resource item name to its display group in the Stats calculator.
+// Add new resources here when they are added to orders — StatsPanel derives
+// its input fields automatically from this map + the items used in orders.
+export const RESOURCE_GROUP_MAP: Record<string, string> = {
+  'Worthless Rock':     'Worthless Rock',
+  'Industrial Bit':     'Silicate',
+  'Silicate Glass':     'Silicate',
+  'Silicate Brick':     'Silicate',
+  'Silicate Concrete':  'Silicate',
+  'Reinforced Concrete':'Silicate',
+  'Battery':            'Silicate',
+  'Vespium':            'Vespium',
+  'Vespium Ingot':      'Vespium',
+  'Vespium Plate':      'Vespium',
+  'Vespium Rod':        'Vespium',
+  'Vespium Frame':      'Vespium',
+  'Vespium Wire':       'Vespium',
+  'Jade':               'Jade',
+  'Hydracite':          'Ore',
+  'Scorchium':          'Ore',
+  'Tokenium Canister':  'Tokenium',
+  'Low Grade Gel':      'Other',
+}
+
+export const RESOURCE_GROUP_ORDER = [
+  'Worthless Rock', 'Silicate', 'Vespium', 'Jade', 'Ore', 'Tokenium', 'Other',
+]
+
 // ordered from largest to avoid false prefix matches
 export const ALL_RESOURCE_NAMES: readonly string[] = [
   'Jade',

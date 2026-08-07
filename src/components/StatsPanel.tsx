@@ -2,6 +2,7 @@
 
 import { useRef, useState } from 'react'
 import type { Order, PlayerStats } from '@/types'
+import { RESOURCE_GROUP_MAP, RESOURCE_GROUP_ORDER } from '@/types'
 import { inferCompletedOrders, type InferenceResult } from '@/utils/inferCompletedOrders'
 import { orders as allOrders } from '@/data/orders'
 import { parseQuantity, formatQuantity } from '@/utils/parseQuantity'
@@ -16,18 +17,23 @@ interface StatsPanelProps {
   onImportOrders: (completed: number[], inProgress: number[]) => void
 }
 
-const RESOURCE_GROUPS: { label: string; items: string[] }[] = [
-  { label: 'Worthless Rock', items: ['Worthless Rock'] },
-  { label: 'Silicate', items: ['Industrial Bit', 'Silicate Glass', 'Silicate Brick', 'Silicate Concrete', 'Reinforced Concrete', 'Battery'] },
-  {
-    label: 'Vespium',
-    items: ['Vespium', 'Vespium Ingot', 'Vespium Plate', 'Vespium Rod', 'Vespium Frame', 'Vespium Wire'],
-  },
-  { label: 'Jade', items: ['Jade'] },
-  { label: 'Ore', items: ['Hydracite', 'Scorchium'] },
-  { label: 'Tokenium', items: ['Tokenium', 'Tokenium Canister'] },
-  { label: 'Other', items: ['Low Grade Gel'] },
-]
+// Derived from order data — no manual updates needed when new resources are added.
+// To add a new resource: update RESOURCE_GROUP_MAP in types/index.ts and add orders that use it.
+const RESOURCE_GROUPS: { label: string; items: string[] }[] = (() => {
+  const usedItems = new Set<string>()
+  for (const order of allOrders) {
+    for (const r of order.resources) usedItems.add(r.item)
+  }
+  const groupMap = new Map<string, string[]>()
+  for (const item of usedItems) {
+    const group = RESOURCE_GROUP_MAP[item] ?? 'Other'
+    if (!groupMap.has(group)) groupMap.set(group, [])
+    groupMap.get(group)!.push(item)
+  }
+  return RESOURCE_GROUP_ORDER
+    .filter(g => groupMap.has(g))
+    .map(g => ({ label: g, items: groupMap.get(g)! }))
+})()
 
 const INPUT_CLASSES =
   'w-full bg-slate-950/60 border border-slate-800/55 rounded-sm px-2 py-1 text-xs text-slate-200 placeholder-slate-700 font-spacemono focus:outline-none focus:border-cyan-700/40 focus:ring-1 focus:ring-cyan-600/20 transition-colors'

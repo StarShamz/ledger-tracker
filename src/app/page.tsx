@@ -13,7 +13,7 @@ import BottomSheet from '@/components/BottomSheet'
 import { parseQuantity } from '@/utils/parseQuantity'
 import { getAllPrerequisites, getAllDependents } from '@/utils/inferCompletedOrders'
 import type { CharacterFilter, Order, OrderStatus, PlayerStats, ResourceFilter, RewardFilter, StatusFilter } from '@/types'
-import { DEFAULT_STATS } from '@/types'
+import { DEFAULT_STATS, RESOURCE_GROUP_MAP } from '@/types'
 
 function getStatus(
   order: Order,
@@ -58,7 +58,7 @@ function matchesResource(order: Order, filter: ResourceFilter): boolean {
     case 'ether':     return (order.completion?.resources ?? []).some(r => r.item.toLowerCase() === 'ether')
     case 'jade':      return items.some(i => i === 'jade')
     case 'vespium':   return items.some(i => i.includes('vespium'))
-    case 'silicate':  return items.some(i => i.includes('silicate') || i === 'reinforced concrete' || i === 'battery')
+    case 'silicate':  return order.resources.some(r => RESOURCE_GROUP_MAP[r.item] === 'Silicate')
     case 'industrial': return items.some(i => i === 'industrial bit')
     case 'hydracite': return items.some(i => i === 'hydracite')
     case 'scorchium': return items.some(i => i === 'scorchium')
