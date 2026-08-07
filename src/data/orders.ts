@@ -2870,8 +2870,15 @@ export const orders: Order[] = [
     requiredOrderIds: [165],
     resources: [{ item: 'Tokenium Canister', quantityDisplay: '1×10²⁴' }],
     actions: [],
-    completion: { resources: [], actions: [] },
-    rewards: [],
+    npc: 'Gama Kamalon',
+    completion: {
+      resources: [
+        { item: 'Silicate Concrete', quantityDisplay: '5.00b' },
+        { item: 'Low Grade Gel', quantityDisplay: '1.00m' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.2 Hydracite', 'x1.2 Tokenium', '+1 Attribute Point'],
   },
   // 178
   {
@@ -2880,8 +2887,15 @@ export const orders: Order[] = [
     requiredOrderIds: [170],
     resources: [{ item: 'Tokenium Canister', quantityDisplay: '1×10²⁴' }],
     actions: [],
-    completion: { resources: [], actions: [] },
-    rewards: [],
+    npc: 'Donathan Creel',
+    completion: {
+      resources: [
+        { item: 'Industrial Bit', quantityDisplay: '1.00b' },
+        { item: 'Silicate Concrete', quantityDisplay: '1.00b' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.25 Credit', 'x1.25 EXP'],
   },
   // 179
   {
@@ -2890,8 +2904,12 @@ export const orders: Order[] = [
     requiredOrderIds: [132],
     resources: [{ item: 'Tokenium Canister', quantityDisplay: '1×10²⁴' }],
     actions: [],
-    completion: { resources: [], actions: [] },
-    rewards: [],
+    npc: 'Minalima Lin',
+    completion: {
+      resources: [{ item: 'Jade', quantityDisplay: '100.00qu' }],
+      actions: [],
+    },
+    rewards: ['+1 Attribute Point', '+50 Ether'],
   },
   // 180
   {
