@@ -3,7 +3,7 @@
 import { useMemo, useState } from 'react'
 import Link from 'next/link'
 import { orders } from '@/data/orders'
-import { getOrderNpc } from '@/data/npcs'
+import { getOrderNpc, NPC_IMAGES } from '@/data/npcs'
 import { useLocalStorage } from '@/hooks/useLocalStorage'
 import { parseQuantity } from '@/utils/parseQuantity'
 import { DEFAULT_STATS } from '@/types'
@@ -163,40 +163,67 @@ export default function TimelinePage() {
               {/* Order rows */}
               {visible.map(({ order, status }) => {
                 const npc = getOrderNpc(order)
+                const npcImage = npc ? NPC_IMAGES[npc] : undefined
                 const completionSummary = getCompletionSummary(order)
-                const firstReward = order.rewards?.[0] ?? '—'
+                const rewards = order.rewards ?? []
                 const isLocked = status === 'locked'
 
                 return (
                   <div
                     key={order.id}
-                    className={`flex items-center gap-0 border-l-2 ${STATUS_BORDER[status]} ${STATUS_BG[status]}`}
+                    className={`flex items-stretch border-l-2 ${STATUS_BORDER[status]} ${STATUS_BG[status]}`}
                   >
-                    {/* Order ID */}
-                    <span className="font-spacemono text-[10px] text-slate-500 w-[64px] shrink-0 px-3 py-2.5 tabular-nums">
-                      #{order.id}
-                    </span>
+                    {/* NPC Portrait */}
+                    <div className="w-11 shrink-0 flex items-center justify-center px-1.5">
+                      {npcImage ? (
+                        <img
+                          src={npcImage}
+                          alt=""
+                          aria-hidden="true"
+                          className="w-8 h-8 object-cover rounded-sm opacity-75"
+                        />
+                      ) : (
+                        <div className="w-8 h-8 rounded-sm bg-slate-800/80 flex items-center justify-center">
+                          <span className="font-orbitron text-[9px] text-slate-600">
+                            {npc?.[0] ?? '?'}
+                          </span>
+                        </div>
+                      )}
+                    </div>
 
-                    {/* NPC */}
-                    <span className="font-spacemono text-[10px] text-slate-400 w-[108px] shrink-0 py-2.5 truncate pr-2">
-                      {npc ?? <span className="text-slate-700">—</span>}
-                    </span>
-
-                    {/* Completion cost */}
-                    <span className={`font-spacemono text-[10px] flex-1 py-2.5 truncate pr-3 min-w-0 ${isLocked ? 'text-slate-600' : 'text-slate-300'}`}>
-                      {completionSummary}
-                    </span>
-
-                    {/* Locked badge or first reward */}
-                    {isLocked ? (
-                      <span className="font-orbitron text-[8px] tracking-[0.1em] text-slate-600 border border-slate-800 px-1.5 py-0.5 rounded-sm shrink-0 mx-3">
-                        LOCKED
+                    {/* Order ID + NPC name + completion cost */}
+                    <div className="flex-1 min-w-0 py-2.5 pr-3 flex flex-col justify-center gap-0.5">
+                      <div className="flex items-center gap-1.5">
+                        <span className="font-spacemono text-[10px] text-slate-500 tabular-nums shrink-0">
+                          #{order.id}
+                        </span>
+                        {npc && (
+                          <span className="font-spacemono text-[9px] text-slate-600 truncate">
+                            {npc}
+                          </span>
+                        )}
+                      </div>
+                      <span className={`font-spacemono text-[10px] leading-snug ${isLocked ? 'text-slate-600' : 'text-slate-300'}`}>
+                        {completionSummary}
                       </span>
-                    ) : (
-                      <span className="font-spacemono text-[10px] text-emerald-400/70 shrink-0 py-2.5 px-3 text-right max-w-[140px] truncate">
-                        {firstReward}
-                      </span>
-                    )}
+                    </div>
+
+                    {/* Rewards or locked badge */}
+                    <div className="shrink-0 py-2.5 px-3 flex flex-col items-end justify-center gap-0.5 max-w-[160px]">
+                      {isLocked ? (
+                        <span className="font-orbitron text-[8px] tracking-[0.1em] text-slate-600 border border-slate-800 px-1.5 py-0.5 rounded-sm">
+                          LOCKED
+                        </span>
+                      ) : rewards.length > 0 ? (
+                        rewards.map((r, i) => (
+                          <span key={i} className="font-spacemono text-[10px] text-emerald-400/70 text-right">
+                            {r}
+                          </span>
+                        ))
+                      ) : (
+                        <span className="font-spacemono text-[10px] text-slate-600">—</span>
+                      )}
+                    </div>
                   </div>
                 )
               })}
