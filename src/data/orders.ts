@@ -2927,8 +2927,15 @@ export const orders: Order[] = [
     requiredOrderIds: [172],
     resources: [{ item: 'Tokenium Canister', quantityDisplay: '1×10²⁴' }],
     actions: [],
-    completion: { resources: [], actions: [] },
-    rewards: [],
+    npc: 'Tank Timmerson',
+    completion: {
+      resources: [
+        { item: 'Vespium Ingot', quantityDisplay: '450.00m' },
+        { item: 'Vespium Frame', quantityDisplay: '1.50m' },
+      ],
+      actions: [],
+    },
+    rewards: ['/4.43 Crafter Cost', 'x1.26 Rock'],
   },
   // 183
   {
@@ -3072,8 +3079,12 @@ export const orders: Order[] = [
     requiredOrderIds: [184],
     resources: [],
     actions: [],
-    completion: { resources: [], actions: [] },
-    rewards: [],
+    npc: 'Nyra Voss',
+    completion: {
+      resources: [{ item: 'Reinforced Concrete', quantityDisplay: '32' }],
+      actions: [],
+    },
+    rewards: ['x1.09 Credit', '+14 Core'],
   },
   // 193
   {
@@ -3114,8 +3125,12 @@ export const orders: Order[] = [
     requiredOrderIds: [185],
     resources: [],
     actions: [],
-    completion: { resources: [], actions: [] },
-    rewards: [],
+    npc: 'Wrecket',
+    completion: {
+      resources: [{ item: 'Battery', quantityDisplay: '40' }],
+      actions: [],
+    },
+    rewards: ['x1.08 Tokenium', 'x1.16 Credit'],
   },
   // 196
   {
@@ -3155,8 +3170,12 @@ export const orders: Order[] = [
     requiredOrderIds: [178],
     resources: [],
     actions: [],
-    completion: { resources: [], actions: [] },
-    rewards: [],
+    npc: 'Donathan Creel',
+    completion: {
+      resources: [{ item: 'Reinforced Concrete', quantityDisplay: '175' }],
+      actions: [],
+    },
+    rewards: ['x1.15 Craftable Sell Price'],
   },
   // 199
   {
@@ -3266,8 +3285,16 @@ export const orders: Order[] = [
     requiredOrderIds: [194],
     resources: [],
     actions: [],
-    completion: { resources: [], actions: [] },
-    rewards: [],
+    npc: 'Tank Timmerson',
+    completion: {
+      resources: [
+        { item: 'Vespium', quantityDisplay: '500.00d' },
+        { item: 'Vespium Plate', quantityDisplay: '8.00m' },
+        { item: 'Battery', quantityDisplay: '19' },
+      ],
+      actions: [],
+    },
+    rewards: ['/4.95 Crafter Cost', '+10% Crafter Speed', '+1.18% Crafter Duplication Chance'],
   },
   // 207
   {
