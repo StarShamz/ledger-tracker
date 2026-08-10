@@ -3069,8 +3069,8 @@ export const orders: Order[] = [
     npc: 'Clank',
     completion: {
       resources: [
-        { item: 'Industrial Bit', quantityDisplay: '500.00b' },
-        { item: 'Silicate Concrete', quantityDisplay: '500.00b' },
+        { item: 'Industrial Bit', quantityDisplay: '25.00b' },
+        { item: 'Silicate Concrete', quantityDisplay: '25.00b' },
       ],
       actions: [],
     },
