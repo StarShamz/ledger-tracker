@@ -102,14 +102,28 @@ const FORMAT_TIERS: [bigint, string][] = [
 export function formatQuantity(n: bigint): string {
   for (const [mult, suffix] of FORMAT_TIERS) {
     if (n >= mult) {
-      if (n % mult === 0n) return `${n / mult}${suffix}`
+      const coeff = n / mult
+      // Skip this tier if the coefficient would be unreadably large
+      if (coeff > 9999n) continue
+      if (n % mult === 0n) return `${coeff}${suffix}`
       const tenth = mult / 10n
       if (tenth > 0n && n % tenth === 0n) {
-        return `${n / mult}.${(n % mult) / tenth}${suffix}`
+        return `${coeff}.${(n % mult) / tenth}${suffix}`
+      }
+      const hundredth = mult / 100n
+      if (hundredth > 0n && n % hundredth === 0n) {
+        const dec = String((n % mult) / hundredth).padStart(2, '0')
+        return `${coeff}.${dec}${suffix}`
       }
     }
   }
-  return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+  // Fall back to compact e notation
+  const s = n.toString()
+  const sig = s.replace(/0+$/, '')
+  const exp = s.length - 1
+  if (sig.length <= 1) return `${sig}e${exp}`
+  const dec = sig.slice(1).replace(/0+$/, '')
+  return dec ? `${sig[0]}.${dec}e${exp}` : `${sig[0]}e${exp}`
 }
 
 export function meetsRequirement(
