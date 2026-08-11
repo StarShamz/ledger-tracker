@@ -3463,7 +3463,7 @@ export const orders: Order[] = [
     requiredOrderIds: [],
     resources: [
       { item: 'Reinforced Concrete', quantityDisplay: '4500' },
-      { item: 'Battery', quantityDisplay: '2.00b' },
+      { item: 'Silicate Concrete', quantityDisplay: '2.00b' },
     ],
     actions: [],
     npc: 'Nyra Voss',
