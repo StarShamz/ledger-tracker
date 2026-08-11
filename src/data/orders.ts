@@ -2067,7 +2067,7 @@ export const orders: Order[] = [
       ],
       actions: [],
     },
-    rewards: ['+75 Max Stamina', '+10 Core'],
+    rewards: ['+75 Max Stamina', '+10 Core', 'x3 EXP'],
   },
   // 128
   {
@@ -2084,7 +2084,7 @@ export const orders: Order[] = [
       ],
       actions: [],
     },
-    rewards: ['+3 Critical Power'],
+    rewards: ['+3 Critical Power', 'x3 EXP'],
   },
   // 129
   {
@@ -2166,7 +2166,7 @@ export const orders: Order[] = [
       ],
       actions: [],
     },
-    rewards: ['+100 Max Stamina', '+1% Critical Power'],
+    rewards: ['+100 Max Stamina', '+1% Critical Power', 'x3 EXP'],
   },
   // 135
   {
@@ -2182,7 +2182,7 @@ export const orders: Order[] = [
       ],
       actions: [],
     },
-    rewards: ['+80 Max Stamina', 'x1.25 EXP'],
+    rewards: ['+80 Max Stamina', 'x3 EXP'],
   },
   // 136
   {
