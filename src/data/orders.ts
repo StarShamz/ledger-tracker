@@ -3319,10 +3319,11 @@ export const orders: Order[] = [
     id: 207,
     minOrders: 199,
     requiredOrderIds: [190],
-    resources: [{ item: 'Tokenium Canister', quantityDisplay: '5×10²⁵' }],
+    resources: [{ item: 'Battery', quantityDisplay: '10000' }],
     actions: [],
+    npc: 'Clank',
     completion: { resources: [], actions: [] },
-    rewards: [],
+    rewards: ['x1.5 Hydracite', '+80% Crafter Speed'],
   },
   // 208
   {
