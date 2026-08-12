@@ -2092,7 +2092,7 @@ export const orders: Order[] = [
     minOrders: 131,
     requiredOrderIds: [67],
     resources: [],
-    actions: [{ type: 'chad_infusion', quantity: 54 }],
+    actions: [{ type: 'chad_level', quantity: 54 }],
     npc: 'The Ether Hoarder',
     completion: {
       resources: [{ item: 'Ether', quantityDisplay: '272' }],

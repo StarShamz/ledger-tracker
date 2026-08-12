@@ -98,8 +98,22 @@ const FORMAT_TIERS: [bigint, string][] = [
   [10n **  3n, 'k'],
 ]
 
+const E_NOTATION_THRESHOLD = 10n ** 36n
+
+function toENotation(n: bigint): string {
+  const s = n.toString()
+  const sig = s.replace(/0+$/, '')
+  const exp = s.length - 1
+  if (sig.length <= 1) return `${sig}e${exp}`
+  const dec = sig.slice(1).replace(/0+$/, '')
+  return dec ? `${sig[0]}.${dec}e${exp}` : `${sig[0]}e${exp}`
+}
+
 /** Convert a BigInt quantity to a compact human-readable string (e.g. 10sq, 2qi, 1.5m). */
 export function formatQuantity(n: bigint): string {
+  // Values >= 10^36 always use e notation
+  if (n >= E_NOTATION_THRESHOLD) return toENotation(n)
+
   for (const [mult, suffix] of FORMAT_TIERS) {
     if (n >= mult) {
       const coeff = n / mult
@@ -117,13 +131,8 @@ export function formatQuantity(n: bigint): string {
       }
     }
   }
-  // Fall back to compact e notation
-  const s = n.toString()
-  const sig = s.replace(/0+$/, '')
-  const exp = s.length - 1
-  if (sig.length <= 1) return `${sig}e${exp}`
-  const dec = sig.slice(1).replace(/0+$/, '')
-  return dec ? `${sig[0]}.${dec}e${exp}` : `${sig[0]}e${exp}`
+  // Plain integer (with commas) for small values that don't match a suffix tier
+  return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 }
 
 export function meetsRequirement(
