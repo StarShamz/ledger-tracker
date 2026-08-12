@@ -77,6 +77,7 @@ function fmtQty(display: string | null): string {
 
 function isImmediatelyAvailable(order: Order): boolean {
   return (
+    !order.unlockUnknown &&
     order.minOrders === 0 &&
     order.requiredOrderIds.length === 0 &&
     order.resources.length === 0 &&
@@ -229,6 +230,12 @@ export default function OrderCard({
             <p className="text-xs text-emerald-400 font-spacemono">Available immediately</p>
           ) : (
             <>
+              {order.unlockUnknown && (
+                <RequirementRow state="unknown">
+                  Unlock requirements unknown
+                </RequirementRow>
+              )}
+
               {order.minOrders > 0 && (
                 <RequirementRow state={countMet ? 'met' : 'unmet'}>
                   Complete {order.minOrders}+ orders

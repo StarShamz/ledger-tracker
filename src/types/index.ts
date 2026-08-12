@@ -23,6 +23,8 @@ export interface Order {
   rewards?: string[]
   // Confirmed requesting NPC, overriding the resource-based inference. Omitted where unconfirmed.
   npc?: string
+  // Unlock requirements exist but are not yet known.
+  unlockUnknown?: boolean
 }
 
 export interface PlayerStats {
