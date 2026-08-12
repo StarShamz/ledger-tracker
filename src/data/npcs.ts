@@ -51,8 +51,8 @@ export const NPC_IMAGES: Record<string, string> = {
   'Donathan Creel':    '/npcs/donathan-creel.webp',
   'Samos Sula':        '/npcs/samos-sula.webp',
   'Bhramari':          '/npcs/bhramari.webp',
-  'Nyra Voss':         '/npcs/nyra-voss.webp',
-  'Wrecket':           '/npcs/wrecket.webp',
+  'Nyra Voss':         '/npcs/nyra-voss.png',
+  'Wrecket':           '/npcs/wrecket.png',
 }
 
 export function getOrderNpc(order: Order): string | undefined {
