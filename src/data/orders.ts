@@ -3360,7 +3360,7 @@ export const orders: Order[] = [
       ],
       actions: [],
     },
-    rewards: ['x1.03 Forgie Output', 'x1.05 Scorchium', '+16% Crafter Duplication Chance'],
+    rewards: ['x1.03 Forgie Output', 'x1.05 Scorchium', '+16% Crafter Speed'],
   },
   // 210
   {
