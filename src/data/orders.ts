@@ -3494,6 +3494,21 @@ export const orders: Order[] = [
     rewards: ['x1.2 EXP', 'x1.2 Rig Output', 'x1.2 Credit'],
   },
   {
+    id: 218,
+    minOrders: 208,
+    requiredOrderIds: [202],
+    resources: [],
+    actions: [],
+    npc: 'Wrecket',
+    completion: {
+      resources: [
+        { item: 'Battery', quantityDisplay: '1100' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.07 Hydracite', 'x1.03 Tokenium'],
+  },
+  {
     id: 220,
     minOrders: 0,
     requiredOrderIds: [],
