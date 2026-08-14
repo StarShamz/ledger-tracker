@@ -3445,7 +3445,7 @@ export const orders: Order[] = [
   },
   {
     id: 215,
-    minOrders: 205,
+    minOrders: 207,
     requiredOrderIds: [209],
     resources: [],
     actions: [],
@@ -3462,7 +3462,7 @@ export const orders: Order[] = [
   },
   {
     id: 216,
-    minOrders: 205,
+    minOrders: 206,
     requiredOrderIds: [204],
     resources: [],
     actions: [],
