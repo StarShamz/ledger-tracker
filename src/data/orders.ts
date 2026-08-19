@@ -2107,8 +2107,12 @@ export const orders: Order[] = [
     requiredOrderIds: [129],
     resources: [],
     actions: [{ type: 'chad_level', quantity: 66 }],
-    completion: { resources: [], actions: [] },
-    rewards: [],
+    npc: 'The Ether Hoarder',
+    completion: {
+      resources: [{ item: 'Ether', quantityDisplay: '440' }],
+      actions: [],
+    },
+    rewards: ['+1 Attribute Point', '+500 Max Stamina'],
   },
   // 131
   {
@@ -2191,8 +2195,17 @@ export const orders: Order[] = [
     requiredOrderIds: [135],
     resources: [],
     actions: [{ type: 'endurance_synthesizer_potion', quantity: 101 }],
-    completion: { resources: [], actions: [] },
-    rewards: [],
+    npc: 'Eidelaine Eeko',
+    completion: {
+      resources: [
+        { item: 'Endurance Booster Potion', quantityDisplay: '8' },
+        { item: 'Precision Booster Potion', quantityDisplay: '5' },
+        { item: 'Detection Booster Potion', quantityDisplay: '5' },
+        { item: 'Power Booster Potion', quantityDisplay: '5' },
+      ],
+      actions: [],
+    },
+    rewards: ['+2 Attribute Point'],
   },
   // 137
   {
