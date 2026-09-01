@@ -2879,8 +2879,15 @@ export const orders: Order[] = [
     requiredOrderIds: [136],
     resources: [],
     actions: [{ type: 'endurance_synthesizer_potion', quantity: 111 }],
-    completion: { resources: [], actions: [] },
-    rewards: [],
+    npc: 'Eidelaine Eeko',
+    completion: {
+      resources: [
+        { item: 'Endurance Booster Potion', quantityDisplay: '10' },
+        { item: 'Precision Booster Potion', quantityDisplay: '8' },
+      ],
+      actions: [],
+    },
+    rewards: ['+1000 Max Stamina', '+3% Critical Power'],
   },
   // 177
   {
