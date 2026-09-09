@@ -3529,6 +3529,19 @@ export const orders: Order[] = [
     rewards: ['x1.07 Hydracite', 'x1.03 Tokenium'],
   },
   {
+    id: 219,
+    minOrders: 0,
+    requiredOrderIds: [],
+    resources: [
+      { item: 'Hydracite', quantityDisplay: '2.22sx' },
+      { item: 'Scorchium', quantityDisplay: '3.33sx' },
+    ],
+    actions: [],
+    npc: 'The Twins',
+    completion: { resources: [], actions: [] },
+    rewards: ['+1 Attribute Point', 'x2 EXP'],
+  },
+  {
     id: 220,
     minOrders: 0,
     requiredOrderIds: [],
