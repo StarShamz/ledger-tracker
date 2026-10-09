@@ -2944,8 +2944,15 @@ export const orders: Order[] = [
     requiredOrderIds: [176],
     resources: [],
     actions: [{ type: 'endurance_synthesizer_potion', quantity: 126 }],
-    completion: { resources: [], actions: [] },
-    rewards: [],
+    npc: 'Eidelaine Eeko',
+    completion: {
+      resources: [
+        { item: 'Endurance Booster Potion', quantityDisplay: '11' },
+        { item: 'Precision Booster Potion', quantityDisplay: '9' },
+      ],
+      actions: [],
+    },
+    rewards: ['+1100 Max Stamina', '+4% Critical Power'],
   },
   // 181
   {
@@ -3260,8 +3267,15 @@ export const orders: Order[] = [
     requiredOrderIds: [180],
     resources: [],
     actions: [{ type: 'endurance_synthesizer_potion', quantity: 141 }],
-    completion: { resources: [], actions: [] },
-    rewards: [],
+    npc: 'Eidelaine Eeko',
+    completion: {
+      resources: [
+        { item: 'Endurance Booster Potion', quantityDisplay: '12' },
+        { item: 'Precision Booster Potion', quantityDisplay: '10' },
+      ],
+      actions: [],
+    },
+    rewards: ['+1200 Max Stamina', '+5% Critical Power'],
   },
   // 202
   {
