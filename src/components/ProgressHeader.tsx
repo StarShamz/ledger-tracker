@@ -35,7 +35,7 @@ export default function ProgressHeader({
               Chad&apos;s Galactic Mining Empire
             </p>
             <h1 className="font-orbitron text-3xl font-bold tracking-[0.12em] text-cyan-200 uppercase leading-snug [text-shadow:0_0_18px_rgba(0,212,255,0.45)]">
-              Ledger Planner
+              StarShamz&apos;s Ledger Tracker
             </h1>
             <div className="flex items-center gap-2 mt-2">
               <div className="flex items-center gap-1.5 text-xs font-spacemono tabular-nums">
@@ -52,6 +52,12 @@ export default function ProgressHeader({
               className="font-orbitron text-[10px] tracking-[0.08em] px-3 py-2 min-h-[44px] rounded-sm border border-slate-700/60 text-slate-400 hover:text-slate-200 hover:border-slate-500 transition-all duration-150 flex items-center cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-cyan-500/50 focus-visible:ring-offset-1 focus-visible:ring-offset-black"
             >
               Timeline
+            </Link>
+            <Link
+              href="/planner"
+              className="font-orbitron text-[10px] tracking-[0.08em] px-3 py-2 min-h-[44px] rounded-sm border border-slate-700/60 text-slate-400 hover:text-slate-200 hover:border-slate-500 transition-all duration-150 flex items-center cursor-pointer focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-cyan-500/50 focus-visible:ring-offset-1 focus-visible:ring-offset-black"
+            >
+              Planner
             </Link>
 
             <button

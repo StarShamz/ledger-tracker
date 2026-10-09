@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Orbitron, Space_Mono, Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
+import UpdateBanner from '@/components/UpdateBanner'
 
 const orbitron = Orbitron({
   variable: '--font-orbitron',
@@ -26,6 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className="dark">
       <body className={`${orbitron.variable} ${spaceMono.variable} ${geistSans.variable} ${geistMono.variable} antialiased text-gray-100 min-h-dvh`}>
+        <UpdateBanner />
         {children}
       </body>
     </html>

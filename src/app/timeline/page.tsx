@@ -149,6 +149,9 @@ export default function TimelinePage() {
 
       {/* Content */}
       <div className="max-w-2xl mx-auto py-2">
+        <p className="font-spacemono text-[11px] leading-relaxed text-slate-400 px-4 pt-3 pb-1">
+          See ledgers in their unlock and completion order here.
+        </p>
         {grouped.map(([minOrders, group]) => {
           const withStatus = group.map(order => ({
             order,
