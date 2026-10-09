@@ -4,7 +4,7 @@ export interface ResourceRequirement {
 }
 
 export interface ActionRequirement {
-  type: 'chad_infusion' | 'chad_level' | 'endurance_synthesizer_potion'
+  type: 'chad_infusion' | 'chad_level' | 'endurance_synthesizer_potion' | 'post_update_infusion'
   quantity: number
 }
 
@@ -31,6 +31,7 @@ export interface PlayerStats {
   tiLevel: string             // TI level = Chad Infusions performed
   chadLevel: string           // Chad Level (separate from TI count)
   potionsCrafted: string      // Endurance Synthesizer Potions crafted
+  infusionsSinceUpdate?: string  // Chad Infusions performed since updating to v1.2
   resources: Record<string, string>  // item name → all-time gained (stored as string)
   totalOrdersCompleted: string  // in-game count used by the inference engine
 }
@@ -39,6 +40,7 @@ export const DEFAULT_STATS: PlayerStats = {
   tiLevel: '',
   chadLevel: '',
   potionsCrafted: '',
+  infusionsSinceUpdate: '',
   resources: {},
   totalOrdersCompleted: '',
 }
@@ -63,7 +65,12 @@ export const RESOURCE_GROUP_MAP: Record<string, string> = {
   'Jade':               'Jade',
   'Hydracite':          'Ore',
   'Scorchium':          'Ore',
+  'Ardranite':          'Ore',
+  'Azvelite':           'Ore',
+  'Tokenium':           'Tokenium',
   'Tokenium Canister':  'Tokenium',
+  'Detection Booster Potion': 'Other',
+  'Power Booster Potion':     'Other',
   'Low Grade Gel':      'Other',
 }
 
@@ -87,8 +94,11 @@ export const ALL_RESOURCE_NAMES: readonly string[] = [
   'Battery',
   'Industrial Bit',
   'Tokenium Canister',
+  'Tokenium',
   'Hydracite',
   'Scorchium',
+  'Ardranite',
+  'Azvelite',
   'Low Grade Gel',
   'Worthless Rock',
 ]
@@ -106,6 +116,8 @@ export type ResourceFilter =
   | 'industrial'
   | 'hydracite'
   | 'scorchium'
+  | 'ardranite'
+  | 'azvelite'
   | 'gel'
   | 'rocks'
   | 'actions'
@@ -120,6 +132,8 @@ export type RewardFilter =
   | 'vespium'
   | 'jade'
   | 'worthless_rock'
+  | 'ardranite'
+  | 'azvelite'
   | 'tokenium'
   | 'craftable_sell_price'
   | 'rig'

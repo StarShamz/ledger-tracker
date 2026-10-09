@@ -111,7 +111,7 @@ export default function ProgressHeader({
 
         {/* Description + feedback link */}
         <p className="font-spacemono text-[11px] leading-relaxed text-slate-400 mb-3">
-          Plan resource costs, prerequisite chains, and your completion progress across all 163 orders — saved automatically in your browser.{' '}
+          Plan resource costs, prerequisite chains, and your completion progress across all {totalCount} orders — saved automatically in your browser.{' '}
           <a
             href="https://github.com/StarShamz/ledger-tracker/issues/new/choose"
             target="_blank"

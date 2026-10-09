@@ -35,6 +35,8 @@ const RESOURCE_CHIPS: { value: ResourceFilter; label: string }[] = [
   { value: 'industrial', label: 'Ind. Bits' },
   { value: 'hydracite', label: 'Hydracite' },
   { value: 'scorchium', label: 'Scorchium' },
+  { value: 'ardranite', label: 'Ardranite' },
+  { value: 'azvelite', label: 'Azvelite' },
   { value: 'gel', label: 'Gel' },
   { value: 'rocks', label: 'Rocks' },
   { value: 'actions', label: 'Actions' },
@@ -50,6 +52,8 @@ const REWARD_CHIPS: { value: RewardFilter; label: string }[] = [
   { value: 'vespium', label: 'Vespium' },
   { value: 'jade', label: 'Jade' },
   { value: 'worthless_rock', label: 'Worthless Rock' },
+  { value: 'ardranite', label: 'Ardranite' },
+  { value: 'azvelite', label: 'Azvelite' },
   { value: 'tokenium', label: 'Tokenium' },
   { value: 'craftable_sell_price', label: 'Sell Price' },
   { value: 'rig', label: 'Rig' },
@@ -59,7 +63,9 @@ const REWARD_CHIPS: { value: RewardFilter; label: string }[] = [
 ]
 
 const CHARACTER_NAMES = [
+  'Bertha',
   'Bhramari',
+  'Caylris En Divalone',
   'Clank',
   'Donathan Creel',
   'Eidelaine Eeko',
@@ -67,11 +73,13 @@ const CHARACTER_NAMES = [
   'Gerbo',
   'Meepa Torani',
   'Minalima Lin',
+  'Nyra Voss',
   'Puri Puri',
   'Samos Sula',
   'Tank Timmerson',
   'The Ether Hoarder',
   'The Twins',
+  'Wrecket',
 ]
 
 const CHARACTER_CHIPS: { value: CharacterFilter; label: string; image?: string }[] = [

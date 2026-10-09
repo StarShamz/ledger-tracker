@@ -1,6 +1,7 @@
 import { orders } from '@/data/orders'
 import type { Order, PlayerStats } from '@/types'
 import { parseQuantity } from './parseQuantity'
+import { actionPlayerValue, ACTION_STAT_LABEL } from '@/utils/actions'
 
 const orderMap = new Map(orders.map(o => [o.id, o]))
 
@@ -68,7 +69,7 @@ function isUnlockable(order: Order, completed: Set<number>, stats: PlayerStats):
   }
 
   for (const a of order.actions) {
-    const playerStr = a.type === 'chad_infusion' ? stats.tiLevel : a.type === 'chad_level' ? stats.chadLevel : stats.potionsCrafted
+    const playerStr = actionPlayerValue(a, stats)
     if (!playerStr?.trim()) continue
     const player = parseQuantity(playerStr)
     if (player !== null && player < BigInt(a.quantity)) return false
@@ -89,7 +90,7 @@ function isUnlockable(order: Order, completed: Set<number>, stats: PlayerStats):
     }
 
     for (const a of order.completion.actions) {
-      const playerStr = a.type === 'chad_infusion' ? stats.tiLevel : a.type === 'chad_level' ? stats.chadLevel : stats.potionsCrafted
+      const playerStr = actionPlayerValue(a, stats)
       if (!playerStr?.trim()) continue
       const player = parseQuantity(playerStr)
       if (player !== null && player < BigInt(a.quantity)) return false
@@ -163,9 +164,9 @@ export function inferCompletedOrders(
         if (!stats.resources[r.item]?.trim()) missingStats.add(r.item)
       }
       for (const a of order.actions) {
-        const playerStr = a.type === 'chad_infusion' ? stats.tiLevel : a.type === 'chad_level' ? stats.chadLevel : stats.potionsCrafted
+        const playerStr = actionPlayerValue(a, stats)
         if (!playerStr?.trim()) {
-          missingStats.add(a.type === 'chad_infusion' ? 'Infusions Done (TIs)' : a.type === 'chad_level' ? 'Chad Level' : 'Potions Crafted')
+          missingStats.add(ACTION_STAT_LABEL[a.type])
         }
       }
       if (order.completion) {
@@ -173,9 +174,9 @@ export function inferCompletedOrders(
           if (!stats.resources[r.item]?.trim()) missingStats.add(r.item)
         }
         for (const a of order.completion.actions) {
-          const playerStr = a.type === 'chad_infusion' ? stats.tiLevel : a.type === 'chad_level' ? stats.chadLevel : stats.potionsCrafted
+          const playerStr = actionPlayerValue(a, stats)
           if (!playerStr?.trim()) {
-            missingStats.add(a.type === 'chad_infusion' ? 'Infusions Done (TIs)' : a.type === 'chad_level' ? 'Chad Level' : 'Potions Crafted')
+            missingStats.add(ACTION_STAT_LABEL[a.type])
           }
         }
       }

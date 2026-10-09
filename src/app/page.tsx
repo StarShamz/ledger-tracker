@@ -14,6 +14,7 @@ import { parseQuantity } from '@/utils/parseQuantity'
 import { getAllPrerequisites, getAllDependents } from '@/utils/inferCompletedOrders'
 import type { CharacterFilter, Order, OrderStatus, PlayerStats, ResourceFilter, RewardFilter, StatusFilter } from '@/types'
 import { DEFAULT_STATS, RESOURCE_GROUP_MAP } from '@/types'
+import { actionPlayerValue } from '@/utils/actions'
 
 function getStatus(
   order: Order,
@@ -42,7 +43,7 @@ function getStatus(
   }
 
   for (const a of order.actions) {
-    const playerStr = a.type === 'chad_infusion' ? stats.tiLevel : a.type === 'chad_level' ? stats.chadLevel : stats.potionsCrafted
+    const playerStr = actionPlayerValue(a, stats)
     if (!playerStr?.trim()) continue
     const player = parseQuantity(playerStr)
     if (player !== null && player < BigInt(a.quantity)) return 'needs_resources'
@@ -51,17 +52,21 @@ function getStatus(
   return 'available'
 }
 
+// Resource chips match items needed to unlock or to complete the order.
 function matchesResource(order: Order, filter: ResourceFilter): boolean {
   if (filter === 'all') return true
-  const items = order.resources.map(r => r.item.toLowerCase())
+  const resources = [...order.resources, ...(order.completion?.resources ?? [])]
+  const items = resources.map(r => r.item.toLowerCase())
   switch (filter) {
-    case 'ether':     return (order.completion?.resources ?? []).some(r => r.item.toLowerCase() === 'ether')
+    case 'ether':     return items.some(i => i === 'ether')
     case 'jade':      return items.some(i => i === 'jade')
     case 'vespium':   return items.some(i => i.includes('vespium'))
-    case 'silicate':  return order.resources.some(r => RESOURCE_GROUP_MAP[r.item] === 'Silicate')
+    case 'silicate':  return resources.some(r => RESOURCE_GROUP_MAP[r.item] === 'Silicate')
     case 'industrial': return items.some(i => i === 'industrial bit')
     case 'hydracite': return items.some(i => i === 'hydracite')
     case 'scorchium': return items.some(i => i === 'scorchium')
+    case 'ardranite': return items.some(i => i === 'ardranite')
+    case 'azvelite':  return items.some(i => i === 'azvelite')
     case 'gel':       return items.some(i => i === 'low grade gel')
     case 'rocks':     return items.some(i => i === 'worthless rock')
     case 'actions':   return order.actions.length > 0
@@ -74,13 +79,15 @@ function matchesReward(order: Order, filter: RewardFilter): boolean {
   const rewards = order.rewards ?? []
   switch (filter) {
     case 'ether':               return rewards.some(r => r.includes('Ether'))
-    case 'credits':             return rewards.some(r => r.includes('Credits'))
+    case 'credits':             return rewards.some(r => r.includes('Credit'))
     case 'exp':                 return rewards.some(r => r.includes('EXP'))
     case 'core':                return rewards.some(r => r.includes('Core'))
     case 'crafting_speed':      return rewards.some(r => r.includes('Crafting Speed'))
     case 'vespium':             return rewards.some(r => r.includes('Vespium'))
     case 'jade':                return rewards.some(r => r.includes('Jade'))
     case 'worthless_rock':      return rewards.some(r => r.includes('Worthless Rock'))
+    case 'ardranite':           return rewards.some(r => r.includes('Ardranite'))
+    case 'azvelite':            return rewards.some(r => r.includes('Azvelite'))
     case 'tokenium':            return rewards.some(r => r.includes('Tokenium'))
     case 'craftable_sell_price': return rewards.some(r => r.includes('Craftable Sell Price'))
     case 'rig':                 return rewards.some(r => r.includes('Rig'))

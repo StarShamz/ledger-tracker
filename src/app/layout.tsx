@@ -1,7 +1,8 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Orbitron, Space_Mono, Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import UpdateBanner from '@/components/UpdateBanner'
+import { orders } from '@/data/orders'
 
 const orbitron = Orbitron({
   variable: '--font-orbitron',
@@ -18,9 +19,31 @@ const spaceMono = Space_Mono({
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
 const geistMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin'] })
 
+const title = "StarShamz's Ledger Tracker"
+const description = `v1.2 orders are now live! Plan resource costs, prerequisite chains, and your completion progress across all ${orders.length} ledger orders in Chad's Galactic Mining Empire — saved automatically in your browser.`
+
+// openGraph/twitter drive the link preview shown when the site is posted in Discord, Slack, etc.
 export const metadata: Metadata = {
-  title: "Chad's Galactic Mining Empire — Order Registry",
-  description: 'Track unlock requirements for all 118 orders in the Galactic Mining Empire',
+  metadataBase: new URL('https://ledger-hub-psi.vercel.app'),
+  title,
+  description,
+  openGraph: {
+    type: 'website',
+    url: '/',
+    siteName: "Chad's Galactic Mining Empire",
+    title,
+    description,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title,
+    description,
+  },
+}
+
+// Accent color for the embed's side bar (Discord) and mobile browser chrome.
+export const viewport: Viewport = {
+  themeColor: '#00d4ff',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

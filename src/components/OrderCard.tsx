@@ -5,6 +5,7 @@ import { meetsRequirement, parseQuantity, formatQuantity } from '@/utils/parseQu
 import { orders as allOrders } from '@/data/orders'
 import { RESOURCE_ICONS, ACTION_ICONS } from '@/data/icons'
 import { getOrderNpc, NPC_IMAGES } from '@/data/npcs'
+import { actionPlayerValue } from '@/utils/actions'
 
 interface OrderCardProps {
   order: Order
@@ -388,9 +389,7 @@ function ResourceRequirementRow({
 }
 
 function ActionRequirementRow({ a, stats }: { a: ActionRequirement; stats: PlayerStats }) {
-  const playerStr = a.type === 'chad_infusion' ? stats.tiLevel
-    : a.type === 'chad_level' ? stats.chadLevel
-    : stats.potionsCrafted
+  const playerStr = actionPlayerValue(a, stats)
   const actionState: ReqState = playerStr?.trim()
     ? (parseQuantity(playerStr) ?? 0n) >= BigInt(a.quantity) ? 'met' : 'unmet'
     : 'unknown'
@@ -402,6 +401,8 @@ function ActionRequirementRow({ a, stats }: { a: ActionRequirement; stats: Playe
         ? `TI Level ${a.quantity}+ (${a.quantity}+ Chad Infusions)`
         : a.type === 'chad_level'
         ? `Chad Level ${a.quantity}+`
+        : a.type === 'post_update_infusion'
+        ? 'Infuse after updating to v1.2'
         : `Craft ${a.quantity}+ Endurance Synthesizer Booster Potion${a.quantity > 1 ? 's' : ''}`}
     </RequirementRow>
   )
@@ -508,9 +509,7 @@ export function OrderPreview({
               )
             })}
             {order.actions.map(a => {
-              const playerStr = a.type === 'chad_infusion' ? stats.tiLevel
-                : a.type === 'chad_level' ? stats.chadLevel
-                : stats.potionsCrafted
+              const playerStr = actionPlayerValue(a, stats)
               const actionState: ReqState = playerStr?.trim()
                 ? (parseQuantity(playerStr) ?? 0n) >= BigInt(a.quantity) ? 'met' : 'unmet'
                 : 'unknown'
@@ -522,6 +521,8 @@ export function OrderPreview({
                     ? `TI Level ${a.quantity}+`
                     : a.type === 'chad_level'
                     ? `Chad Level ${a.quantity}+`
+                    : a.type === 'post_update_infusion'
+                    ? 'Infuse after updating to v1.2'
                     : `Craft ${a.quantity}+ Endurance Booster Potion${a.quantity > 1 ? 's' : ''}`}
                 </RequirementRow>
               )

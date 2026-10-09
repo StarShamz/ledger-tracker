@@ -10,6 +10,7 @@ import { DEFAULT_STATS, RESOURCE_GROUP_MAP, RESOURCE_GROUP_ORDER } from '@/types
 import type { Order, OrderStatus, PlayerStats } from '@/types'
 import OrderCard from '@/components/OrderCard'
 import { getAllPrerequisites, getAllDependents } from '@/utils/inferCompletedOrders'
+import { actionPlayerValue } from '@/utils/actions'
 
 function getStatus(order: Order, completedIds: Set<number>, stats: PlayerStats): OrderStatus {
   if (completedIds.has(order.id)) return 'completed'
@@ -29,7 +30,7 @@ function getStatus(order: Order, completedIds: Set<number>, stats: PlayerStats):
     }
   }
   for (const a of order.actions) {
-    const playerStr = a.type === 'chad_infusion' ? stats.tiLevel : a.type === 'chad_level' ? stats.chadLevel : stats.potionsCrafted
+    const playerStr = actionPlayerValue(a, stats)
     if (!playerStr?.trim()) continue
     const player = parseQuantity(playerStr)
     if (player !== null && player < BigInt(a.quantity)) return 'needs_resources'
@@ -89,6 +90,7 @@ export default function PlannerPage() {
       chad_infusion: 0,
       chad_level: 0,
       endurance_synthesizer_potion: 0,
+      post_update_infusion: 0,
     }
 
     for (const order of orders) {
@@ -466,6 +468,12 @@ export default function PlannerPage() {
                         <div className="flex items-center justify-between px-3 py-2 bg-slate-900/30 border border-slate-800/50 rounded-sm">
                           <span className="font-spacemono text-[11px] text-slate-300">Endurance Synthesizer Potions</span>
                           <span className="font-spacemono text-[11px] text-violet-300 tabular-nums">{actionTotals.endurance_synthesizer_potion.toLocaleString()}</span>
+                        </div>
+                      )}
+                      {actionTotals.post_update_infusion > 0 && (
+                        <div className="flex items-center justify-between px-3 py-2 bg-slate-900/30 border border-slate-800/50 rounded-sm">
+                          <span className="font-spacemono text-[11px] text-slate-300">Infuse after updating to v1.2</span>
+                          <span className="font-spacemono text-[11px] text-violet-300 tabular-nums">Required</span>
                         </div>
                       )}
                     </div>

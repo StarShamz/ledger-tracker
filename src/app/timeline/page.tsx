@@ -9,6 +9,7 @@ import { parseQuantity } from '@/utils/parseQuantity'
 import { DEFAULT_STATS } from '@/types'
 import type { Order, OrderStatus, PlayerStats } from '@/types'
 import { OrderPreview } from '@/components/OrderCard'
+import { actionPlayerValue } from '@/utils/actions'
 
 function getStatus(order: Order, completedIds: Set<number>, stats: PlayerStats): OrderStatus {
   if (completedIds.has(order.id)) return 'completed'
@@ -28,7 +29,7 @@ function getStatus(order: Order, completedIds: Set<number>, stats: PlayerStats):
     }
   }
   for (const a of order.actions) {
-    const playerStr = a.type === 'chad_infusion' ? stats.tiLevel : a.type === 'chad_level' ? stats.chadLevel : stats.potionsCrafted
+    const playerStr = actionPlayerValue(a, stats)
     if (!playerStr?.trim()) continue
     const player = parseQuantity(playerStr)
     if (player !== null && player < BigInt(a.quantity)) return 'needs_resources'
@@ -59,6 +60,7 @@ function getCompletionSummary(order: Order): string {
       if (a.type === 'endurance_synthesizer_potion') return `${a.quantity}× Potion`
       if (a.type === 'chad_infusion') return `${a.quantity} TIs`
       if (a.type === 'chad_level') return `Chad Lvl ${a.quantity}`
+      if (a.type === 'post_update_infusion') return 'Infuse (v1.2)'
       return ''
     }).filter(Boolean),
   ]

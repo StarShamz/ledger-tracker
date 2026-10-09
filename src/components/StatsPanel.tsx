@@ -69,6 +69,8 @@ function orderSummary(order: Order): { reqs: string[]; prereqs: string } {
 
   for (const a of order.actions) {
     if (a.type === 'chad_infusion') reqs.push(`TI ${a.quantity}+`)
+    else if (a.type === 'chad_level') reqs.push(`Chad Lvl ${a.quantity}+`)
+    else if (a.type === 'post_update_infusion') reqs.push('Infuse after v1.2')
     else reqs.push(`${a.quantity}+ Potions`)
   }
 
@@ -175,6 +177,7 @@ export default function StatsPanel({ stats, onChange, onApplyInference, complete
           tiLevel: typeof data.tiLevel === 'string' ? data.tiLevel : '',
           chadLevel: typeof data.chadLevel === 'string' ? data.chadLevel : '',
           potionsCrafted: typeof data.potionsCrafted === 'string' ? data.potionsCrafted : '',
+          infusionsSinceUpdate: typeof data.infusionsSinceUpdate === 'string' ? data.infusionsSinceUpdate : '',
           resources: typeof data.resources === 'object' && data.resources !== null ? data.resources : {},
           totalOrdersCompleted: typeof data.totalOrdersCompleted === 'string' ? data.totalOrdersCompleted : '',
         })
@@ -451,6 +454,22 @@ export default function StatsPanel({ stats, onChange, onApplyInference, complete
                   className={INPUT_CLASSES}
                 />
               </div>
+              <div>
+                <label className="flex items-center gap-1 text-xs text-slate-300 mb-0.5">
+                  {ACTION_ICONS.chad_infusion && (
+                    <img src={ACTION_ICONS.chad_infusion} alt="" aria-hidden="true" className="w-3.5 h-3.5 object-contain flex-shrink-0" />
+                  )}
+                  Infusions Since v1.2
+                </label>
+                <input
+                  type="text"
+                  inputMode="numeric"
+                  value={stats.infusionsSinceUpdate ?? ''}
+                  onChange={e => onChange({ ...stats, infusionsSinceUpdate: e.target.value })}
+                  placeholder="e.g. 1"
+                  className={INPUT_CLASSES}
+                />
+              </div>
             </div>
           )}
         </div>
@@ -541,7 +560,7 @@ export default function StatsPanel({ stats, onChange, onApplyInference, complete
           />
           <button
             onClick={() => {
-              onChange({ tiLevel: '', chadLevel: '', potionsCrafted: '', resources: {}, totalOrdersCompleted: '' })
+              onChange({ tiLevel: '', chadLevel: '', potionsCrafted: '', infusionsSinceUpdate: '', resources: {}, totalOrdersCompleted: '' })
               setResult(null)
               setCheckedIds(new Set())
               setImportError(null)

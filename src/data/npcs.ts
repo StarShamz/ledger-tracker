@@ -53,6 +53,8 @@ export const NPC_IMAGES: Record<string, string> = {
   'Bhramari':          '/npcs/bhramari.webp',
   'Nyra Voss':         '/npcs/nyra-voss.webp',
   'Wrecket':           '/npcs/wrecket.webp',
+  'Bertha':            '/npcs/bertha.webp',
+  'Caylris En Divalone': '/npcs/caylris-en-divalone.webp',
 }
 
 export function getOrderNpc(order: Order): string | undefined {
