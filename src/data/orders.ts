@@ -4047,6 +4047,12 @@ export const orders: Order[] = [
     requiredOrderIds: [252],
     resources: [{ item: 'Tokenium Canister', quantityDisplay: '1.00e39' }],
     actions: [{ type: 'post_update_infusion', quantity: 1 }],
+    npc: 'Caylris En Divalone',
+    completion: {
+      resources: [{ item: 'Ardranite', quantityDisplay: '2450' }],
+      actions: [],
+    },
+    rewards: ['x1.1 Craftable Sell Price', 'x1.05 Credit', 'x1.05 Ardranite'],
   },
   {
     id: 254,
