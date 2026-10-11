@@ -4781,6 +4781,17 @@ export const orders: Order[] = [
     requiredOrderIds: [297],
     resources: [{ item: 'Tokenium Canister', quantityDisplay: '1.00e41' }],
     actions: [],
+    npc: 'Puri Puri',
+    completion: {
+      resources: [
+        { item: 'Vespium Plate', quantityDisplay: '850.00m' },
+        { item: 'Vespium Rod', quantityDisplay: '575.00m' },
+        { item: 'Vespium Frame', quantityDisplay: '225.00m' },
+        { item: 'Vespium Wire', quantityDisplay: '27.50m' },
+      ],
+      actions: [],
+    },
+    rewards: ['+40% Crafter Speed', '/10 Crafter Cost', '+6% Crafter Duplication Chance'],
   },
   {
     id: 311,
