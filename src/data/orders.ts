@@ -4202,6 +4202,12 @@ export const orders: Order[] = [
     requiredOrderIds: [263],
     resources: [{ item: 'Tokenium Canister', quantityDisplay: '1.00e39' }],
     actions: [{ type: 'post_update_infusion', quantity: 1 }],
+    npc: 'Gerbo',
+    completion: {
+      resources: [{ item: 'Scorchium', quantityDisplay: '444.00o' }],
+      actions: [],
+    },
+    rewards: ['x1.25 Scorchium', 'x1.25 Ardranite'],
   },
   {
     id: 265,
@@ -4626,6 +4632,17 @@ export const orders: Order[] = [
     requiredOrderIds: [299],
     resources: [{ item: 'Azvelite', quantityDisplay: '1000' }],
     actions: [],
+    npc: 'Bertha',
+    completion: {
+      resources: [
+        { item: 'Hydracite', quantityDisplay: '985.00o' },
+        { item: 'Scorchium', quantityDisplay: '2.85n' },
+        { item: 'Ardranite', quantityDisplay: '2.30m' },
+        { item: 'Azvelite', quantityDisplay: '400.00k' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.09 All Mining Resources'],
   },
   {
     id: 301,
@@ -4746,6 +4763,17 @@ export const orders: Order[] = [
     requiredOrderIds: [296],
     resources: [{ item: 'Tokenium Canister', quantityDisplay: '1.00e41' }],
     actions: [],
+    npc: 'Tank Timmerson',
+    completion: {
+      resources: [
+        { item: 'Vespium', quantityDisplay: '3.95e56' },
+        { item: 'Scorchium', quantityDisplay: '300.00o' },
+        { item: 'Vespium Plate', quantityDisplay: '1.10b' },
+        { item: 'Vespium Rod', quantityDisplay: '800.00m' },
+      ],
+      actions: [],
+    },
+    rewards: ['+4.95% Crafter Duplication Chance', 'x20 Vespium', 'x1.2 Scorchium'],
   },
   {
     id: 310,
@@ -4774,6 +4802,16 @@ export const orders: Order[] = [
     requiredOrderIds: [303],
     resources: [{ item: 'Tokenium Canister', quantityDisplay: '1.00e42' }],
     actions: [],
+    npc: 'Nyra Voss',
+    completion: {
+      resources: [
+        { item: 'Reinforced Concrete', quantityDisplay: '105.00k' },
+        { item: 'Silicate Brick', quantityDisplay: '600.00m' },
+        { item: 'Battery', quantityDisplay: '50.00k' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.25 Credit', '+30 Core'],
   },
   {
     id: 314,
@@ -4781,6 +4819,16 @@ export const orders: Order[] = [
     requiredOrderIds: [304],
     resources: [{ item: 'Tokenium Canister', quantityDisplay: '1.00e42' }],
     actions: [],
+    npc: 'Bhramari',
+    completion: {
+      resources: [
+        { item: 'Vespium Rod', quantityDisplay: '900.00m' },
+        { item: 'Silicate Glass', quantityDisplay: '800.00m' },
+        { item: 'Vespium Plate', quantityDisplay: '900.00m' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.07 Forgie Output'],
   },
   {
     id: 315,
