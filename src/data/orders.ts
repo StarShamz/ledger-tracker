@@ -4589,6 +4589,17 @@ export const orders: Order[] = [
     requiredOrderIds: [114],
     resources: [{ item: 'Tokenium Canister', quantityDisplay: '1.00e39' }],
     actions: [{ type: 'post_update_infusion', quantity: 1 }],
+    npc: 'Puri Puri',
+    completion: {
+      resources: [
+        { item: 'Vespium Plate', quantityDisplay: '650.00m' },
+        { item: 'Vespium Rod', quantityDisplay: '375.00m' },
+        { item: 'Vespium Frame', quantityDisplay: '125.00m' },
+        { item: 'Vespium Wire', quantityDisplay: '2.75m' },
+      ],
+      actions: [],
+    },
+    rewards: ['+30% Crafter Speed', '/5 Crafter Cost', '+2% Crafter Duplication Chance'],
   },
   {
     id: 298,
@@ -4668,6 +4679,15 @@ export const orders: Order[] = [
     requiredOrderIds: [289],
     resources: [{ item: 'Tokenium Canister', quantityDisplay: '1.00e40' }],
     actions: [],
+    npc: 'Donathan Creel',
+    completion: {
+      resources: [
+        { item: 'Silicate Concrete', quantityDisplay: '200.00b' },
+        { item: 'Industrial Bit', quantityDisplay: '33.30b' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.75 Craftable Sell Price', 'x2 Worthless Rock'],
   },
   {
     id: 303,
@@ -4806,6 +4826,15 @@ export const orders: Order[] = [
     requiredOrderIds: [302],
     resources: [{ item: 'Tokenium Canister', quantityDisplay: '1.00e42' }],
     actions: [],
+    npc: 'Donathan Creel',
+    completion: {
+      resources: [
+        { item: 'Silicate Concrete', quantityDisplay: '300.00b' },
+        { item: 'Industrial Bit', quantityDisplay: '300.00b' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.75 Craftable Sell Price', 'x3 Worthless Rock'],
   },
   {
     id: 313,
@@ -4926,6 +4955,17 @@ export const orders: Order[] = [
     requiredOrderIds: [310],
     resources: [{ item: 'Tokenium Canister', quantityDisplay: '1.00e43' }],
     actions: [],
+    npc: 'Puri Puri',
+    completion: {
+      resources: [
+        { item: 'Vespium Plate', quantityDisplay: '1.05b' },
+        { item: 'Vespium Rod', quantityDisplay: '1.15b' },
+        { item: 'Vespium Frame', quantityDisplay: '335.00m' },
+        { item: 'Vespium Wire', quantityDisplay: '47.50m' },
+      ],
+      actions: [],
+    },
+    rewards: ['+50% Crafter Speed', '/10 Crafter Cost', '+6% Crafter Duplication Chance'],
   },
   {
     id: 321,
