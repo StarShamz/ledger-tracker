@@ -4378,7 +4378,7 @@ export const orders: Order[] = [
       resources: [{ item: 'Power Booster Potion', quantityDisplay: '6' }],
       actions: [],
     },
-    rewards: ['+2% Critical Power'],
+    rewards: ['x1.05 Azvelite', 'x1.08 Scorchium', '+2% Critical Power'],
   },
   {
     id: 280,
