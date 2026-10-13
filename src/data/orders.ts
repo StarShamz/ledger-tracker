@@ -4940,8 +4940,8 @@ export const orders: Order[] = [
     npc: 'Tank Timmerson',
     completion: {
       resources: [
-        { item: 'Vespium', quantityDisplay: '6.95e58' },
-        { item: 'Scorchium', quantityDisplay: '300.00o' },
+        { item: 'Vespium', quantityDisplay: '6.95e63' },
+        { item: 'Scorchium', quantityDisplay: '30.00n' },
         { item: 'Vespium Plate', quantityDisplay: '1.20b' },
         { item: 'Vespium Frame', quantityDisplay: '500.00m' },
       ],
@@ -5046,7 +5046,7 @@ export const orders: Order[] = [
       resources: [
         { item: 'Vespium Plate', quantityDisplay: '1.50b' },
         { item: 'Battery', quantityDisplay: '100.00k' },
-        { item: 'Ardranite', quantityDisplay: '500.00k' },
+        { item: 'Ardranite', quantityDisplay: '5.00m' },
       ],
       actions: [],
     },
