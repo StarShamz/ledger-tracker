@@ -4386,6 +4386,12 @@ export const orders: Order[] = [
     requiredOrderIds: [279],
     resources: [{ item: 'Power Booster Potion', quantityDisplay: '5' }],
     actions: [],
+    npc: 'Eidelaine Eeko',
+    completion: {
+      resources: [{ item: 'Power Booster Potion', quantityDisplay: '7' }],
+      actions: [],
+    },
+    rewards: ['x1.06 Azvelite', 'x1.09 Scorchium', '+3% Critical Power'],
   },
   {
     id: 281,
