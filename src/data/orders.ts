@@ -5075,9 +5075,9 @@ export const orders: Order[] = [
     completion: {
       resources: [
         { item: 'Battery', quantityDisplay: '2.00m' },
-        { item: 'Vespium Frame', quantityDisplay: '2.00b' },
-        { item: 'Ardranite', quantityDisplay: '300.00m' },
-        { item: 'Azvelite', quantityDisplay: '5.00m' },
+        { item: 'Vespium Frame', quantityDisplay: '7.00b' },
+        { item: 'Ardranite', quantityDisplay: '800.00m' },
+        { item: 'Azvelite', quantityDisplay: '15.00m' },
       ],
       actions: [],
     },
