@@ -4718,6 +4718,16 @@ export const orders: Order[] = [
     requiredOrderIds: [291],
     resources: [{ item: 'Tokenium Canister', quantityDisplay: '1.00e40' }],
     actions: [],
+    npc: 'Bhramari',
+    completion: {
+      resources: [
+        { item: 'Vespium Rod', quantityDisplay: '800.00m' },
+        { item: 'Silicate Glass', quantityDisplay: '700.00m' },
+        { item: 'Vespium Plate', quantityDisplay: '800.00m' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.06 Forgie Output'],
   },
   {
     id: 305,
