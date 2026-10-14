@@ -3749,7 +3749,7 @@ export const orders: Order[] = [
       ],
       actions: [],
     },
-    rewards: ['+1 Attribute Point'],
+    rewards: ['+6.25% Crafter Duplication Chance'],
   },
   {
     id: 233,
