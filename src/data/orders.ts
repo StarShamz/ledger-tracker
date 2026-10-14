@@ -4168,7 +4168,7 @@ export const orders: Order[] = [
       resources: [{ item: 'Vespium', quantityDisplay: '1.13e55' }],
       actions: [],
     },
-    rewards: ['x5 Vespium', 'x1.5 Jade'],
+    rewards: ['x5 Vespium', 'x2 Jade'],
   },
   {
     id: 262,
