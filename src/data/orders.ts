@@ -4136,7 +4136,7 @@ export const orders: Order[] = [
     npc: 'Wrecket',
     completion: {
       resources: [
-        { item: 'Industrial Bit', quantityDisplay: '1.00b' },
+        { item: 'Industrial Bit', quantityDisplay: '5.00b' },
         { item: 'Battery', quantityDisplay: '12.50k' },
         { item: 'Ardranite', quantityDisplay: '6000' },
       ],
@@ -4178,10 +4178,10 @@ export const orders: Order[] = [
     actions: [{ type: 'post_update_infusion', quantity: 1 }],
     npc: 'Gerbo',
     completion: {
-      resources: [{ item: 'Jade', quantityDisplay: '739.00d' }],
+      resources: [{ item: 'Jade', quantityDisplay: '73.90d' }],
       actions: [],
     },
-    rewards: ['x1.5 Jade', 'x1.25 Hydracite'],
+    rewards: ['x2 Jade', 'x1.5 Hydracite'],
   },
   {
     id: 263,
