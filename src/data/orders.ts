@@ -3820,7 +3820,7 @@ export const orders: Order[] = [
       resources: [{ item: 'Battery', quantityDisplay: '100.00k' }],
       actions: [],
     },
-    rewards: ['+30% Crafter Speed', '+10% Crafter Duplication Chance'],
+    rewards: ['+30% Crafter Speed', '+8% Crafter Duplication Chance'],
   },
   {
     id: 239,
@@ -3929,7 +3929,7 @@ export const orders: Order[] = [
       ],
       actions: [],
     },
-    rewards: ['+6.32% Crafter Duplication Chance', 'x10 Vespium'],
+    rewards: ['+4.32% Crafter Duplication Chance', 'x10 Vespium'],
   },
   {
     id: 246,
@@ -4102,7 +4102,7 @@ export const orders: Order[] = [
       resources: [{ item: 'Battery', quantityDisplay: '250.00k' }],
       actions: [],
     },
-    rewards: ['+10% Crafter Duplication Chance', 'x1.5 Credit'],
+    rewards: ['+8% Crafter Duplication Chance', 'x1.5 Credit'],
   },
   {
     id: 258,
@@ -4237,6 +4237,12 @@ export const orders: Order[] = [
     requiredOrderIds: [255],
     resources: [{ item: 'Azvelite', quantityDisplay: null }],
     actions: [],
+    npc: 'Caylris En Divalone',
+    completion: {
+      resources: [{ item: 'Azvelite', quantityDisplay: '10' }],
+      actions: [],
+    },
+    rewards: ['+1 Attribute Point'],
   },
   {
     id: 268,
@@ -4244,6 +4250,12 @@ export const orders: Order[] = [
     requiredOrderIds: [267],
     resources: [],
     actions: [],
+    npc: 'Caylris En Divalone',
+    completion: {
+      resources: [{ item: 'Azvelite', quantityDisplay: '50' }],
+      actions: [],
+    },
+    rewards: ['x1.3 Credit', 'x1.05 Ardranite'],
   },
   {
     id: 269,
@@ -4264,6 +4276,12 @@ export const orders: Order[] = [
     requiredOrderIds: [269],
     resources: [],
     actions: [],
+    npc: 'Caylris En Divalone',
+    completion: {
+      resources: [{ item: 'Azvelite', quantityDisplay: '180' }],
+      actions: [],
+    },
+    rewards: ['x1.2 Craftable Sell Price', 'x1.2 Worthless Rock', 'x2 Vespium'],
   },
   {
     id: 271,
@@ -4349,6 +4367,12 @@ export const orders: Order[] = [
     requiredOrderIds: [201],
     resources: [{ item: 'Detection Booster Potion', quantityDisplay: '1' }],
     actions: [],
+    npc: 'Eidelaine Eeko',
+    completion: {
+      resources: [{ item: 'Detection Booster Potion', quantityDisplay: '6' }],
+      actions: [],
+    },
+    rewards: ['x1.05 Azvelite', 'x1.07 Jade', 'x1.09 Rig Output'],
   },
   {
     id: 278,
@@ -4559,7 +4583,7 @@ export const orders: Order[] = [
       resources: [{ item: 'Silicate Concrete', quantityDisplay: '1.00t' }],
       actions: [],
     },
-    rewards: ['x2 Credit', 'x1.15 Ardranite', '+6% Crafter Duplication Chance'],
+    rewards: ['x2 Credit', 'x1.15 Ardranite', '+4% Crafter Duplication Chance'],
   },
   {
     id: 296,
@@ -4577,7 +4601,7 @@ export const orders: Order[] = [
       ],
       actions: [],
     },
-    rewards: ['+6.45% Crafter Duplication Chance', 'x20 Vespium'],
+    rewards: ['+4.45% Crafter Duplication Chance', 'x20 Vespium'],
   },
   {
     id: 297,
@@ -4627,7 +4651,7 @@ export const orders: Order[] = [
         { item: 'Jade', quantityDisplay: '30.00d' },
         { item: 'Hydracite', quantityDisplay: '28.50o' },
         { item: 'Ardranite', quantityDisplay: '47.50k' },
-        { item: 'Azvelite', quantityDisplay: '115' },
+        { item: 'Azvelite', quantityDisplay: '2600' },
       ],
       actions: [],
     },
@@ -4761,7 +4785,7 @@ export const orders: Order[] = [
         { item: 'Battery', quantityDisplay: '115.00k' },
         { item: 'Vespium Frame', quantityDisplay: '300.00m' },
         { item: 'Ardranite', quantityDisplay: '37.50k' },
-        { item: 'Azvelite', quantityDisplay: '100' },
+        { item: 'Azvelite', quantityDisplay: '5000' },
       ],
       actions: [],
     },
@@ -4825,6 +4849,17 @@ export const orders: Order[] = [
     requiredOrderIds: [301],
     resources: [{ item: 'Tokenium Canister', quantityDisplay: '1.00e42' }],
     actions: [],
+    npc: 'Meepa Torani',
+    completion: {
+      resources: [
+        { item: 'Reinforced Concrete', quantityDisplay: '100.00k' },
+        { item: 'Battery', quantityDisplay: '78.50k' },
+        { item: 'Silicate Brick', quantityDisplay: '1.00b' },
+        { item: 'Silicate Glass', quantityDisplay: '1.00b' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.7 Credit', 'x1.7 Craftable Sell Price'],
   },
   {
     id: 312,
@@ -4953,7 +4988,7 @@ export const orders: Order[] = [
       ],
       actions: [],
     },
-    rewards: ['+7.95% Crafter Duplication Chance', 'x10 Vespium', 'x1.25 Scorchium'],
+    rewards: ['+5.95% Crafter Duplication Chance', 'x10 Vespium', 'x1.25 Scorchium'],
   },
   {
     id: 320,
