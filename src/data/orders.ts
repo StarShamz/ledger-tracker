@@ -4380,6 +4380,12 @@ export const orders: Order[] = [
     requiredOrderIds: [277],
     resources: [{ item: 'Detection Booster Potion', quantityDisplay: '5' }],
     actions: [],
+    npc: 'Eidelaine Eeko',
+    completion: {
+      resources: [{ item: 'Detection Booster Potion', quantityDisplay: '7' }],
+      actions: [],
+    },
+    rewards: ['x1.06 Ardranite', 'x1.08 Jade', 'x1.1 Rig Output'],
   },
   {
     id: 279,
