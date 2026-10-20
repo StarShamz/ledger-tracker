@@ -5171,7 +5171,7 @@ export const orders: Order[] = [
       ],
       actions: [],
     },
-    rewards: ['+60% Crafter Speed', '/10 Rig Cost', '+9% Crafter Duplication Chance'],
+    rewards: ['+60% Crafter Speed', '/10 Rig Cost', '+7% Crafter Duplication Chance'],
   },
   {
     id: 331,
