@@ -5257,7 +5257,7 @@ export const orders: Order[] = [
     completion: {
       resources: [
         { item: 'Ardranite', quantityDisplay: '675.00m' },
-        { item: 'Jade', quantityDisplay: '5.00e40' },
+        { item: 'Jade', quantityDisplay: '8.00e39' },
         { item: 'Hydracite', quantityDisplay: '500.00n' },
         { item: 'Azvelite', quantityDisplay: '10.00m' },
       ],
