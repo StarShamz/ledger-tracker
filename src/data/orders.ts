@@ -5046,7 +5046,7 @@ export const orders: Order[] = [
       ],
       actions: [],
     },
-    rewards: ['x2.25 Credit', 'x3 Worthless Rock'],
+    rewards: ['x2.25 Craftable Sell Price', 'x3 Worthless Rock'],
   },
   {
     id: 323,
@@ -5153,7 +5153,7 @@ export const orders: Order[] = [
       ],
       actions: [],
     },
-    rewards: ['+8.95% Crafter Duplication Chance', 'x10 Vespium', 'x1.35 Scorchium'],
+    rewards: ['+6.95% Crafter Duplication Chance', 'x10 Vespium', 'x1.35 Scorchium'],
   },
   {
     id: 330,
@@ -5210,9 +5210,9 @@ export const orders: Order[] = [
     completion: {
       resources: [
         { item: 'Tokenium', quantityDisplay: '4.00e53' },
-        { item: 'Jade', quantityDisplay: '9.00e39' },
-        { item: 'Scorchium', quantityDisplay: '30.00n' },
-        { item: 'Azvelite', quantityDisplay: '2.50m' },
+        { item: 'Jade', quantityDisplay: '1.00e39' },
+        { item: 'Scorchium', quantityDisplay: '80.00n' },
+        { item: 'Azvelite', quantityDisplay: '1.50m' },
       ],
       actions: [],
     },
