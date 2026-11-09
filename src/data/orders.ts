@@ -4419,6 +4419,15 @@ export const orders: Order[] = [
     requiredOrderIds: [280],
     resources: [{ item: 'Power Booster Potion', quantityDisplay: '30' }],
     actions: [],
+    npc: 'Eidelaine Eeko',
+    completion: {
+      resources: [
+        { item: 'Detection Booster Potion', quantityDisplay: '8' },
+        { item: 'Power Booster Potion', quantityDisplay: '8' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.15 Azvelite', 'x1.15 Ardranite', '+1 Attribute Point'],
   },
   {
     id: 282,
@@ -4433,6 +4442,16 @@ export const orders: Order[] = [
     requiredOrderIds: [282],
     resources: [{ item: 'Detection Booster Potion', quantityDisplay: '75' }],
     actions: [],
+    npc: 'Eidelaine Eeko',
+    completion: {
+      resources: [
+        { item: 'Precision Booster Potion', quantityDisplay: '12' },
+        { item: 'Detection Booster Potion', quantityDisplay: '10' },
+        { item: 'Power Booster Potion', quantityDisplay: '10' },
+      ],
+      actions: [],
+    },
+    rewards: ['+10% Critical Power', 'x2 Azvelite', 'x2 Ardranite'],
   },
   {
     id: 284,
@@ -4811,7 +4830,7 @@ export const orders: Order[] = [
       resources: [{ item: 'Low Grade Gel', quantityDisplay: '1.00b' }],
       actions: [],
     },
-    rewards: ['x5 Credit', 'x1.15 Azvelite', '+7% Crafter Duplication Chance'],
+    rewards: ['x5 Credit', 'x1.15 Azvelite', '+5% Crafter Duplication Chance'],
   },
   {
     id: 309,
@@ -4976,7 +4995,7 @@ export const orders: Order[] = [
       resources: [{ item: 'Vespium Ingot', quantityDisplay: '5.00t' }],
       actions: [],
     },
-    rewards: ['x10 Credit', '+15% Crafter Duplication Chance'],
+    rewards: ['x10 Credit', '+13% Crafter Duplication Chance'],
   },
   {
     id: 319,
@@ -5446,7 +5465,7 @@ export const orders: Order[] = [
       ],
       actions: [],
     },
-    rewards: ['+9.11% Crafter Duplication Chance', 'x2 Vespium', 'x2 Worthless Rock'],
+    rewards: ['+7.11% Crafter Duplication Chance', 'x2 Vespium', 'x2 Worthless Rock'],
   },
   {
     id: 350,
@@ -5520,6 +5539,14 @@ export const orders: Order[] = [
     resources: [{ item: 'Tokenium Canister', quantityDisplay: '1.00e49' }],
     actions: [],
     npc: 'The Twins',
+    completion: {
+      resources: [
+        { item: 'Hydracite', quantityDisplay: '75.00d' },
+        { item: 'Scorchium', quantityDisplay: '100.00d' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.1 Scorchium', 'x1.1 Azvelite', '+15 Core'],
   },
   {
     id: 356,
@@ -5528,6 +5555,14 @@ export const orders: Order[] = [
     resources: [{ item: 'Tokenium Canister', quantityDisplay: '1.00e49' }],
     actions: [],
     npc: 'Caylris En Divalone',
+    completion: {
+      resources: [
+        { item: 'Ardranite', quantityDisplay: '325.00b' },
+        { item: 'Azvelite', quantityDisplay: '925.00m' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.25 Credit', 'x1.15 Rig Output', 'x1.05 Azvelite'],
   },
   {
     id: 357,
@@ -5536,6 +5571,11 @@ export const orders: Order[] = [
     resources: [{ item: 'Tokenium Canister', quantityDisplay: '1.00e50' }],
     actions: [],
     npc: 'Minalima Lin',
+    completion: {
+      resources: [{ item: 'Jade', quantityDisplay: '1.00e43' }],
+      actions: [],
+    },
+    rewards: ['+1 Attribute Point', '+8 Core'],
   },
   {
     id: 358,
@@ -5753,6 +5793,16 @@ export const orders: Order[] = [
     resources: [{ item: 'Tokenium Canister', quantityDisplay: '1.00e56' }],
     actions: [],
     npc: 'Donathan Creel',
+    completion: {
+      resources: [
+        { item: 'Industrial Bit', quantityDisplay: '80.00t' },
+        { item: 'Silicate Brick', quantityDisplay: '650.00b' },
+        { item: 'Silicate Glass', quantityDisplay: '200.00b' },
+        { item: 'Reinforced Concrete', quantityDisplay: '80.00m' },
+      ],
+      actions: [],
+    },
+    rewards: ['x4 Credit', 'x4 Worthless Rock', 'x4 EXP'],
   },
   {
     id: 373,
@@ -5769,6 +5819,16 @@ export const orders: Order[] = [
     resources: [{ item: 'Tokenium Canister', quantityDisplay: '1.00e56' }],
     actions: [],
     npc: 'Bhramari',
+    completion: {
+      resources: [
+        { item: 'Vespium Rod', quantityDisplay: '550.00b' },
+        { item: 'Low Grade Gel', quantityDisplay: '835.00b' },
+        { item: 'Silicate Brick', quantityDisplay: '500.00b' },
+        { item: 'Battery', quantityDisplay: '112.00m' },
+      ],
+      actions: [],
+    },
+    rewards: ['x1.12 Forgie Output', 'x1.12 Rig Output', 'x1.24 Credit'],
   },
   {
     id: 375,
@@ -5785,6 +5845,15 @@ export const orders: Order[] = [
     resources: [{ item: 'Tokenium Canister', quantityDisplay: '1.00e56' }],
     actions: [],
     npc: 'Samos Sula',
+    completion: {
+      resources: [
+        { item: 'Vespium Rod', quantityDisplay: '800.00b' },
+        { item: 'Battery', quantityDisplay: '130.00m' },
+        { item: 'Vespium Wire', quantityDisplay: '20.00b' },
+      ],
+      actions: [],
+    },
+    rewards: ['x2 Rig Output', '/8.22 Rig Cost', '+16 Core'],
   },
   {
     id: 377,
@@ -5809,6 +5878,16 @@ export const orders: Order[] = [
     resources: [{ item: 'Tokenium Canister', quantityDisplay: '1.00e56' }],
     actions: [],
     npc: 'Tank Timmerson',
+    completion: {
+      resources: [
+        { item: 'Vespium Plate', quantityDisplay: '800.00b' },
+        { item: 'Vespium Frame', quantityDisplay: '70.00b' },
+        { item: 'Vespium Rod', quantityDisplay: '200.00b' },
+        { item: 'Silicate Glass', quantityDisplay: '400.00b' },
+      ],
+      actions: [],
+    },
+    rewards: ['+20% Crafter Duplication Chance', 'x4 Worthless Rock', '/33 Crafter Cost'],
   },
   {
     id: 380,
